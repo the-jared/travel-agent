@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Food {{TITLE}} Dining Guide</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Food {{PAGE_TITLE}} Dining Guide</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Food Guide — Japan October 2026</h1>
+<blockquote>
+<p>2-week solo foodie trip. Mid-range budget with strategic splurges.</p>
+<p>Daily target: ~¥5,500-7,800 ($37-52 USD at ~¥150/$1)</p>
+</blockquote>
+<hr>
+<h2>Must-Try Dishes (The Definitive 15)</h2>
+<h3>1. Ramen</h3>
+<p>The cornerstone of solo dining in Japan. Every bowl is a personal ritual.</p>
+<p><strong>What it is:</strong> Wheat noodles in a rich broth — Tokyo alone has distinct regional styles competing for supremacy.</p>
+<p><strong>Styles to try:</strong></p>
+<ul>
+<li><strong>Tonkotsu</strong> — Creamy pork bone broth, 12-18 hour simmer</li>
+<li><strong>Shoyu</strong> — Soy sauce-based, clear and deep. The original Tokyo style</li>
+<li><strong>Miso</strong> — Hokkaido origin, heavier and more robust</li>
+<li><strong>Tsukemen</strong> — Cold noodles dipped into concentrated hot broth. A must-try</li>
+</ul>
+<p><strong>Best spots:</strong></p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Restaurant</th><th>Location</th><th>Style</th><th>Price</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>Fuunji</td><td>Shinjuku (south exit)</td><td>Tsukemen</td><td>¥900-1,100</td><td>The best tsukemen in Tokyo. Line moves fast. Get the rich broth.</td></tr>
+<tr>
+<td>Ichiran</td><td>Multiple locations</td><td>Tonkotsu</td><td>¥1,000-1,300</td><td>Individual flavor booths — literally designed for solo diners. Customize everything on a paper form.</td></tr>
+<tr>
+<td>Konjiki Hototogisu</td><td>Shinjuku Gyoenmae</td><td>Shio/Shoyu</td><td>¥1,000-1,200</td><td>Michelin Bib Gourmand. Clam and dashi-based. Refined and unusual.</td></tr>
+<tr>
+<td>Rokurinsha</td><td>Tokyo Station Ramen Street</td><td>Tsukemen</td><td>¥900-1,100</td><td>Thick, chewy noodles. Always a line but worth it.</td></tr>
+<tr>
+<td>Nakiryu</td><td>Otsuka</td><td>Tantanmen</td><td>¥900-1,100</td><td>One Michelin star. Spicy sesame ramen. Arrive 30 min before 11am opening.</td></tr>
+</tbody></table></div>
+<p><strong>Solo dining notes:</strong> Ramen shops are the ultimate solo meal. Most use ticket vending machines — buy your ticket, hand it to the cook, eat in focused silence. In and out in 20 minutes.</p>
+<hr>
+<h3>2. Sushi</h3>
+<p>Three tiers, three completely different experiences.</p>
+<p><strong>Tier 1 — Conveyor Belt (Kaitenzushi): ¥1,500-3,000</strong></p>
+<ul>
+<li><strong>Sushiro</strong> — Best quality-to-price ratio of the big chains. Order via tablet for freshly made pieces rather than taking from the belt. Salmon, engawa, and uni are standouts.</li>
+<li><strong>Kurazushi</strong> — Fun gimmick: plates go into a slot, every 5 plates triggers a gacha prize game.</li>
+<li><strong>Genki Sushi</strong> — Shibuya location is convenient. Plates delivered by bullet train tray.</li>
+</ul>
+<p><strong>Tier 2 — Market Sushi: ¥4,000-5,000</strong></p>
+<ul>
+<li><strong>Sushi Dai</strong> — Toyosu Market. The omakase set is legendary. Arrive at 5:00am for the 5:30am lottery (they changed from a physical line to a lottery system). Worth it once.</li>
+<li><strong>Daiwa Sushi</strong> — Also Toyosu. Slightly shorter wait, nearly as good. The anago is exceptional.</li>
+<li><strong>Tsukiji Outer Market stalls</strong> — The outer market still operates. Multiple standing sushi bars with fresh cuts. Grab-and-go donburi bowls for ¥1,500-2,500.</li>
+</ul>
+<p><strong>Tier 3 — Omakase Counter: ¥10,000-15,000 (lunch)</strong></p>
+<ul>
+<li><strong>Sushi Tokami</strong> — Ginza. Lunch omakase around ¥10,000-15,000. Excellent rice (they use red vinegar). Counter seats only — ideal for solo. Book via Tableall or Omakase.</li>
+<li><strong>Sushi Saito</strong> — If you can get a reservation (nearly impossible without a concierge). 3 Michelin stars. ¥20,000+.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Counter sushi is inherently a solo experience. Sit at the bar, watch the itamae work. At conveyor belt spots, solo seats are everywhere. No awkwardness whatsoever.</p>
+<hr>
+<h3>3. Tempura</h3>
+<p><strong>What it is:</strong> Lightly battered and deep-fried seafood and vegetables. When done right, the batter is barely there — shatteringly crisp, almost translucent.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Tempura Kondo</strong> — Ginza. Michelin-starred. The sweet potato tempura is legendary — thick slices cooked low and slow until caramelized inside. Lunch course ¥8,000-12,000. Book well ahead.</li>
+<li><strong>Tsunahachi</strong> — Shinjuku. Since 1923. Excellent mid-range counter tempura. Set meals ¥2,000-4,000. No reservation needed, short waits.</li>
+<li><strong>Tendon Tenya</strong> — Chain restaurant. Tendon (tempura rice bowl) for ¥500-800. Genuinely good for the price. Locations everywhere.</li>
+<li><strong>Tempura Endo Yasaka</strong> — Kyoto. Counter seats facing the fryer. Lunch set ¥3,500-5,000.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Counter tempura is one of Japan's great solo dining experiences. Each piece is fried and placed directly on your plate one at a time. Eat it immediately. The chef controls the pace.</p>
+<hr>
+<h3>4. Yakitori</h3>
+<p><strong>What it is:</strong> Skewered chicken parts grilled over binchotan charcoal. Every part of the bird is used — breast, thigh, skin, heart, gizzard, cartilage, tail.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Birdland</strong> — Ginza (basement of Tsukiji Building). Michelin star. Omakase course ¥6,000-8,000. Uses premium Okutama shamo chicken. Reservation required.</li>
+<li><strong>Toriki</strong> — Meguro. Locals queue for this. Cash only. Omakase ¥3,000-4,000. The tsukune (chicken meatball with raw egg yolk) is perfect.</li>
+<li><strong>Yurakucho under-the-tracks</strong> — The entire alley under the train tracks near Yurakucho station is lined with tiny yakitori joints. Pick any that's busy. ¥2,000-3,500 with beer.</li>
+<li><strong>Omoide Yokocho</strong> — Shinjuku. Atmospheric alley of tiny smoke-filled stalls. Touristy but still fun. ¥1,500-3,000.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Yakitori counters seat 8-12 people, most of them solo. Order a beer, point at what looks good. Tare (sauce) or shio (salt) — try both.</p>
+<hr>
+<h3>5. Udon</h3>
+<p><strong>What it is:</strong> Thick, chewy wheat noodles. Ranges from simple chilled dipping noodles to rich curry udon.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Omen</strong> — Kyoto (Gion area). ¥1,200-1,800. Signature cold udon with sesame dipping sauce and a tray of fresh vegetables. Beautiful traditional building.</li>
+<li><strong>Tsurutontan</strong> — Osaka (Namba). ¥1,000-1,800. Known for absurdly large bowls served in oversized dishes. Great variety of styles. Creative toppings.</li>
+<li><strong>Marugame Seimen</strong> — Chain with locations everywhere. ¥300-600. Watch them make noodles fresh. Self-serve toppings. Best cheap lunch in Japan.</li>
+<li><strong>Shin Udon</strong> — Tokyo (Shibuya area). Handmade noodles with translucent, slippery texture. ¥1,000-1,500.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Udon shops are fast and casual. Standing udon (tachigui) near train stations is a classic solo speed-meal for ¥300-500.</p>
+<hr>
+<h3>6. Soba</h3>
+<p><strong>What it is:</strong> Thin buckwheat noodles, often served cold on a bamboo mat (zaru soba) with dipping sauce. The earthy, nutty flavor of good soba is completely different from the instant stuff.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Honke Owariya</strong> — Kyoto. Operating since 1465. One of the oldest restaurants in Japan. ¥2,000-3,000. The horai soba (five tiers of noodles with different toppings) is the signature. Stunning historic building.</li>
+<li><strong>Kanda Matsuya</strong> — Tokyo (Kanda). Since 1884. ¥800-1,200. Classic zaru soba in an old-school atmosphere. The soba-yu (hot noodle water) at the end is tradition.</li>
+<li><strong>Tamawarai</strong> — Tokyo (Jingumae). Michelin-starred soba. ¥1,500-2,500. The coarse-ground soba has an intense buckwheat aroma. Often a wait.</li>
+<li><strong>Honmura An</strong> — Tokyo (Roppongi). Elegant setting. Handmade soba with excellent tempura sides. ¥2,000-3,500.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Slurp loudly. It aerates the noodles and enhances flavor. This is expected and polite. Drink the soba-yu (starchy cooking water mixed with leftover dipping sauce) at the end.</p>
+<hr>
+<h3>7. Okonomiyaki</h3>
+<p><strong>What it is:</strong> Savory pancake/griddle cake. Two rival styles: Osaka-style (mixed batter) and Hiroshima-style (layered with noodles).</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Mizuno</strong> — Osaka, Dotonbori. ¥1,200-1,800. The yama-imo (mountain yam) version is incredibly fluffy. Long lines but worth it. They cook it for you on the griddle in front of your seat.</li>
+<li><strong>Nagata-ya</strong> — Hiroshima. ¥1,000-1,500. Hiroshima-style with layers of crepe, cabbage, pork, noodles, and egg. Counter seating with a view of the massive griddle.</li>
+<li><strong>Chibo</strong> — Osaka (Dotonbori). ¥1,500-2,500. Upscale okonomiyaki. Good alternative if Mizuno's line is too long.</li>
+<li><strong>Sometaro</strong> — Tokyo (Asakusa). ¥1,000-1,500. You cook it yourself on your own griddle. Charming old building.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Counter seats at okonomiyaki restaurants are great for solo diners — watch the chef build your pancake. If it's a cook-it-yourself place, staff will help you. No shame in asking.</p>
+<hr>
+<h3>8. Takoyaki</h3>
+<p><strong>What it is:</strong> Spherical batter balls filled with diced octopus, tempura scraps, and pickled ginger, cooked in a special molded pan. Crispy outside, molten inside. Osaka's iconic street food.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Wanaka</strong> — Osaka (Namba/Sennichimae). ¥500-700. Consistently excellent. Crispy exterior, creamy interior. Get the ponzu or plain salt version to taste the octopus.</li>
+<li><strong>Aizuya</strong> — Osaka (Shinsekai). ¥500-600. Claims to be the original inventor of takoyaki. Served with dashi broth for dipping — the old-school way.</li>
+<li><strong>Kukuru</strong> — Osaka (Dotonbori). ¥600-800. Uses whole baby octopus. Dramatic giant octopus sign on the storefront.</li>
+<li><strong>Gindaco</strong> — Chain with locations nationwide. ¥500-700. Crispier style. Good when you need a quick fix outside Osaka.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> This is pure street food. Grab a tray, eat standing. Careful — the inside is lava-hot. Osaka locals wait 30 seconds before biting in.</p>
+<hr>
+<h3>9. Tonkatsu</h3>
+<p><strong>What it is:</strong> Breaded and deep-fried pork cutlet. Choose between hire (lean fillet) and rosu (fattier loin). Served with shredded cabbage, rice, miso soup, and tonkatsu sauce.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Maisen</strong> — Omotesando, Tokyo. ¥1,800-2,500. Located in a converted bathhouse. The kurobuta (black pork) hire-katsu is perfectly juicy. Grind your own sesame seeds for the dipping sauce.</li>
+<li><strong>Tonkatsu Suzuki</strong> — Ningyocho, Tokyo. ¥1,500-2,000. Old-school spot. Minimal frills, maximum flavor. Thick-cut loin with a dark, savory sauce.</li>
+<li><strong>Butagumi</strong> — Nishi-Azabu, Tokyo. ¥2,500-4,000. Choose from multiple pork breeds listed on a menu that reads like a wine list. Serious tonkatsu.</li>
+<li><strong>Gyukatsu Motomura</strong> — Multiple Tokyo locations. ¥1,500-1,800. Beef katsu (gyukatsu) seared rare, finished on a hot stone at your seat. Different but incredible.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Tonkatsu shops are mostly counter seating. The ritual of grinding sesame, mixing your own sauce, and eating with unlimited cabbage refills is deeply satisfying alone.</p>
+<hr>
+<h3>10. Kaiseki</h3>
+<p><strong>What it is:</strong> Traditional Japanese multi-course haute cuisine. Each course reflects the season in ingredients, presentation, and even the ceramics used. This is Japanese cooking at its most refined.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Kikunoi</strong> — Kyoto (Higashiyama). 3 Michelin stars. ¥20,000-35,000 for dinner. A once-in-a-lifetime meal. Reserve months in advance. October courses feature matsutake mushroom and autumn leaves motifs.</li>
+<li><strong>Giro Giro Hitoshina</strong> — Kyoto (Kiyamachi). ¥4,000-5,000. The casual offshoot of Kikunoi. Counter seating, same chef lineage, fraction of the price. Modern, playful kaiseki that doesn't take itself too seriously. Book 2-3 weeks ahead.</li>
+<li><strong>Kikunoi Roan</strong> — Kyoto. ¥6,000-8,000 lunch. The mid-tier Kikunoi restaurant. Excellent value.</li>
+<li><strong>Hyotei</strong> — Kyoto. Since 1615. ¥15,000-25,000. Historic ryotei with garden seating. The morning porridge breakfast (¥4,500) is legendary.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Counter kaiseki (like Giro Giro Hitoshina) is perfect for solo diners. Traditional kaiseki in a private room can feel lonely alone — go for the counter format.</p>
+<hr>
+<h3>11. Wagyu Beef</h3>
+<p><strong>What it is:</strong> Intensely marbled Japanese beef. Kobe beef is the most famous, but Matsusaka, Omi, and Miyazaki wagyu are equally extraordinary.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Mouriya</strong> — Kobe (Sannomiya). Teppanyaki lunch ¥5,000-8,000. Watch the chef cook your steak on a steel griddle. You choose the cut and grade. A5 is the highest marbling. Lunch is significantly cheaper than dinner.</li>
+<li><strong>Hafuu</strong> — Kyoto. Steak lunch ¥3,500-6,000. Omi beef (the oldest wagyu brand, from Shiga Prefecture). Intimate counter seating.</li>
+<li><strong>Satou</strong> — Tokyo (Kichijoji). Famous menchi-katsu (fried ground beef patty) for ¥300. Line around the block. The upstairs steakhouse is ¥5,000-8,000.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Teppanyaki counters are naturally solo-friendly. Sit at the steel griddle, watch the chef work. Order 100-150g — wagyu is rich, you don't need a large portion.</p>
+<hr>
+<h3>12. Matcha and Japanese Tea</h3>
+<p><strong>What it is:</strong> Stone-ground green tea powder, whisked with hot water. Uji (south of Kyoto) is the most famous growing region.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Nakamura Tokichi</strong> — Uji. ¥1,000-1,500. Since 1854. The matcha parfait and nama-chocolate are legendary. The main shop in Uji has a lovely garden. Byodoin temple is a 5-minute walk.</li>
+<li><strong>Ippodo Tea</strong> — Kyoto (Teramachi). ¥600-1,000. Operating since 1717. Sit in the tearoom and they teach you how to prepare your own matcha. Multiple grades to try. Buy some to take home.</li>
+<li><strong>Tsujiri</strong> — Kyoto (Gion). ¥500-900. The originator of matcha tea blending. Soft serve, parfaits, and traditional tea.</li>
+<li><strong>Saryo Tsujiri</strong> — Kyoto Station. Convenient for a matcha break between trains.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Tea houses are inherently contemplative and solo-friendly. Sit, sip, slow down. Nobody expects conversation.</p>
+<hr>
+<h3>13. Japanese Curry</h3>
+<p><strong>What it is:</strong> Not Indian, not Thai — Japanese curry is its own thing. Thick, sweet, mild, served over rice. A comfort food staple.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>CoCo Ichibanya</strong> — Nationwide chain. ¥700-1,000. Customize spice level (1-10), rice amount, and toppings. Level 3 is plenty for most. The cheese and hamburg combo is a guilty pleasure.</li>
+<li><strong>Columbia 8</strong> — Osaka (Kitahama). ¥1,200-1,600. At the forefront of Osaka's "spice curry" movement — inventive, aromatic, nothing like the typical Japanese curry. Often has a line.</li>
+<li><strong>Moyan Curry</strong> — Tokyo (Shimokitazawa). ¥1,000-1,400. Another great spice curry spot. Complex, layered flavors with South Asian influences.</li>
+<li><strong>Ethiopian</strong> — Tokyo (Ochanomizu). ¥700-900. Since 1988. Despite the name, it's pure Japanese curry. The "Ethiopia" is a spicier style. Cash only. Fast.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Curry shops are the quintessential solo lunch. Counter seating, ticket machines, quick service. In and out in 15 minutes.</p>
+<hr>
+<h3>14. Onigiri (Rice Balls)</h3>
+<p><strong>What it is:</strong> Triangular or round balls of seasoned rice with various fillings, wrapped in crispy nori. Japan's original grab-and-go food.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Onigiri Yadoroku</strong> — Asakusa, Tokyo. ¥200-400 per piece. Michelin Bib Gourmand for a rice ball shop. Made fresh to order. The sake (salmon) and tarako (cod roe) are perfect. Tiny shop — counter seats only.</li>
+<li><strong>Bongo</strong> — Otsuka, Tokyo. ¥300-400. Famous for enormous, loosely packed onigiri with creative fillings. The suji-nikomi (beef tendon stew) filling is incredible. Cash only.</li>
+<li><strong>Onigiri Asakusa Yadoroku</strong> — The original Asakusa location. Opens at 11:30am, often sells out by 2pm.</li>
+</ul>
+<p><strong>Konbini onigiri ranking (for daily eating):</strong></p>
+<ol>
+<li><strong>7-Eleven</strong> — Best overall. The tuna-mayo is a national institution. Premium line uses high-quality ingredients.</li>
+<li><strong>Lawson</strong> — The akumaki (red rice) series is unique. Good variety.</li>
+<li><strong>FamilyMart</strong> — Solid but slightly behind. The grilled onigiri (yaki-onigiri) is their strength.</li>
+</ol>
+<p><strong>Solo dining notes:</strong> Onigiri is the ultimate solo food. Grab two from a konbini, eat on a park bench. Total cost: ¥300. Perfect pre-train snack.</p>
+<hr>
+<h3>15. Japanese Breakfast</h3>
+<p><strong>What it is:</strong> A traditional Japanese breakfast includes grilled fish, miso soup, rice, pickles, tamagoyaki (rolled omelet), natto (fermented soybeans), and small side dishes. A complete meal that fuels an entire morning.</p>
+<p><strong>Best spots:</strong></p>
+<ul>
+<li><strong>Ryokan stay</strong> — The single best way to experience Japanese breakfast. Many ryokan serve it in your room or in a communal dining hall. Budget ryokan with breakfast: ¥8,000-12,000/night.</li>
+<li><strong>Nakajima</strong> — Shinjuku, Tokyo. ¥800-1,000. A Michelin-starred sardine restaurant that serves an incredible breakfast set with iwashi (sardine) sashimi. Lunch and dinner are ¥4,000+, but breakfast is a steal.</li>
+<li><strong>Tsukiji Outer Market</strong> — Multiple spots serve market-style breakfasts from 6am. Tamagoyaki from Tsukijiya, grilled fish sets from the stalls.</li>
+<li><strong>Hotel breakfast buffets</strong> — Many business hotels offer excellent Japanese breakfast buffets for ¥1,000-1,500, even for non-guests.</li>
+</ul>
+<p><strong>Solo dining notes:</strong> Japanese breakfast is a deeply solo meal. At a ryokan, you sit in your room with a tray of small dishes and morning light. In the city, counter breakfast sets are everywhere.</p>
+<hr>
+<h2>Restaurant Recommendations by City</h2>
+<h3>Tokyo</h3>
+<h4>Fine Dining (Special Occasion)</h4>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Restaurant</th><th>Cuisine</th><th>Area</th><th>Price</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>Sushi Tokami</td><td>Omakase sushi</td><td>Ginza</td><td>¥10,000-15,000 lunch</td><td>Red vinegar rice. Book via Tableall.</td></tr>
+<tr>
+<td>Tempura Kondo</td><td>Tempura</td><td>Ginza</td><td>¥8,000-12,000 lunch</td><td>The sweet potato. Reserve 1 month ahead.</td></tr>
+<tr>
+<td>Narisawa</td><td>Innovative Japanese</td><td>Minami-Aoyama</td><td>¥15,000-20,000 lunch</td><td>"Innovative Satoyama cuisine." 2 Michelin stars. Forest-themed tasting menu.</td></tr>
+<tr>
+<td>Birdland</td><td>Yakitori</td><td>Ginza</td><td>¥6,000-8,000</td><td>Best yakitori in Tokyo. Reservation essential.</td></tr>
+<tr>
+<td>Den</td><td>Innovative Japanese</td><td>Jingumae</td><td>¥15,000-20,000</td><td>Fun, playful fine dining. The dentucky fried chicken course is iconic.</td></tr>
+</tbody></table></div>
+<h4>Mid-Range Favorites (8 Essential Picks)</h4>
+<ol>
+<li><strong>Fuunji</strong> — Shinjuku. Tsukemen. ¥900-1,100. The dipping broth is intensely concentrated. Get noodles large for free.</li>
+<li><strong>Maisen</strong> — Omotesando. Tonkatsu. ¥1,800-2,500. Converted bathhouse building. Grind your own sesame.</li>
+<li><strong>Toriki</strong> — Meguro. Yakitori. ¥3,000-4,000. Cash only. The tsukune is life-changing.</li>
+<li><strong>Afuri</strong> — Ebisu/Harajuku. Yuzu shio ramen. ¥1,000-1,300. Light, citrusy broth. Beautiful modern design. Good vegan option available.</li>
+<li><strong>Gyukatsu Motomura</strong> — Shibuya/Akihabara. Beef katsu. ¥1,500-1,800. Rare beef cutlet with hot stone. Quick lunch.</li>
+<li><strong>Uoriki</strong> — Shibuya. Kaisen-don (seafood bowls). ¥1,200-2,000. Generous portions of sashimi over rice.</li>
+<li><strong>Tamawarai</strong> — Jingumae. Michelin soba. ¥1,500-2,500. Coarse buckwheat flavor. Often a 30-60 minute wait.</li>
+<li><strong>Butagumi</strong> — Nishi-Azabu. Premium tonkatsu. ¥2,500-4,000. Choose your pork breed. Sophisticated and porky.</li>
+</ol>
+<h4>Street Food and Yokocho (Alley Dining)</h4>
+<ul>
+<li><strong>Omoide Yokocho</strong> — Shinjuku west exit. "Piss Alley" (the old name). Tiny yakitori stalls crammed together. Atmospheric, smoky, touristy but fun. Go after 7pm. ¥1,500-3,000.</li>
+<li><strong>Harmonica Yokocho</strong> — Kichijoji. Less touristy than Shinjuku. Excellent mix of izakaya, wine bars, and small restaurants. Wander and pick what looks good.</li>
+<li><strong>Ameyoko</strong> — Ueno. Open-air market street. Grilled seafood on sticks, chocolate vendors, dried fruit. Good for daytime grazing. Try the fresh fruit stands.</li>
+<li><strong>Shibuya Yokocho</strong> — Shibuya. Indoor food hall with regional cuisine from every prefecture. Great for sampling regional specialties in one place. ¥800-1,500 per dish.</li>
+</ul>
+<h4>Budget Options (Under ¥1,000)</h4>
+<ul>
+<li><strong>Konbini meals</strong> — 7-Eleven, Lawson, FamilyMart. Onigiri (¥130-200), sandwiches (¥200-350), bento boxes (¥400-600), fried chicken (¥200). Genuinely good food.</li>
+<li><strong>Standing soba</strong> — Found in most train stations. Fuji Soba chain. ¥350-500 for a hot bowl. Fast, filling, cheap.</li>
+<li><strong>Gyudon chains</strong> — Yoshinoya, Matsuya, Sukiya. Beef bowl over rice. ¥400-800. Matsuya includes miso soup free. Open 24 hours. Ticket machine ordering.</li>
+<li><strong>Tenya</strong> — Tempura rice bowl chain. ¥500-800. Way better than it has any right to be at this price.</li>
+<li><strong>Ootoya</strong> — Home-style set meal chain. ¥700-1,000. Grilled fish, rice, soup, pickles. Balanced and healthy.</li>
+</ul>
+<h4>Depachika (Department Store Basement Food Halls)</h4>
+<ul>
+<li><strong>Isetan Shinjuku B1</strong> — The gold standard. Every famous Japanese food brand has a counter. Wagashi, sushi, bento, pickles, wagyu. <strong>Pro tip: go between 6-7pm for discounted bento boxes (marked with half-price stickers).</strong></li>
+<li><strong>Daimaru Tokyo Station</strong> — Excellent bento selection for shinkansen journeys. Buy an ekiben (train bento) here.</li>
+<li><strong>Takashimaya Nihonbashi</strong> — More traditional selection. Great wagashi (Japanese sweets) floor.</li>
+</ul>
+<h4>Kissaten (Classic Coffee Houses)</h4>
+<ul>
+<li><strong>Chatei Hatou</strong> — Shibuya. Since 1989. Aged coffee beans, pour-over perfection. Dark wood, jazz, smoke (yes, smoking allowed). ¥700-1,000. A time capsule.</li>
+<li><strong>Kayaba Coffee</strong> — Yanaka. Renovated 1916 building. Famous egg sandwich. ¥500-800. Beautiful neighborhood for a morning walk.</li>
+<li><strong>Cafe de l'Ambre</strong> — Ginza. Since 1948. The late master Ichiro Sekiguchi's legacy. Aged coffee beans (some 20+ years old). ¥700-1,200. Pure focus on coffee.</li>
+<li><strong>Fuglen</strong> — Tomigaya. Norwegian coffee shop in a quiet residential area. Excellent pour-over. Cocktail bar at night.</li>
+</ul>
+<hr>
+<h3>Kyoto</h3>
+<h4>Kaiseki at Three Price Points</h4>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Tier</th><th>Restaurant</th><th>Price</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>Splurge</td><td>Kikunoi (Higashiyama)</td><td>¥20,000-35,000 dinner</td><td>3 stars. Life-list meal.</td></tr>
+<tr>
+<td>Mid</td><td>Kikunoi Roan</td><td>¥6,000-8,000 lunch</td><td>Same lineage, accessible price.</td></tr>
+<tr>
+<td>Accessible</td><td>Giro Giro Hitoshina</td><td>¥4,000-5,000</td><td>Counter kaiseki. Fun and modern.</td></tr>
+</tbody></table></div>
+<h4>Nishiki Market — Stall-by-Stall Guide</h4>
+<p>Known as "Kyoto's Kitchen." A narrow covered arcade about 400m long. Go between 10am-12pm to avoid peak crowds.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Stall</th><th>What to Get</th><th>Price</th></tr></thead><tbody>
+<tr>
+<td>Aritsugu</td><td>Browse the knives (don't have to buy, but they're incredible)</td><td>¥5,000-50,000+</td></tr>
+<tr>
+<td>Konnamonja</td><td>Fresh yuba (tofu skin) with wasabi and soy</td><td>¥300-500</td></tr>
+<tr>
+<td>Nishiki Marutaya</td><td>Dashimaki tamago (rolled omelet) on a stick</td><td>¥350</td></tr>
+<tr>
+<td>Mochitsukiya</td><td>Fresh mochi, pounded to order</td><td>¥300-500</td></tr>
+<tr>
+<td>Uchida Tsukemono</td><td>Kyoto pickles (tsukemono). Sample freely, buy what you like.</td><td>¥400-800/bag</td></tr>
+<tr>
+<td>Kyo-yasai stalls</td><td>Seasonal Kyoto vegetables — unique varieties</td><td>Varies</td></tr>
+<tr>
+<td>Any dango stall</td><td>Mitarashi dango (sweet soy sauce-glazed rice balls)</td><td>¥300-400</td></tr>
+</tbody></table></div>
+<p><strong>Strategy:</strong> Walk the full length first to scout. Then double back for your picks. Budget ¥2,000-3,000 for a full grazing session.</p>
+<h4>Matcha Spots</h4>
+<ul>
+<li><strong>Nakamura Tokichi</strong> — Take the JR Nara line to Uji (30 min from Kyoto). The parfait. Trust me.</li>
+<li><strong>Ippodo Tea</strong> — Teramachi. Learn to whisk your own. Buy the "Ikuyo no Mukashi" grade for drinking at home.</li>
+<li><strong>Tsujiri</strong> — Gion. Quick matcha soft serve fix. ¥400-600.</li>
+<li><strong>Saryo Housen</strong> — Uji. Less crowded than Nakamura Tokichi. Excellent matcha soba.</li>
+</ul>
+<h4>Tofu Cuisine</h4>
+<ul>
+<li><strong>Okutan</strong> — Nanzenji area. Since 1635. Multi-course yudofu (simmered tofu) set ¥3,000-4,000. Eat in the garden overlooking moss and maple trees. In October, the autumn colors may be starting.</li>
+<li><strong>Tousuiro</strong> — Kiyamachi. Yuba and tofu kaiseki courses. ¥3,000-5,000. More modern approach.</li>
+</ul>
+<h4>Obanzai (Kyoto Home-Style)</h4>
+<ul>
+<li><strong>Ogata</strong> — Elegant obanzai in a machiya townhouse. ¥8,000-12,000.</li>
+<li><strong>Bon Bon Cafe</strong> — Casual obanzai lunch set. ¥1,000-1,500. Rotating small dishes.</li>
+</ul>
+<hr>
+<h3>Osaka</h3>
+<p>Osaka calls itself "Japan's Kitchen" (tenka no daidokoro). The local philosophy is <em>kuidaore</em> — eat until you drop.</p>
+<h4>Dotonbori — Stall-by-Stall Guide</h4>
+<p>The neon-lit canal street. Touristy but iconic. Best visited at night when the lights are blazing.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Spot</th><th>What to Get</th><th>Price</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>Mizuno</td><td>Okonomiyaki (yama-imo special)</td><td>¥1,200-1,800</td><td>Line but worth it. They cook it for you.</td></tr>
+<tr>
+<td>Kukuru</td><td>Takoyaki (whole octopus)</td><td>¥600-800</td><td>Giant octopus sign — can't miss it.</td></tr>
+<tr>
+<td>Kinryu Ramen</td><td>Tonkotsu ramen</td><td>¥600-800</td><td>The dragon sign. Decent, very late-night. Open 24h.</td></tr>
+<tr>
+<td>Creo-Ru</td><td>Kushikatsu (deep-fried skewers)</td><td>¥1,000-2,000</td><td>No double-dipping the communal sauce. Seriously.</td></tr>
+<tr>
+<td>Pablo</td><td>Cheese tart</td><td>¥300</td><td>Jiggly, custardy, semi-baked.</td></tr>
+<tr>
+<td>Rikuro Ojisan</td><td>Cheesecake</td><td>¥900/whole</td><td>Fluffy jiggly cheesecake. Buy whole, eat over 2 days.</td></tr>
+</tbody></table></div>
+<h4>Shinsekai — Kushikatsu Central</h4>
+<ul>
+<li><strong>Daruma</strong> — The most famous kushikatsu spot. ¥1,500-2,500. Deep-fried skewers of meat, seafood, and vegetables. Dip once in the communal sauce. The angry mascot face is everywhere.</li>

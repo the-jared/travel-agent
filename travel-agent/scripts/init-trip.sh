@@ -15,6 +15,11 @@ fi
 
 mkdir -p "$TRIP_DIR"
 
+# Create output format subdirectories
+mkdir -p "$TRIP_DIR/html"
+mkdir -p "$TRIP_DIR/print"
+mkdir -p "$TRIP_DIR/share"
+
 # Create all deliverable files with headers
 cat > "$TRIP_DIR/00-overview.md" << 'HEADER'
 # Trip Overview
@@ -89,4 +94,5 @@ for f in "$TRIP_DIR"/*.md; do
 done
 
 echo "Trip folder created: $TRIP_DIR"
-echo "Files: $(ls "$TRIP_DIR" | wc -l | tr -d ' ') deliverables ready"
+echo "Files: $(ls "$TRIP_DIR"/*.md 2>/dev/null | wc -l | tr -d ' ') markdown deliverables ready"
+echo "Output directories: html/ print/ share/"

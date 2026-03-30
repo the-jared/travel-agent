@@ -1,0 +1,842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Country {{TITLE}} Culture Guide</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Country {{PAGE_TITLE}} Culture Guide</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Japan — Travel Guide</h1>
+<blockquote>
+<p>Researched for: October 2026 | Last updated: 2026-03-30</p>
+<p>Trip profile: 2-week solo trip | Mid-range budget | Foodie + cultural immersion</p>
+</blockquote>
+<hr>
+<h2>Quick Facts</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>**Capital**</th><th>Tokyo</th></tr></thead><tbody>
+<tr>
+<td>**Population**</td><td>~125 million</td></tr>
+<tr>
+<td>**Language**</td><td>Japanese (Nihongo)</td></tr>
+<tr>
+<td>**Currency**</td><td>Japanese Yen (JPY / ¥) — 1 USD ~ ¥150</td></tr>
+<tr>
+<td>**Time Zone**</td><td>JST (UTC+9) — no daylight saving. 13h ahead of EST, 16h ahead of PST</td></tr>
+<tr>
+<td>**Power**</td><td>Type A/B plug, 100V 50/60Hz (US plugs fit; voltage slightly lower but fine for modern chargers)</td></tr>
+<tr>
+<td>**Driving**</td><td>Left side of the road</td></tr>
+<tr>
+<td>**Emergency**</td><td>Police: **110** / Fire & Ambulance: **119**</td></tr>
+<tr>
+<td>**Country Code**</td><td>+81</td></tr>
+<tr>
+<td>**Visa**</td><td>Not required for US citizens (90 days visa-free)</td></tr>
+<tr>
+<td>**Best SIM/eSIM**</td><td>Airalo (Moshi Moshi plan ~$15/2 weeks), Ubigi (~$20-30), or IIJmio Travel eSIM</td></tr>
+<tr>
+<td>**Water**</td><td>Tap water is safe to drink everywhere</td></tr>
+<tr>
+<td>**Religion**</td><td>Shinto & Buddhism (often practiced simultaneously)</td></tr>
+<tr>
+<td>**Tipping**</td><td>**Do not tip** — it is considered rude</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Essential Phrases</h2>
+<p>Japanese pronunciation is straightforward: vowels are pure (a=ah, i=ee, u=oo, e=eh, o=oh). Every syllable is evenly stressed. Even basic attempts at Japanese are deeply appreciated.</p>
+<h3>Survival Phrases</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Japanese</th><th>Romaji</th><th>English</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>こんにちは</td><td>Konnichiwa</td><td>Hello / Good afternoon</td><td>Universal daytime greeting</td></tr>
+<tr>
+<td>おはようございます</td><td>Ohayou gozaimasu</td><td>Good morning</td><td>Drop "gozaimasu" for casual</td></tr>
+<tr>
+<td>こんばんは</td><td>Konbanwa</td><td>Good evening</td><td>After ~5 PM</td></tr>
+<tr>
+<td>ありがとうございます</td><td>Arigatou gozaimasu</td><td>Thank you (polite)</td><td>Most important phrase you'll use</td></tr>
+<tr>
+<td>すみません</td><td>Sumimasen</td><td>Excuse me / I'm sorry</td><td>Use to get attention, apologize, or thank someone</td></tr>
+<tr>
+<td>ごめんなさい</td><td>Gomen nasai</td><td>I'm sorry (apology)</td><td>Stronger apology than sumimasen</td></tr>
+<tr>
+<td>はい / いいえ</td><td>Hai / Iie</td><td>Yes / No</td><td></td></tr>
+<tr>
+<td>お願いします</td><td>Onegai shimasu</td><td>Please</td><td>Add after any request</td></tr>
+<tr>
+<td>大丈夫です</td><td>Daijoubu desu</td><td>I'm fine / It's okay</td><td>Also used to politely decline</td></tr>
+<tr>
+<td>わかりません</td><td>Wakarimasen</td><td>I don't understand</td><td></td></tr>
+<tr>
+<td>英語を話しますか？</td><td>Eigo wo hanashimasu ka?</td><td>Do you speak English?</td><td></td></tr>
+<tr>
+<td>日本語が少し話せます</td><td>Nihongo ga sukoshi hanasemasu</td><td>I speak a little Japanese</td><td>Gets you instant goodwill</td></tr>
+</tbody></table></div>
+<h3>Food & Dining Phrases</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Japanese</th><th>Romaji</th><th>English</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>いただきます</td><td>Itadakimasu</td><td>I humbly receive (before eating)</td><td>**Say this before every meal** — shows gratitude</td></tr>
+<tr>
+<td>ごちそうさまでした</td><td>Gochisousama deshita</td><td>Thank you for the meal (after eating)</td><td>Say when leaving a restaurant</td></tr>
+<tr>
+<td>おいしい！</td><td>Oishii!</td><td>Delicious!</td><td>Chefs love hearing this</td></tr>
+<tr>
+<td>お会計お願いします</td><td>Okaikei onegai shimasu</td><td>Bill, please</td><td>Or gesture an "X" with fingers</td></tr>
+<tr>
+<td>一人です</td><td>Hitori desu</td><td>One person</td><td>When entering a restaurant solo</td></tr>
+<tr>
+<td>予約があります</td><td>Yoyaku ga arimasu</td><td>I have a reservation</td><td></td></tr>
+<tr>
+<td>おすすめは何ですか？</td><td>Osusume wa nan desu ka?</td><td>What do you recommend?</td><td>Great for izakayas and sushi bars</td></tr>
+<tr>
+<td>これをください</td><td>Kore wo kudasai</td><td>This one, please</td><td>Point at menu + say this</td></tr>
+<tr>
+<td>アレルギーがあります</td><td>Arerugii ga arimasu</td><td>I have an allergy</td><td>Follow with the allergen</td></tr>
+<tr>
+<td>ベジタリアン</td><td>Bejitarian</td><td>Vegetarian</td><td>Vegetarianism is uncommon — be specific</td></tr>
+<tr>
+<td>肉なし</td><td>Niku nashi</td><td>No meat</td><td></td></tr>
+<tr>
+<td>もう一杯</td><td>Mou ippai</td><td>One more (drink)</td><td></td></tr>
+<tr>
+<td>生ビールください</td><td>Nama biiru kudasai</td><td>Draft beer, please</td><td>The magic words at any izakaya</td></tr>
+</tbody></table></div>
+<h3>Navigation & Transport</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Japanese</th><th>Romaji</th><th>English</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>〜はどこですか？</td><td>~wa doko desu ka?</td><td>Where is ~?</td><td>Insert place name before "wa"</td></tr>
+<tr>
+<td>駅</td><td>Eki</td><td>Station</td><td></td></tr>
+<tr>
+<td>出口</td><td>Deguchi</td><td>Exit</td><td>You'll see this in every station</td></tr>
+<tr>
+<td>入口</td><td>Iriguchi</td><td>Entrance</td><td></td></tr>
+<tr>
+<td>いくらですか？</td><td>Ikura desu ka?</td><td>How much is this?</td><td></td></tr>
+<tr>
+<td>右 / 左 / まっすぐ</td><td>Migi / Hidari / Massugu</td><td>Right / Left / Straight</td><td></td></tr>
+<tr>
+<td>近い / 遠い</td><td>Chikai / Tooi</td><td>Near / Far</td><td></td></tr>
+<tr>
+<td>ここ</td><td>Koko</td><td>Here</td><td>Point at map + say "koko"</td></tr>
+<tr>
+<td>タクシーを呼んでください</td><td>Takushii wo yonde kudasai</td><td>Please call a taxi</td><td></td></tr>
+<tr>
+<td>〜まで行きたいです</td><td>~made ikitai desu</td><td>I want to go to ~</td><td></td></tr>
+</tbody></table></div>
+<h3>Emergency & Help</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Japanese</th><th>Romaji</th><th>English</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>助けて！</td><td>Tasukete!</td><td>Help!</td><td></td></tr>
+<tr>
+<td>警察を呼んでください</td><td>Keisatsu wo yonde kudasai</td><td>Please call the police</td><td></td></tr>
+<tr>
+<td>病院はどこですか？</td><td>Byouin wa doko desu ka?</td><td>Where is a hospital?</td><td></td></tr>
+<tr>
+<td>気分が悪いです</td><td>Kibun ga warui desu</td><td>I feel sick</td><td></td></tr>
+<tr>
+<td>パスポートをなくしました</td><td>Pasupooto wo nakushimashita</td><td>I lost my passport</td><td></td></tr>
+<tr>
+<td>薬局</td><td>Yakkyoku</td><td>Pharmacy</td><td>Look for green cross signs</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Entry Requirements</h2>
+<h3>Visa</h3>
+<ul>
+<li><strong>US citizens</strong>: Visa-free entry for stays up to <strong>90 days</strong> for tourism.</li>
+<li>No pre-registration or visa application needed.</li>
+<li>You receive a "temporary visitor" stamp on arrival.</li>
+<li>You may be asked to show proof of a return/onward ticket and sufficient funds (rarely enforced, but have documentation accessible).</li>
+</ul>
+<h3>Passport</h3>
+<ul>
+<li>Must be valid for the <strong>duration of your stay</strong> (Japan does not require 6 months validity, but having extra validity is always wise).</li>
+<li>Ensure at least 2 blank pages for entry/exit stamps.</li>
+</ul>
+<h3>Arrival Process</h3>
+<ol>
+<li><strong>Visit Japan Web</strong>: Complete the online entry form at <a href="https://www.vjw.digital.go.jp/" target="_blank" rel="noopener">Visit Japan Web</a> before departure. This covers immigration, customs, and tax-free purchase registration. Complete it at least 24 hours before landing.</li>
+<li><strong>Immigration</strong>: Show passport + QR code from Visit Japan Web. Fingerprinting and photo are taken at the immigration counter for all foreign nationals.</li>
+<li><strong>Customs</strong>: Declare if carrying over ¥1,000,000 in cash, or restricted items. Standard duty-free allowances: 3 bottles of alcohol (760ml each), 400 cigarettes, 2 oz perfume.</li>
+<li><strong>Prohibited items</strong>: No recreational drugs (zero tolerance policy — even CBD is illegal). Certain cold medicines containing pseudoephedrine (like Sudafed) require advance import permission. Stimulant drugs (Adderall, etc.) are <strong>strictly prohibited</strong>.</li>
+</ol>
+<h3>Japan Travel Authorization (JETA)</h3>
+<p>As of 2025, Japan is phasing in an electronic travel authorization system similar to ESTA. Check the Japanese Ministry of Foreign Affairs website 60 days before travel to confirm whether JETA is required for your trip.</p>
+<hr>
+<h2>Health & Safety</h2>
+<h3>Vaccinations</h3>
+<ul>
+<li><strong>No mandatory vaccinations</strong> for US travelers.</li>
+<li><strong>Recommended (CDC)</strong>: Ensure routine vaccinations are up to date (MMR, Tdap, flu, COVID-19). Hepatitis A and B recommended for most travelers. Japanese Encephalitis vaccine only if visiting rural agricultural areas for extended periods.</li>
+</ul>
+<h3>Tap Water</h3>
+<ul>
+<li><strong>Safe to drink everywhere</strong> in Japan. Tap water quality is excellent. Vending machines and convenience stores also sell water for ¥100-150.</li>
+</ul>
+<h3>Pharmacies & Medical Care</h3>
+<ul>
+<li>Look for <strong>薬局 (yakkyoku)</strong> or the green cross symbol. Major chains: Matsumoto Kiyoshi, Sundrug, Welcia.</li>
+<li>Over-the-counter medication is available but formulations differ from the US. Japanese cold medicine (like Pabron) is effective. Bring any prescription medications in original containers with a doctor's note.</li>
+<li><strong>Hospitals</strong>: Japan has world-class medical care. English-speaking clinics exist in major cities (AMDA International Medical Information Center: 03-5285-8088). Emergency room visits without insurance can cost ¥20,000-50,000+.</li>
+<li><strong>Travel insurance</strong>: Strongly recommended. Japan may require proof of insurance or ability to pay for medical care. Consider World Nomads, SafetyWing, or Allianz.</li>
+</ul>
+<h3>Safety</h3>
+<ul>
+<li>Japan is one of the <strong>safest countries in the world</strong> for travelers. Violent crime against tourists is extremely rare. The US State Department rates Japan as <strong>Level 1 — Exercise Normal Precautions</strong>.</li>
+<li>Solo travelers, including solo women, generally feel very safe walking at night in most areas.</li>
+<li>Lost items are frequently turned in. Check at the nearest koban (police box) or station lost-and-found.</li>
+</ul>
+<h3>Natural Disaster Risks (October)</h3>
+<ul>
+<li><strong>Typhoon season</strong> technically runs through October, though it winds down. Late-season typhoons are possible but less frequent. Monitor the Japan Meteorological Agency (JMA) website and have the NHK World app for alerts.</li>
+<li><strong>Earthquakes</strong>: Japan experiences frequent small earthquakes. Know the basics: drop, cover, hold on. Your hotel will have evacuation instructions. The earthquake early warning system sends alerts to phones.</li>
+<li><strong>Tsunami</strong>: Relevant only for coastal areas after a major quake. Follow evacuation signs (blue signs with a wave symbol pointing to higher ground).</li>
+</ul>
+<h3>Common Scams & Annoyances</h3>
+<ul>
+<li><strong>Kabukicho (Shinjuku) & Roppongi touts</strong>: Nigerian and Japanese touts may try to lure you into overpriced bars/clubs. These "tout bars" can charge ¥30,000-100,000+ for a few drinks. <strong>Never follow a tout.</strong> If it sounds too good to be true, it is.</li>
+<li><strong>Fake monks</strong>: People in monk robes may approach you for "donations" near tourist spots. Real monks do not solicit on the street.</li>
+<li><strong>Overcharging at unlicensed cabs</strong>: Use only official taxis (green license plates) or ride-hailing apps.</li>
+<li><strong>Drink spiking</strong>: Rare but possible in Roppongi nightlife. Standard precautions apply.</li>
+</ul>
+<hr>
+<h2>Money & Costs</h2>
+<h3>Currency</h3>
+<ul>
+<li><strong>Japanese Yen (¥ / JPY)</strong>. Coins: ¥1, ¥5, ¥10, ¥50, ¥100, ¥500. Bills: ¥1,000, ¥5,000, ¥10,000. New bill designs were introduced in 2024.</li>
+<li>The ¥5 coin (gold with a hole) is considered lucky — save some as souvenirs.</li>
+</ul>
+<h3>Getting Cash</h3>
+<ul>
+<li><strong>7-Eleven ATMs</strong> (Seven Bank) are the most reliable for foreign cards. Available 24/7 in most locations. English interface available. Fees: ~¥110 per withdrawal.</li>
+<li><strong>Japan Post ATMs</strong> (in post offices) also accept foreign cards.</li>
+<li>Avoid airport exchange counters — rates are poor. Withdraw yen from ATMs instead.</li>
+<li>Carry <strong>¥10,000-20,000 in cash at all times</strong>. Many small restaurants, temples, vending machines, and local shops are cash-only.</li>
+</ul>
+<h3>Credit Cards</h3>
+<ul>
+<li>Acceptance is <strong>growing significantly</strong> but Japan remains more cash-dependent than other developed nations.</li>
+<li><strong>Accepted</strong>: Hotels, department stores, chain restaurants, convenience stores (¥1+ purchases), major tourist attractions, train stations.</li>
+<li><strong>Often cash-only</strong>: Small ramen shops, street food stalls, local izakayas, some shrines/temples, coin lockers, some taxis.</li>
+<li><strong>Visa and Mastercard</strong> have the widest acceptance. Amex is accepted at major establishments. Discover has limited use.</li>
+<li><strong>Contactless/tap-to-pay</strong> (including Apple Pay and Google Pay) is increasingly common at convenience stores and chain restaurants.</li>
+</ul>
+<h3>Tipping</h3>
+<blockquote>
+<p><strong>Do not tip in Japan.</strong> Tipping is not part of Japanese culture and can cause confusion or even offense. This applies to restaurants, taxis, hotels, and tour guides. Exceptional service is the baseline standard, not an extra.</p>
+</blockquote>
+<p>If you truly want to show appreciation, a small wrapped gift from your home country is more appropriate than cash.</p>
+<h3>Daily Budget (Mid-Range, Solo Traveler)</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Category</th><th>Budget (¥)</th><th>Budget (USD)</th></tr></thead><tbody>
+<tr>
+<td>Accommodation (business hotel / nice hostel private room)</td><td>¥6,000 - ¥12,000</td><td>$40 - $80</td></tr>
+<tr>
+<td>Food (mix of convenience store, ramen, izakaya, one nice meal)</td><td>¥3,000 - ¥6,000</td><td>$20 - $40</td></tr>
+<tr>
+<td>Transport (with JR Pass for long-haul; IC card for local)</td><td>¥1,000 - ¥3,000</td><td>$7 - $20</td></tr>
+<tr>
+<td>Activities & entrance fees</td><td>¥1,000 - ¥3,000</td><td>$7 - $20</td></tr>
+<tr>
+<td>Snacks, drinks, misc.</td><td>¥1,000 - ¥2,000</td><td>$7 - $13</td></tr>
+<tr>
+<td>**Daily Total**</td><td>**¥12,000 - ¥26,000**</td><td>**$80 - $173**</td></tr>
+<tr>
+<td>**14-Day Trip Total**</td><td>**¥168,000 - ¥364,000**</td><td>**$1,120 - $2,427**</td></tr>
+</tbody></table></div>
+<p>This does not include flights, JR Pass purchase, or major splurge meals (e.g., omakase sushi, kaiseki).</p>
+<h3>Tax-Free Shopping</h3>
+<ul>
+<li>Purchases of <strong>¥5,000+ (tax-exclusive) at a single store in one day</strong> qualify for tax-free (10% consumption tax waived).</li>
+<li>Bring your <strong>passport</strong> when shopping. The store will process the exemption at a tax-free counter.</li>
+<li>Register on <strong>Visit Japan Web</strong> for a smoother process — some stores accept digital registration instead of passport stamps.</li>
+<li>Items are categorized as "general" (electronics, clothing) or "consumables" (food, cosmetics). Consumables are sealed in a bag and technically should not be opened in Japan (though this is rarely checked).</li>
+</ul>
+<hr>
+<h2>Communication</h2>
+<h3>English Proficiency</h3>
+<ul>
+<li><strong>Limited in daily life</strong>. Most Japanese people study English in school but have limited conversational confidence. Younger people in Tokyo and Osaka are more likely to speak some English.</li>
+<li><strong>Tourist areas</strong>: Major stations, hotels, and popular attractions usually have English signage and some English-speaking staff.</li>
+<li><strong>Restaurants</strong>: Menus may not have English. Look for places with picture menus, plastic food displays (sampuru) in the window, or use Google Translate's camera mode.</li>
+<li><strong>Key tip</strong>: Speak slowly, use simple words, and have your destination/request written down in Japanese. A paper/phone with the Japanese text is incredibly helpful.</li>
+</ul>
+<h3>SIM & eSIM Options</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Option</th><th>Data</th><th>Duration</th><th>Cost</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>**Airalo (Moshi Moshi)**</td><td>1-20 GB</td><td>7-30 days</td><td>$5 - $26</td><td>eSIM, data only, great coverage via NTT Docomo/SoftBank</td></tr>
+<tr>
+<td>**Ubigi**</td><td>3-50 GB</td><td>15-30 days</td><td>$15 - $45</td><td>eSIM, good speeds</td></tr>
+<tr>
+<td>**IIJmio Travel eSIM**</td><td>2-20 GB</td><td>15-30 days</td><td>¥2,000 - ¥6,000</td><td>Local option, available at airports</td></tr>
+<tr>
+<td>**Mobal Japan SIM**</td><td>Unlimited</td><td>7-30 days</td><td>$36 - $66</td><td>Physical SIM, includes phone number for calls</td></tr>
+<tr>
+<td>**Pocket WiFi Rental**</td><td>Unlimited</td><td>Per day</td><td>¥500 - ¥1,000/day</td><td>Pick up/drop off at airports. Good if you need hotspot for multiple devices</td></tr>
+</tbody></table></div>
+<p><strong>Recommendation</strong>: Airalo eSIM for simplicity. Buy and activate before you land. 10 GB is plenty for 2 weeks if you use WiFi at hotels.</p>
+<h3>WiFi</h3>
+<ul>
+<li><strong>Widely available</strong>: Hotels, cafes, convenience stores (7-Eleven, Lawson, FamilyMart), train stations, and many restaurants offer free WiFi.</li>
+<li><strong>Japan Wi-Fi auto-connect</strong> app connects you to free hotspots automatically.</li>
+<li>Speed and reliability vary. Do not rely solely on public WiFi — an eSIM is essential.</li>
+</ul>
+<h3>Translation Tools</h3>
+<ul>
+<li><strong>Google Translate</strong>: Camera mode for menus/signs (download Japanese offline pack before the trip). Conversation mode for real-time translation.</li>
+<li><strong>DeepL</strong>: Often more accurate than Google Translate for Japanese, especially for nuanced text.</li>
+<li><strong>Papago</strong>: Strong alternative for Asian languages.</li>
+</ul>
+<hr>
+<h2>Cultural Do's and Don'ts</h2>
+<p>Japan has deep, layered social customs. You are not expected to know all of them, and Japanese people are gracious with foreigners. But making the effort shows respect and enriches your experience enormously.</p>
+<h3>Do</h3>
+<ol>
+<li><strong>Bow when greeting and thanking</strong>. A slight bow (15-30 degrees) is appropriate for most interactions. Deeper bows show more respect. You do not need to bow to shop clerks (a nod is fine), but do bow when meeting someone, receiving a gift, or at temples/shrines.</li>
+<li><strong>Say "itadakimasu" before meals and "gochisousama deshita" after</strong>. This is not a prayer — it is an expression of gratitude for the food, the cook, and the ingredients. Skipping it is noticed.</li>
+<li><strong>Remove your shoes when entering homes, ryokans, some restaurants, and temple interiors</strong>. Look for a genkan (entryway step) and shoe shelves. Slippers are usually provided. Remove slippers before stepping on tatami mats. There are separate toilet slippers in bathrooms — do not forget to switch back.</li>
+<li><strong>Carry a small towel (tenugui) or handkerchief</strong>. Many public restrooms lack paper towels or hand dryers. A small towel is standard in Japan.</li>
+<li><strong>Queue patiently and in orderly lines</strong>. Japanese queuing culture is precise. At train platforms, stand behind the marked lines and wait for passengers to exit before boarding. Stand on the left side of escalators in Tokyo (right side in Osaka) to let people pass.</li>
+<li><strong>Accept and give items with both hands</strong>. When receiving a business card, change, or gift, use both hands. This shows respect and attentiveness.</li>
+<li><strong>Wash thoroughly before entering an onsen (hot spring)</strong>. The bathing area has shower stations — sit on the stool, scrub yourself completely, rinse off all soap, then enter the communal bath. The bath is for soaking, not washing.</li>
+<li><strong>Dispose of trash properly or carry it with you</strong>. Public trash cans are rare. Carry a small bag for your trash. When you do find bins, they are sorted: burnables, plastics, PET bottles, cans, glass. Follow the sorting system.</li>
+<li><strong>Use the tray for cash transactions</strong>. Many shops have a small tray at the register. Place your cash/card on the tray rather than handing it directly.</li>
+<li><strong>Be punctual</strong>. If a train departs at 10:32, it departs at 10:32. If you have a dinner reservation at 7:00, arrive at 6:55. Lateness is disrespectful.</li>
+<li><strong>Learn to use chopsticks properly before the trip</strong>. Practice at home. It matters.</li>
+<li><strong>Return your tray at fast-food and self-service restaurants</strong>. Clear your table, sort the garbage, and return the tray to the designated spot.</li>
+</ol>
+<h3>Don't</h3>
+<ol>
+<li><strong>Do not tip</strong>. Not at restaurants, not in taxis, not at hotels. It can cause genuine confusion. (See Money section above.)</li>
+<li><strong>Do not eat or drink while walking</strong>. It is considered inconsiderate. The exception is at festival stalls (matsuri) and designated eating areas near food vendors. If you buy a drink from a vending machine, stand near it and finish before walking.</li>
+<li><strong>Do not talk on your phone on trains or buses</strong>. Set your phone to silent (manner mode) on public transit. Texting is fine; speaking is not. Near priority seats, you should also avoid using your phone entirely.</li>
+<li><strong>Do not blow your nose in public</strong>. Sniffling is acceptable (even common); blowing your nose loudly is considered disgusting. Step into a restroom if you need to blow your nose.</li>
+<li><strong>Do not stick chopsticks upright in rice</strong>. This resembles a funeral ritual (incense sticks in offering bowls) and is deeply taboo. Also do not pass food chopstick-to-chopstick, as this mimics a funeral bone-gathering ceremony.</li>
+<li><strong>Do not point at people or things with chopsticks</strong>. Use them only for eating.</li>
+<li><strong>Do not enter an onsen with tattoos visible</strong> (at most traditional establishments). Tattoos are associated with yakuza in Japan. Some onsens are becoming tattoo-friendly, and cover-up stickers/bandages are sometimes accepted. Research in advance or ask. Private onsen rooms (kashikiri) are always an option.</li>
+<li><strong>Do not litter or smoke outside designated areas</strong>. Smoking on the street is illegal in many wards of Tokyo and Osaka. Use designated smoking areas (kitsuen-jo). Fines can be ¥2,000-5,000.</li>
+<li><strong>Do not cut in line. Ever.</strong> Japanese queuing is sacred. Cutting will draw visible disapproval.</li>
+<li><strong>Do not be loud in public spaces</strong>. Japan values quietness and consideration. Keep your voice low on trains, in restaurants, and in residential areas, especially at night.</li>
+<li><strong>Do not touch the merchandise excessively</strong> in shops without intent to buy, especially food items.</li>
+<li><strong>Do not jaywalk</strong>. Even if there are no cars, wait for the signal. Japanese pedestrians follow traffic signals religiously.</li>
+</ol>
+<h3>Chopstick Rules (Summary)</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Rule</th><th>Why</th></tr></thead><tbody>
+<tr>
+<td>Never stick chopsticks upright in rice</td><td>Funeral ritual association</td></tr>
+<tr>
+<td>Never pass food chopstick-to-chopstick</td><td>Funeral bone ceremony association</td></tr>
+<tr>
+<td>Never point with chopsticks</td><td>Rude gesture</td></tr>
+<tr>
+<td>Never rub wooden chopsticks together</td><td>Implies they are cheap/low quality</td></tr>
+<tr>
+<td>Never hover over dishes undecided</td><td>Called "mayoi-bashi" — indecisive chopsticks</td></tr>
+<tr>
+<td>Never stab food with chopsticks</td><td>Considered childish/lazy</td></tr>
+<tr>
+<td>Place chopsticks on the rest when not eating</td><td>Never across the bowl</td></tr>
+</tbody></table></div>
+<h3>Onsen Etiquette (Step by Step)</h3>
+<ol>
+<li>Pay and enter the correct gender door (男 = men, 女 = women). Check colors — blue is typically men, red/pink is women, but read the kanji.</li>
+<li>In the changing room (datsuijo), undress completely. Place clothes in a basket or locker. Take only your small towel in.</li>
+<li>At the washing station, sit on the stool. Wash and rinse your entire body thoroughly with soap and shampoo. Rinse completely.</li>
+<li>Enter the bath slowly. Do not put your towel in the water — fold it on your head or set it at the pool's edge.</li>
+<li>Soak quietly. Do not swim, splash, or dunk your head.</li>
+<li>When done, do not drain the bath. Dry off lightly before returning to the changing room.</li>
+<li>No swimsuits. Onsens are nude bathing only (segregated by gender).</li>
+</ol>
+<h3>Temple & Shrine Visiting</h3>
+<p><strong>At a Shinto Shrine (Jinja):</strong></p>
+<ol>
+<li>Bow slightly before passing through the torii gate.</li>
+<li>Walk to the sides of the path — the center (sei-chu) is for the deity.</li>
+<li>At the temizuya (water basin): take the ladle with your right hand, pour water over your left hand, switch, pour over your right hand, then pour water into your cupped left hand to rinse your mouth (spit to the side, not back in). Let remaining water run down the handle.</li>
+<li>At the main hall: throw a coin (¥5 coins are considered lucky — "go-en" sounds like "good fortune/connection"), bow twice deeply, clap twice, make your wish/prayer, bow once more.</li>
+</ol>
+<p><strong>At a Buddhist Temple (Tera/Ji):</strong></p>
+<ol>
+<li>Bow at the main gate.</li>
+<li>If there is incense (osenko), buy a bundle, light it, fan out the flame (do not blow), and place it in the incense burner. Waft smoke toward you (it is believed to heal).</li>
+<li>At the main hall: toss a coin, bow once, put your hands together in prayer (do not clap — that is for shrines only), bow again.</li>
+</ol>
+<hr>
+<h2>October Climate & Packing</h2>
+<h3>Weather by Region (October)</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Region</th><th>Avg High</th><th>Avg Low</th><th>Rain Days</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>**Tokyo**</td><td>22°C / 72°F</td><td>14°C / 57°F</td><td>9-10</td><td>Pleasant, light jacket weather</td></tr>
+<tr>
+<td>**Kyoto**</td><td>23°C / 73°F</td><td>13°C / 55°F</td><td>8-9</td><td>Slightly warmer days, cool evenings</td></tr>
+<tr>
+<td>**Osaka**</td><td>23°C / 73°F</td><td>14°C / 57°F</td><td>8</td><td>Similar to Kyoto</td></tr>
+<tr>
+<td>**Hiroshima**</td><td>22°C / 72°F</td><td>13°C / 55°F</td><td>7</td><td>Mild and comfortable</td></tr>
+<tr>
+<td>**Hakone**</td><td>19°C / 66°F</td><td>10°C / 50°F</td><td>10-11</td><td>Mountain area, cooler and wetter</td></tr>
+<tr>
+<td>**Takayama**</td><td>18°C / 64°F</td><td>8°C / 46°F</td><td>9</td><td>Mountain climate, bring warm layers</td></tr>
+<tr>
+<td>**Northern Honshu**</td><td>17°C / 63°F</td><td>8°C / 46°F</td><td>8</td><td>Noticeably cooler</td></tr>
+</tbody></table></div>
+<h3>Autumn Foliage (Koyo)</h3>
+<p>October is the very <strong>beginning</strong> of autumn foliage season. Here is what to expect:</p>
+<ul>
+<li><strong>Early October</strong>: Peak foliage in the <strong>northern mountains</strong> (Northern Alps near Kamikochi/Tateyama, northern Tohoku). Tokyo and Kyoto are still green.</li>
+<li><strong>Mid-October</strong>: Colors descend to mid-altitude areas. Nikko begins to peak. Higher elevations around Hakone show color.</li>
+<li><strong>Late October</strong>: Early color appears in Kyoto's mountain temples (Kurama, Takao). Tokyo parks start turning. Nikko is at or just past peak.</li>
+<li><strong>November</strong>: Peak foliage for Tokyo and Kyoto (typically mid-to-late November).</li>
+</ul>
+<p>For the best foliage during your trip, focus on <strong>higher elevation and northern destinations</strong> in early-to-mid October.</p>
+<h3>Packing List for October</h3>
+<p><strong>Clothing:</strong></p>
+<ul>
+<li>Light layers: t-shirts, long-sleeve shirts, and a mid-weight sweater or fleece</li>
+<li>A packable rain jacket or windbreaker (essential — October can be rainy)</li>
+<li>Light down jacket or puffy vest for cooler mountain areas and evenings</li>
+<li>Comfortable walking shoes you can slip on and off easily (you remove shoes constantly)</li>
+<li>1 pair of nicer shoes/outfit for upscale restaurants</li>
+<li>Compact umbrella (or buy a clear vinyl one from any konbini for ¥500 — ubiquitous in Japan)</li>
+<li>Socks without holes (you will be removing shoes in public)</li>
+<li>Quick-dry underwear and socks for packing light</li>
+</ul>
+<p><strong>Gear:</strong></p>
+<ul>
+<li>Small daypack (20-25L) for daily exploring</li>
+<li>Packing cubes (you'll be on trains with limited luggage space)</li>
+<li>Portable battery pack (10,000+ mAh) — long days out</li>
+<li>Universal power adapter (US plugs work in Japan, but a compact adapter is good backup)</li>
+<li>Reusable water bottle</li>
+<li>Small towel / handkerchief (restrooms often lack paper towels)</li>
+<li>Ziplock bags for trash (limited public bins)</li>
+<li>Eye mask + earplugs for overnight trains or capsule hotels</li>
+</ul>
+<p><strong>Documents & Digital:</strong></p>
+<ul>
+<li>Passport (keep a photocopy separate from the original)</li>
+<li>Visit Japan Web QR code (screenshot it in case of no signal)</li>
+<li>Hotel confirmation printouts (or screenshots)</li>
+<li>JR Pass voucher/QR code</li>
+<li>Travel insurance documents</li>
+<li>International driving permit (only if renting a car — not needed for this trip)</li>
+<li>Cash in yen (withdraw at 7-Eleven ATM upon arrival)</li>
+</ul>
+<hr>
+<h2>Practical Infrastructure</h2>
+<h3>Power</h3>
+<ul>
+<li><strong>Type A and B</strong> plugs (same as US flat-pin plugs). Your US chargers will plug in without an adapter.</li>
+<li>Voltage is <strong>100V</strong> (US is 120V). Modern phone/laptop chargers are multi-voltage (check the fine print: "100-240V") and will work perfectly. Hair dryers and curling irons may run slightly underpowered — most hotels provide hair dryers.</li>
+</ul>
+<h3>Transit System</h3>
+<p>Japan's public transit is the best in the world. Here is what you need to know:</p>
+<p><strong>JR Pass (Japan Rail Pass):</strong></p>
+<ul>
+<li>Covers all JR trains nationwide, including most Shinkansen (bullet trains), JR local/express lines, some JR buses, and the JR ferry to Miyajima.</li>
+<li><strong>Does NOT cover</strong>: Nozomi and Mizuho Shinkansen (fastest trains on the Tokaido/Sanyo lines). Use Hikari or Sakura instead — only 10-20 minutes slower.</li>
+<li><strong>14-day Ordinary Pass</strong>: ~¥50,000 ($333). Worth it if you are doing Tokyo-Kyoto-Osaka-Hiroshima and other long-haul routes.</li>
+<li>Purchase online at <a href="https://www.japanrailpass.net/" target="_blank" rel="noopener">japanrailpass.net</a> before departure and activate at a JR ticket office in Japan.</li>
+<li>Reserve seats for Shinkansen for free at any JR ticket office or through the SmartEX/Japan Rail Pass app.</li>
+</ul>
+<p><strong>IC Cards (Suica / Pasmo / ICOCA):</strong></p>
+<ul>
+<li>Rechargeable transit cards that work on virtually all trains, buses, subways, convenience stores, and vending machines nationwide.</li>
+<li><strong>Get a digital Suica or Pasmo via Apple Wallet</strong> (iPhone 8+ with Japan region or a non-Japan iPhone running iOS 16+). Android users can get Mobile Suica via Google Pay.</li>
+<li>Physical IC cards are limited in availability — digital is the way to go.</li>
+<li>Load at any train station machine, convenience store, or directly in the app.</li>
+<li>Tap in and out at ticket gates. Fares are calculated automatically.</li>
+</ul>
+<p><strong>Metro/Subway:</strong></p>
+<ul>
+<li>Tokyo has two subway systems (Tokyo Metro and Toei) plus JR lines and private railways. They are all connected but run by different companies. IC cards work on all of them.</li>
+<li>Kyoto: Bus system is more practical than the limited subway for most sightseeing. Consider a Kyoto Bus 1-Day Pass (¥700).</li>
+</ul>
+<h3>Ride-Hailing</h3>
+<ul>
+<li><strong>GO (タクシーGO)</strong>: The dominant taxi-hailing app in Japan. Works like Uber. Available in major cities.</li>
+<li><strong>Uber Japan</strong>: Limited availability. Functions as a taxi dispatcher, not a rideshare service. Available mainly in Tokyo.</li>
+<li><strong>Taxis</strong>: Metered, safe, and doors open/close automatically (do not touch the door). Starting fare: ~¥500-710. A 10-minute ride costs roughly ¥1,500-2,500.</li>
+</ul>
+<h3>Convenience Stores (Konbini)</h3>
+<p>Japan's convenience stores are a destination in themselves. The big three:</p>
+<ul>
+<li><strong>7-Eleven</strong> (セブンイレブン): Best ATMs for foreign cards. Excellent onigiri, sandwich selection.</li>
+<li><strong>Lawson</strong> (ローソン): Famous for karaage-kun (fried chicken nuggets) and premium desserts (Uchi Cafe line).</li>
+<li><strong>FamilyMart</strong> (ファミリーマート): Great for Famichiki (fried chicken) and pasta.</li>
+</ul>
+<p>Services available at konbini: ATMs, printing/scanning/faxing, concert/event ticket purchase, bill payment, package shipping, free WiFi, restrooms, tax-free shopping (at some locations).</p>
+<p><strong>Pro tip</strong>: Convenience store food in Japan is genuinely good. An onigiri (¥120-180), a sandwich (¥200-300), and a coffee (¥100-150) makes a perfectly solid breakfast for under ¥500 ($3.33).</p>
+<h3>Coin Lockers</h3>
+<ul>
+<li>Available at <strong>all major train stations</strong> in sizes from small (¥300-400) to large/suitcase-sized (¥600-800) per use.</li>
+<li>Payment by coins (¥100 coins) or IC card.</li>
+<li>Stored items typically must be retrieved same day or within 3 days (varies by station).</li>
+<li>Use the <strong>Coin Locker Navi</strong> app or website to find available lockers.</li>
+<li>If all lockers are full (common at busy stations), ask at the station's baggage storage counter.</li>
+</ul>
+<h3>Luggage Forwarding (Takkyubin)</h3>
+<p>One of Japan's greatest travel conveniences. Ship your suitcase ahead to your next hotel so you can travel with just a daypack.</p>
+<ul>
+<li><strong>Yamato Transport (Kuroneko/Black Cat)</strong> is the most popular service. Look for the black cat logo.</li>
+<li>Cost: ¥1,500-2,500 per bag depending on size and distance.</li>
+<li>Drop off at any convenience store, hotel front desk, or Yamato office. Your hotel can arrange pickup.</li>
+<li><strong>Next-day delivery</strong> (same-day within the same city). Works with remarkable reliability.</li>
+<li>Fill out the delivery slip (hotel staff can help). Pack the destination hotel name and address in Japanese.</li>
+<li>Use this for any long travel days — e.g., ship bags from Tokyo hotel to Kyoto hotel while you stop in Hakone.</li>
+</ul>
+<h3>Public Toilets</h3>
+<p>Japan has the best public toilets in the world.</p>
+<ul>
+<li>Found in every train station, convenience store, department store, and public park.</li>
+<li><strong>Washlet</strong> (heated seat, bidet, warm water) is standard even in modest establishments.</li>
+<li>Button guide: 大 (big flush), 小 (small flush), おしり (rear wash), ビデ (front wash), 止 (stop), 音姫 (sound princess — plays a flushing sound for privacy).</li>
+<li>Carry tissues/a handkerchief — a few older or rural restrooms may lack toilet paper.</li>
+<li>Western-style toilets are universal now, but you may encounter a squat toilet (和式) in older buildings. Face the hood/raised end when squatting.</li>
+</ul>
+<hr>
+<h2>Key Apps to Download</h2>
+<p>Install these before departure. Download all offline data packs while on WiFi.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>App</th><th>Purpose</th><th>Key Features</th></tr></thead><tbody>
+<tr>
+<td>**Google Maps**</td><td>Navigation</td><td>Download Japan offline map. Excellent for train routing with departure times, walking directions, and restaurant discovery.</td></tr>
+<tr>
+<td>**Navitime / Japan Travel by Navitime**</td><td>Train navigation</td><td>More accurate than Google Maps for complex JR + subway transfers. Shows platform numbers and car positions.</td></tr>
+<tr>
+<td>**Google Translate**</td><td>Translation</td><td>Download Japanese offline pack. Camera mode for menus/signs. Conversation mode for speaking with locals.</td></tr>
+<tr>
+<td>**Suica (Apple Wallet) / Mobile Suica**</td><td>Transit card</td><td>Load money, tap to ride trains/buses, pay at convenience stores. Essential.</td></tr>
+<tr>
+<td>**SmartEX / JR Pass app**</td><td>Shinkansen reservations</td><td>Reserve bullet train seats for free with your JR Pass.</td></tr>
+<tr>
+<td>**Tabelog**</td><td>Restaurant reviews</td><td>Japan's top restaurant review site (like Japanese Yelp). 3.5+ rating = genuinely good. Interface is in Japanese but Google Translate helps.</td></tr>
+<tr>
+<td>**GO Taxi**</td><td>Ride-hailing</td><td>Hail taxis in major cities. English interface available.</td></tr>
+<tr>
+<td>**XE Currency**</td><td>Currency conversion</td><td>Quick yen-to-dollar checks. Works offline.</td></tr>
+<tr>
+<td>**Japan Official Travel App**</td><td>Tourism info</td><td>Routes, Wi-Fi spots, tourist info from JNTO (Japan National Tourism Organization).</td></tr>
+<tr>
+<td>**Coin Locker Navi**</td><td>Find lockers</td><td>Real-time availability of coin lockers at major stations.</td></tr>
+<tr>
+<td>**NHK World**</td><td>News & alerts</td><td>English-language disaster alerts, typhoon tracking, earthquake notifications.</td></tr>
+<tr>
+<td>**Airalo**</td><td>eSIM management</td><td>Purchase and manage your Japan eSIM data plan.</td></tr>
+<tr>
+<td>**PayPay**</td><td>Mobile payment</td><td>Japan's most popular QR code payment app. Setting up as a tourist is possible and useful for small cash-only places that accept PayPay.</td></tr>
+<tr>
+<td>**Hyperdia** (or Jorudan)</td><td>Train schedules</td><td>Legacy favorite for precise train timetables and fare calculations.</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Final Tips for the Solo Foodie Traveler</h2>
+<ul>
+<li><strong>Counter seating is your friend</strong>. Solo dining is completely normal in Japan — more so than almost anywhere else. Ramen shops, sushi bars, izakaya counters, and yakitori joints are designed for solo diners. Sit at the counter, watch the chef, and enjoy.</li>
+<li><strong>Eat at odd hours</strong>. Popular ramen shops and restaurants can have long lines at peak times. Eat lunch at 11 AM or 2 PM, dinner at 5:30 PM or 9 PM.</li>
+<li><strong>Ticket machine restaurants (shokkenki)</strong>: Many ramen and gyudon shops have vending machines at the entrance. Insert money, press the button for your dish, hand the ticket to the staff. No Japanese needed.</li>
+<li><strong>Depachika</strong> (department store basement food halls) are a foodie paradise. Incredible prepared foods, wagashi (Japanese sweets), bento boxes, and free samples. Visit Isetan Shinjuku, Daimaru Tokyo Station, or Takashimaya.</li>
+<li><strong>Combini food is not "settling."</strong> 7-Eleven egg sandwiches, Lawson's premium roll cake, and FamilyMart's famichiki are cult favorites for good reason.</li>
+<li><strong>Sake tastings</strong> are available at many department stores and specialty shops. Nishiki Market (Kyoto) and Pontocho area bars are excellent for sake exploration.</li>
+<li><strong>Morning markets</strong>: Tsukiji Outer Market (Tokyo), Nishiki Market (Kyoto), and Kuromon Market (Osaka) are musts for early-morning food exploration.</li>
+<li><strong>Carry cash for food</strong>. The best little ramen shops, yakitori stalls, and izakayas are often cash-only.</li>
+</ul>
+<hr>
+<p><em>Safe travels. Japan rewards the curious and the respectful in equal measure.</em></p>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

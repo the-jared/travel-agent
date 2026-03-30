@@ -297,6 +297,34 @@ Iterate until the user is satisfied.
 
 ---
 
+## Phase 5: Generate Consumer-Ready Formats
+
+After the trip folder is finalized, generate consumer-ready output formats.
+Read `references/output-formats.md` for the format matrix.
+
+### Step 5a: Generate HTML versions
+Run `scripts/generate-html.sh <trip-folder>` to create mobile-friendly HTML
+versions of all deliverables with clickable links, interactive checklists,
+and responsive design.
+
+### Step 5b: Generate printable assets
+Run `scripts/generate-print.sh <trip-folder>` to create print-ready versions
+of communication cards, pocket guide, checklists, and companion briefing.
+
+### Step 5c: Generate shareable assets
+Copy companion briefing and trip summary to share/ folder as self-contained
+HTML files that can be emailed or AirDropped to travel companions.
+(This is handled automatically by `generate-print.sh`.)
+
+### Step 5d: Present the final package
+Show the user the complete output:
+- XX markdown source files in the trip folder
+- XX HTML files in html/ for phone/offline viewing
+- XX printable files in print/ for printing
+- XX shareable files in share/ for companions
+
+---
+
 ## Quality Checklist — Nothing-Missed Verification
 
 Before presenting the final trip folder, verify ALL of the following:
