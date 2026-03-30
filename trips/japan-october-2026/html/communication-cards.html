@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Communication Cards</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Communication Cards</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Communication Cards — Japan October 2026</h1>
+<blockquote>
+<p>Print these cards or save them on your phone. Show them to taxi drivers, hotel staff, and restaurant servers as needed. Large text for easy reading.</p>
+</blockquote>
+<hr>
+<h2>1. Taxi Hotel Card</h2>
+<blockquote>
+<p>Show this to taxi drivers to get back to your hotel. Fill in your hotel name and address before departure.</p>
+</blockquote>
+<hr>
+<h3>Tokyo Hotel</h3>
+<pre><code>
+┌─────────────────────────────────────────────┐
+│                                             │
+│   ホテルまでお願いします。                      │
+│   (Please take me to this hotel.)           │
+│                                             │
+│   ホテル名: ______________________________   │
+│   Hotel Name: ____________________________  │
+│                                             │
+│   住所: __________________________________   │
+│         __________________________________   │
+│   Address: _______________________________  │
+│                                             │
+│   電話: __________________________________   │
+│   Phone: _________________________________  │
+│                                             │
+│   最寄り駅: ______________________________   │
+│   Nearest Station: _______________________  │
+│                                             │
+└─────────────────────────────────────────────┘
+</code></pre>
+<h3>Kyoto Hotel</h3>
+<pre><code>
+┌─────────────────────────────────────────────┐
+│                                             │
+│   ホテルまでお願いします。                      │
+│   (Please take me to this hotel.)           │
+│                                             │
+│   ホテル名: ______________________________   │
+│   Hotel Name: ____________________________  │
+│                                             │
+│   住所: __________________________________   │
+│         __________________________________   │
+│   Address: _______________________________  │
+│                                             │
+│   電話: __________________________________   │
+│   Phone: _________________________________  │
+│                                             │
+└─────────────────────────────────────────────┘
+</code></pre>
+<h3>Osaka Hotel</h3>
+<pre><code>
+┌─────────────────────────────────────────────┐
+│                                             │
+│   ホテルまでお願いします。                      │
+│   (Please take me to this hotel.)           │
+│                                             │
+│   ホテル名: ______________________________   │
+│   Hotel Name: ____________________________  │
+│                                             │
+│   住所: __________________________________   │
+│         __________________________________   │
+│   Address: _______________________________  │
+│                                             │
+│   電話: __________________________________   │
+│   Phone: _________________________________  │
+│                                             │
+└─────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Tip:</strong> Fill in the kanji/Japanese address from your hotel's Japanese website or booking confirmation. Taxi drivers navigate by address, not hotel name.</p>
+<hr>
+<h2>2. Allergy / Dietary Restriction Card</h2>
+<blockquote>
+<p>Customize this card by checking the relevant items. Show to restaurant staff before ordering.</p>
+</blockquote>
+<pre><code>
+┌─────────────────────────────────────────────────┐
+│                                                 │
+│   食物アレルギーがあります。                        │
+│   I have food allergies.                        │
+│                                                 │
+│   以下の食品が食べられません:                       │
+│   I cannot eat the following:                   │
+│                                                 │
+│   □ エビ・カニ (甲殻類)  Shrimp / Crab           │
+│   □ 小麦              Wheat / Gluten           │
+│   □ 卵               Eggs                      │
+│   □ 乳製品            Dairy / Milk              │
+│   □ そば              Buckwheat / Soba          │
+│   □ 落花生・ナッツ      Peanuts / Tree Nuts       │
+│   □ 魚               Fish                      │
+│   □ 大豆              Soy                       │
+│   □ 貝類              Shellfish                 │
+│   □ 肉類              Meat (all)                │
+│   □ 豚肉              Pork                      │
+│   □ 牛肉              Beef                      │
+│                                                 │
+│   アレルギー反応は重篤です。                        │
+│   My allergy is severe.                         │
+│                                                 │
+│   □ はい (Yes)    □ いいえ (No, preference only) │
+│                                                 │
+│   ご確認ありがとうございます。                      │
+│   Thank you for checking.                       │
+│                                                 │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<h3>Vegetarian / Vegan Card</h3>
+<pre><code>
+┌─────────────────────────────────────────────────┐
+│                                                 │
+│   ベジタリアンです。                               │
+│   I am vegetarian.                              │
+│                                                 │
+│   肉と魚は食べられません。                         │
+│   I cannot eat meat or fish.                    │
+│                                                 │
+│   出汁（かつお出汁）も食べられません。                │
+│   I also cannot eat dashi (bonito fish stock).  │
+│                                                 │
+│   卵と乳製品は大丈夫です。                         │
+│   Eggs and dairy are OK.                        │
+│   (Cross out if vegan)                          │
+│                                                 │
+│   よろしくお願いします。                           │
+│   Thank you for your understanding.             │
+│                                                 │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<p><strong>Note:</strong> Dashi (fish stock) is in almost everything in Japanese cuisine, including many "vegetable" dishes. This card specifically flags it.</p>
+<hr>
+<h2>3. Emergency Card</h2>
+<blockquote>
+<p>Keep on your person at all times. Show in any emergency.</p>
+</blockquote>
+<pre><code>
+┌─────────────────────────────────────────────────┐
+│                                                 │
+│          緊急連絡先 / EMERGENCY CARD             │
+│                                                 │
+│   名前 / Name: ______________________________  │
+│   国籍 / Nationality: _______________________  │
+│   パスポート番号 / Passport #: ________________  │
+│   血液型 / Blood Type: ______________________  │
+│                                                 │
+│   緊急連絡先 / Emergency Contact:              │
+│   名前 / Name: ______________________________  │
+│   電話 / Phone: _____________________________  │
+│   関係 / Relation: __________________________  │
+│                                                 │
+│   ホテル / Hotel: ____________________________  │
+│   ホテル電話 / Hotel Phone: __________________  │
+│                                                 │
+│   アレルギー / Allergies: ____________________  │
+│   持病 / Medical Conditions: _________________  │
+│   服用薬 / Medications: _____________________  │
+│                                                 │
+│   大使館 / Embassy: 03-3224-5000 (US)         │
+│   警察 / Police: 110                          │
+│   救急車 / Ambulance: 119                     │
+│                                                 │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2>4. Top 20 Restaurant Phrases</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>#</th><th>English</th><th>Japanese</th><th>Pronunciation</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Table for 2, please</td><td>二名です</td><td>Ni-mei desu</td></tr>
+<tr>
+<td>2</td><td>Do you have an English menu?</td><td>英語のメニューはありますか？</td><td>Eigo no menyuu wa arimasu ka?</td></tr>
+<tr>
+<td>3</td><td>What do you recommend?</td><td>おすすめは何ですか？</td><td>Osusume wa nan desu ka?</td></tr>
+<tr>
+<td>4</td><td>I'll have this one (pointing)</td><td>これをお願いします</td><td>Kore wo onegaishimasu</td></tr>
+<tr>
+<td>5</td><td>One more of this, please</td><td>これをもう一つお願いします</td><td>Kore wo mou hitotsu onegaishimasu</td></tr>
+<tr>
+<td>6</td><td>Water, please</td><td>お水をお願いします</td><td>Omizu wo onegaishimasu</td></tr>
+<tr>
+<td>7</td><td>Beer, please</td><td>ビールをお願いします</td><td>Biiru wo onegaishimasu</td></tr>
+<tr>
+<td>8</td><td>Check, please</td><td>お会計をお願いします</td><td>Okaikei wo onegaishimasu</td></tr>
+<tr>
+<td>9</td><td>It was delicious!</td><td>おいしかったです！</td><td>Oishikatta desu!</td></tr>
+<tr>
+<td>10</td><td>Thank you for the meal</td><td>ごちそうさまでした</td><td>Gochisousama deshita</td></tr>
+<tr>
+<td>11</td><td>I have a reservation</td><td>予約があります</td><td>Yoyaku ga arimasu</td></tr>
+<tr>
+<td>12</td><td>Is this seat taken?</td><td>この席は空いていますか？</td><td>Kono seki wa aite imasu ka?</td></tr>
+<tr>
+<td>13</td><td>No wasabi, please</td><td>わさび抜きでお願いします</td><td>Wasabi nuki de onegaishimasu</td></tr>
+<tr>
+<td>14</td><td>Is this spicy?</td><td>これは辛いですか？</td><td>Kore wa karai desu ka?</td></tr>
+<tr>
+<td>15</td><td>Can I pay by card?</td><td>カードで払えますか？</td><td>Kaado de haraemasu ka?</td></tr>
+<tr>
+<td>16</td><td>This is not what I ordered</td><td>注文と違います</td><td>Chuumon to chigaimasu</td></tr>
+<tr>
+<td>17</td><td>To-go, please</td><td>テイクアウトでお願いします</td><td>Teiku auto de onegaishimasu</td></tr>
+<tr>
+<td>18</td><td>I don't eat meat</td><td>肉は食べられません</td><td>Niku wa taberaremasen</td></tr>
+<tr>
+<td>19</td><td>Does this contain [X]?</td><td>これに[X]は入っていますか？</td><td>Kore ni [X] wa haitte imasu ka?</td></tr>
+<tr>
+<td>20</td><td>Excuse me (to call staff)</td><td>すみません</td><td>Sumimasen</td></tr>
+</tbody></table></div>
+<p><strong>Usage notes:</strong></p>
+<ul>
+<li>Say "sumimasen" to get a server's attention (not rude, it's expected)</li>
+<li>"Gochisousama deshita" when leaving — say it to the chef/staff. Shows appreciation.</li>
+<li>Most restaurants have a call button on the table — press it instead of waving</li>
+</ul>
+<hr>
+<h2>5. Hotel Request Card</h2>
+<blockquote>
+<p>Show to hotel front desk staff for common requests.</p>
+</blockquote>
+<pre><code>
+┌─────────────────────────────────────────────────┐
+│                                                 │
+│   リクエスト / REQUEST                           │
+│   (該当するものに○をつけてください)                  │
+│   (Please circle what you need)                 │
+│                                                 │
+│   □ タオル追加     Extra towels                  │
+│   □ 枕の追加      Extra pillow                  │
+│   □ 歯ブラシ      Toothbrush                    │
+│   □ 充電器       Phone charger                  │
+│   □ 変換プラグ    Power adapter                  │
+│   □ アイロン      Iron                           │
+│   □ 荷物預かり    Luggage storage                │
+│   □ タクシーを呼ぶ  Call a taxi                   │
+│   □ モーニングコール  Wake-up call                │
+│     → ___:___ AM                                │
+│   □ チェックアウト延長  Late checkout              │
+│     → ___:___ まで (until)                      │
+│   □ レストラン予約  Restaurant reservation         │
+│     → 店名: _______________                     │
+│     → 日時: ___月___日 ___:___                   │
+│     → 人数: ___名                               │
+│   □ 近くの薬局    Nearest pharmacy               │
+│   □ 近くのコンビニ  Nearest convenience store      │
+│   □ 近くの病院    Nearest hospital               │
+│                                                 │
+│   部屋番号 / Room #: _______                     │
+│   名前 / Name: _______________                  │
+│                                                 │
+│   ありがとうございます。                           │
+│   Thank you.                                    │
+│                                                 │
+└─────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2>General Phrases (Beyond Restaurants)</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>English</th><th>Japanese</th><th>Pronunciation</th></tr></thead><tbody>
+<tr>
+<td>Thank you</td><td>ありがとうございます</td><td>Arigatou gozaimasu</td></tr>
+<tr>
+<td>Excuse me / Sorry</td><td>すみません</td><td>Sumimasen</td></tr>
+<tr>
+<td>Yes / No</td><td>はい / いいえ</td><td>Hai / Iie</td></tr>
+<tr>
+<td>I don't understand</td><td>わかりません</td><td>Wakarimasen</td></tr>
+<tr>
+<td>Do you speak English?</td><td>英語を話しますか？</td><td>Eigo wo hanashimasu ka?</td></tr>
+<tr>
+<td>Where is ___?</td><td>___はどこですか？</td><td>___ wa doko desu ka?</td></tr>
+<tr>
+<td>How much is this?</td><td>いくらですか？</td><td>Ikura desu ka?</td></tr>
+<tr>
+<td>Help!</td><td>助けて！</td><td>Tasukete!</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Digital Alternatives</h2>
+<ul>
+<li><strong>Google Translate</strong> app: Download Japanese offline pack before the trip. Use camera mode to translate menus in real-time.</li>
+<li><strong>Papago</strong> app: Often better than Google for Japanese. Download offline pack.</li>
+<li><strong>Google Lens:</strong> Point at any sign or menu for instant translation.</li>
+</ul>
+<p><strong>Tip:</strong> Even with translation apps, having printed/saved cards is faster and more polite in a restaurant setting. Pulling out a card shows you prepared and respect the effort.</p>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

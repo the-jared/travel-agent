@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Plan B {{TITLE}} Contingencies</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Plan B {{PAGE_TITLE}} Contingencies</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Plan B and Contingencies — Japan October 2026</h1>
+<blockquote>
+<p>October in Japan averages 10-12 rainy days. Typhoon season runs through mid-October. Always have an indoor backup ready.</p>
+</blockquote>
+<hr>
+<h2>Rainy Day Alternatives by City</h2>
+<h3>Tokyo</h3>
+<h4>Museums and Galleries</h4>
+<ul>
+<li><strong>Tokyo National Museum</strong> — Ueno Park. Japan's largest museum with 110,000+ objects. The Honkan (Japanese Gallery) alone needs 2-3 hours. 1,000 JPY.</li>
+<li><strong>Mori Art Museum</strong> — Roppongi Hills 53F. Contemporary art with city views from the observation deck included in the ticket. 2,000 JPY. Open until 22:00.</li>
+<li><strong>21_21 Design Sight</strong> — Tokyo Midtown. Tadao Ando-designed museum for design exhibitions. 1,200 JPY. Small but always excellent.</li>
+<li><strong>Nezu Museum</strong> — Omotesando. Pre-modern Japanese/Asian art in a stunning Kengo Kuma building with a hidden garden. 1,300 JPY.</li>
+</ul>
+<h4>Indoor Experiences</h4>
+<ul>
+<li><strong>TeamLab Borderless</strong> — Azabudai Hills. 2-3 hours of immersive digital art. Pre-book required. Actually better on rainy days (fewer crowds if people cancel).</li>
+<li><strong>Depachika (department store basement food halls)</strong> — Isetan Shinjuku, Mitsukoshi Ginza, or Takashimaya Nihonbashi. Free to browse; incredible tastings and bento. Budget 2,000-5,000 JPY for a gourmet lunch spread.</li>
+<li><strong>Manga cafes</strong> — Private booth, unlimited manga, free drinks, showers, WiFi. Chains: Gran Cyber Cafe Bagus, Manboo. 400-600 JPY/hour.</li>
+<li><strong>Akihabara exploration</strong> — Multi-floor electronics stores, retro game arcades (Super Potato, Hey!), anime shops. Entirely indoors.</li>
+<li><strong>Sento / Onsen</strong> — Thermae-Yu (Shinjuku, open 24h, 2,600 JPY). A rainy afternoon soak is the perfect recovery activity.</li>
+</ul>
+<h4>Rainy Day Meal Plan</h4>
+<ul>
+<li>Extended lunch at Tokyo Ramen Street (under Tokyo Station — 8 top ramen shops in one hallway)</li>
+<li>Afternoon tea at a hotel lounge (Peninsula Tokyo, Aman Tokyo)</li>
+<li>Depachika snack crawl followed by a kissaten coffee stop</li>
+</ul>
+<hr>
+<h3>Kyoto</h3>
+<h4>Covered and Indoor Options</h4>
+<ul>
+<li><strong>Nishiki Market</strong> — Fully covered 400m shopping arcade. 130+ food stalls and shops. Opens 9:00. Spend 2-3 hours sampling pickles, mochi, grilled seafood, tofu donuts. Free to browse.</li>
+<li><strong>Manga Museum</strong> — Former elementary school converted to a manga library. 900 JPY. Read from 300,000+ volumes. Half-day easy.</li>
+<li><strong>Sanjusangendo</strong> — 1,001 life-size golden Kannon statues in a 120m hall. Stunning in any weather. 600 JPY. Near Kyoto Station.</li>
+</ul>
+<h4>Temple Interiors (Best in Rain)</h4>
+<ul>
+<li><strong>Kenninji Temple</strong> — Gion's oldest Zen temple. Twin Dragons ceiling painting, beautiful rock garden viewed from inside. Rain makes the garden moss glow. 600 JPY.</li>
+<li><strong>Ryoan-ji</strong> — The famous rock garden is viewed from a covered veranda. Rain adds atmosphere. 500 JPY.</li>
+<li><strong>Nanzen-ji</strong> — The massive Sanmon gate interior is sheltered; Tenju-an sub-temple garden is viewed from inside. 600 JPY combined.</li>
+</ul>
+<h4>Tea Ceremony</h4>
+<ul>
+<li><strong>Camellia Tea Ceremony</strong> — English-language ceremony in a Gion townhouse. Around 3,000 JPY. Book 1 day ahead.</li>
+<li><strong>En Tea Ceremony</strong> — Near Kinkaku-ji. Small group, matcha plus wagashi. Around 2,500 JPY.</li>
+<li><strong>Ippodo Tea</strong> — Not a ceremony but a tea tasting room where staff teach you to brew. Free tasting; teas from 1,000 JPY.</li>
+</ul>
+<h4>Kyoto Rainy Day Itinerary</h4>
+<p>Morning: Nishiki Market snack crawl (9:00-11:00) then Sanjusangendo (11:30-12:30). Lunch at a covered-arcade restaurant. Afternoon: Tea ceremony (14:00-15:00) then Kenninji Temple (15:30-16:30). Evening: Pontocho alley restaurants (covered).</p>
+<hr>
+<h3>Osaka</h3>
+<h4>Indoor Food Halls and Markets</h4>
+<ul>
+<li><strong>Kuromon Market</strong> — Covered market. Street food breakfast/lunch. See the Hidden Gems guide for early-morning strategy.</li>
+<li><strong>Dotonbori indoor areas</strong> — Much of the restaurant strip has covered arcades. Shinsaibashi-suji is a fully covered 600m shopping street.</li>
+<li><strong>Umeda Food Halls</strong> — Basement floors of Grand Front Osaka and Lucua. Hundreds of restaurants.</li>
+</ul>
+<h4>Osaka Aquarium Kaiyukan</h4>
+<ul>
+<li>One of the world's largest aquariums. Whale sharks, manta rays, Pacific Rim ecosystems. 2,700 JPY.</li>
+<li>Location: Tempozan, Osakako Station</li>
+<li>Allow 2-3 hours. Less crowded on rainy weekdays (locals assume it will be packed and stay home).</li>
+</ul>
+<h4>Other Indoor Options</h4>
+<ul>
+<li><strong>Osaka Museum of History</strong> — Full-floor recreations of historical Osaka. Views of Osaka Castle from upper floors. 600 JPY.</li>
+<li><strong>Instant Ramen Museum</strong> — Ikeda (30 min from Umeda). Make your own Cup Noodle. 500 JPY + 500 JPY for custom cup. Book chicken ramen workshop in advance.</li>
+<li><strong>Spa World</strong> — Shinsekai. Themed international baths across multiple floors. Full day pass around 2,700 JPY. Has saunas, pools, restaurants.</li>
+<li><strong>Namba Grand Kagetsu</strong> — Yoshimoto comedy theater. Manzai (stand-up comedy duo) performances. Some physical comedy transcends language. Around 4,500 JPY.</li>
+</ul>
+<hr>
+<h2>Typhoon Protocol</h2>
+<p>October typhoons are possible (though late October risk is lower). If a typhoon warning is issued:</p>
+<ol>
+<li><strong>Check:</strong> Japan Meteorological Agency (jma.go.jp) and NHK World app</li>
+<li><strong>Stay indoors</strong> during the typhoon (usually 12-24 hours)</li>
+<li><strong>Trains will stop</strong> — JR and private lines suspend service proactively. Do not go to the station.</li>
+<li><strong>Stock up</strong> — Buy water, onigiri, and snacks from a konbini the day before</li>
+<li><strong>Post-typhoon</strong> — Trains resume within hours. Next day is often spectacularly clear ("typhoon sunshine")</li>
+<li><strong>Hotels:</strong> Your hotel is the safest place. Most are built to withstand typhoons.</li>
+</ol>
+<hr>
+<h2>Emergency Contacts</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Service</th><th>Number</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>Police</td><td>110</td><td>English interpreters available</td></tr>
+<tr>
+<td>Ambulance / Fire</td><td>119</td><td>Say "ambulance" — operators trained for English</td></tr>
+<tr>
+<td>Japan Helpline</td><td>0570-000-911</td><td>24/7 multilingual assistance</td></tr>
+<tr>
+<td>US Embassy Tokyo</td><td>03-3224-5000</td><td>After hours: same number</td></tr>
+<tr>
+<td>AMDA Medical Info</td><td>03-6233-9266</td><td>Multilingual medical help M-F</td></tr>
+<tr>
+<td>NTT Directory</td><td>104</td><td>English operator assistance</td></tr>
+<tr>
+<td>Tourist Police (Tokyo)</td><td>03-3503-8484</td><td>Marunouchi office</td></tr>
+</tbody></table></div>
+<h3>Nearest Hospitals with English Support</h3>
+<p><strong>Tokyo:</strong></p>
+<ul>
+<li><strong>St. Luke's International Hospital</strong> — 9-1 Akashi-cho, Chuo-ku. Tel: 03-3541-5151. Full English support. Walk-in OK.</li>
+<li><strong>Tokyo Medical and Surgical Clinic</strong> — Shiba Park Building, Minato-ku. Tel: 03-3436-3028. Western-style clinic, English-speaking doctors.</li>
+</ul>
+<p><strong>Kyoto:</strong></p>
+<ul>
+<li><strong>Japan Baptist Hospital</strong> — 47 Yamanomoto-cho, Sakyo-ku. Tel: 075-781-5191. English-speaking staff.</li>
+<li><strong>Kyoto University Hospital</strong> — 54 Shogoin-Kawahara-cho, Sakyo-ku. Tel: 075-751-3111. Major hospital with international services.</li>
+</ul>
+<p><strong>Osaka:</strong></p>
+<ul>
+<li><strong>Sumitomo Hospital</strong> — 5-3-20 Nakanoshima, Kita-ku. Tel: 06-6443-1261. English-speaking doctors available.</li>
+<li><strong>Rinku General Medical Center</strong> — Near Kansai Airport. Tel: 072-469-3111. Multilingual support.</li>
+</ul>
+<hr>
+<h2>Lost or Stolen Items</h2>
+<ul>
+<li><strong>Lost passport:</strong> Go to US Embassy immediately. Bring a photocopy (keep one in email/cloud) and a passport photo.</li>
+<li><strong>Lost phone:</strong> Check Find My / Find My Device. Visit the nearest koban (police box) — Japan has an extraordinary 83% lost item return rate.</li>
+<li><strong>Lost JR Pass:</strong> Cannot be reissued. Buy individual tickets for remaining days.</li>
+<li><strong>Credit card lost:</strong> Call your bank's international number (save in a separate note/email before the trip).</li>
+</ul>
+<hr>
+<h2>Travel Insurance</h2>
+<p>Ensure your policy covers:</p>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb1" ><label for="cb1">Medical evacuation</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb2" ><label for="cb2">Trip interruption (typhoons)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb3" ><label for="cb3">Lost luggage</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb4" ><label for="cb4">Adventure activities (if doing hiking)</label></li>
+</ul>
+<p>Recommended: World Nomads (worldnomads.com), Safety Wing (safetywing.com), or your credit card travel insurance (check coverage limits).</p>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

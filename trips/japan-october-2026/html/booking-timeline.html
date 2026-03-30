@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Booking Timeline</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Booking Timeline</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Booking Timeline — Japan October 2026</h1>
+<blockquote>
+<p>Everything you need to book, in the order you need to book it.</p>
+<p>Generated on 2026-03-30 for travel dates: October 2026 (2 weeks).</p>
+</blockquote>
+<h2>Status Key</h2>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb1" ><label for="cb1">Not booked</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb2" checked><label for="cb2">Booked — Confirmation: #</label></li>
+<li>[~] Monitoring for price drop</li>
+</ul>
+<hr>
+<h2>NOW — March/April 2026 (6+ months out)</h2>
+<p>October is peak autumn foliage season in Japan. Kyoto accommodation and popular ryokans sell out months ahead. This is the most critical booking window.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Priority</th><th>Item</th><th>Est. Cost</th><th>Book At</th><th>Deadline</th><th>Status</th></tr></thead><tbody>
+<tr>
+<td>:red_circle: Urgent</td><td>Kyoto ryokan (peak foliage season)</td><td>$150–350/night</td><td>[Japanican.com](https://www.japanican.com/en/)</td><td>April 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Kyoto hotels for Oct 22 (Jidai Matsuri festival)</td><td>$100–200/night</td><td>[Booking.com](https://www.booking.com/) (free cancellation)</td><td>April 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Hakone ryokan with onsen</td><td>$200–400/night</td><td>[Japanese Guest Houses](https://www.japaneseguesthouses.com/)</td><td>April 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Set Google Flights price alerts (US to Tokyo NRT/HND)</td><td>Free</td><td>[Google Flights](https://www.google.com/travel/flights)</td><td>Now</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Download Hopper app, start tracking Tokyo flights</td><td>Free</td><td>[App Store](https://apps.apple.com/app/hopper-flights-hotels-cars/id904052407) / [Google Play](https://play.google.com/store/apps/details?id=com.hopper.mountainview.play)</td><td>Now</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Set Skyscanner price alert for round-trip to Tokyo</td><td>Free</td><td>[Skyscanner](https://www.skyscanner.com/)</td><td>Now</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Verify passport validity (6+ months beyond Oct 2026)</td><td>Free</td><td>Check physical passport</td><td>Now</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Create Japan trip folder in email for confirmations</td><td>Free</td><td>Gmail/Outlook</td><td>Now</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Join r/JapanTravel for current tips</td><td>Free</td><td>[Reddit](https://www.reddit.com/r/JapanTravel/)</td><td>Anytime</td><td>[ ]</td></tr>
+</tbody></table></div>
+<h3>Kyoto Ryokan Shortlist (Book ASAP)</h3>
+<p>These are highly sought-after during October foliage season:</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Ryokan</th><th>Location</th><th>Price/Night</th><th>Link</th></tr></thead><tbody>
+<tr>
+<td>Tawaraya Ryokan</td><td>Nakagyo-ku</td><td>$400–700</td><td>[tawaraya.co.jp](https://www.tawaraya.co.jp/english/)</td></tr>
+<tr>
+<td>Hiiragiya Ryokan</td><td>Nakagyo-ku</td><td>$350–600</td><td>[hiiragiya.co.jp](https://www.hiiragiya.co.jp/en/)</td></tr>
+<tr>
+<td>Gion Hatanaka</td><td>Gion district</td><td>$200–350</td><td>[thehatanaka.co.jp](https://www.thehatanaka.co.jp/en/)</td></tr>
+<tr>
+<td>Yuzuya Ryokan</td><td>Gion district</td><td>$150–250</td><td>[yuzuya.co.jp](https://www.yuzuya-ryokan.com/en/)</td></tr>
+<tr>
+<td>Kinoe</td><td>Higashiyama</td><td>$120–200</td><td>[Japanican listing](https://www.japanican.com/en/)</td></tr>
+</tbody></table></div>
+<h3>Hakone Ryokan Shortlist</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Ryokan</th><th>Price/Night</th><th>Notes</th><th>Link</th></tr></thead><tbody>
+<tr>
+<td>Hakone Ginyu</td><td>$300–500</td><td>Private open-air onsen in every room</td><td>[hakoneginyu.co.jp](https://www.hakoneginyu.co.jp/en/)</td></tr>
+<tr>
+<td>Gora Kadan</td><td>$400–800</td><td>Luxury, kaiseki dinner included</td><td>[gorakadan.com](https://www.gorakadan.com/eng/)</td></tr>
+<tr>
+<td>Fukuzumiro</td><td>$150–250</td><td>Historic, riverside onsen</td><td>[fukuzumi.co.jp](https://www.fukuzumiro.com/en/)</td></tr>
+<tr>
+<td>Senkyoro</td><td>$120–200</td><td>Budget-friendly, meals included</td><td>[senkyoro.co.jp](https://www.senkyoro.co.jp/english/)</td></tr>
+</tbody></table></div>
+<hr>
+<h2>April 2026 (6 months out)</h2>
+<p>Prime window for flight deals. Historically, April–May is the sweet spot for October Japan flights.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Priority</th><th>Item</th><th>Est. Cost</th><th>Book At</th><th>Deadline</th><th>Status</th></tr></thead><tbody>
+<tr>
+<td>:red_circle: Urgent</td><td>Round-trip flights to Tokyo (NRT or HND)</td><td>$800–1,400 RT</td><td>[Google Flights](https://www.google.com/travel/flights) / [Skyscanner](https://www.skyscanner.com/)</td><td>May 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>All Kyoto accommodation (refundable rates)</td><td>$100–350/night</td><td>[Booking.com](https://www.booking.com/) / [Agoda](https://www.agoda.com/)</td><td>April 30</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Hakone ryokan (1–2 nights)</td><td>$200–400/night</td><td>[Japanican.com](https://www.japanican.com/en/)</td><td>April 30</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Tokyo hotel (first 3–4 nights)</td><td>$80–180/night</td><td>[Booking.com](https://www.booking.com/) (free cancel)</td><td>May 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Osaka hotel (last 2–3 nights)</td><td>$70–150/night</td><td>[Agoda](https://www.agoda.com/) / [Booking.com](https://www.booking.com/)</td><td>May 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Travel insurance quote</td><td>$80–200 total</td><td>[World Nomads](https://www.worldnomads.com/) / [SafetyWing](https://safetywing.com/)</td><td>June 2026</td><td>[ ]</td></tr>
+</tbody></table></div>
+<h3>Flight Booking Tips</h3>
+<ul>
+<li><strong>Target price</strong>: Under $1,000 round-trip economy from US West Coast; under $1,200 from East Coast</li>
+<li><strong>Best airlines for Japan</strong>: ANA, JAL (superior service, included meals), or United/Delta using miles</li>
+<li><strong>Open jaw option</strong>: Fly into Tokyo NRT, out of Osaka KIX to avoid backtracking — often same price</li>
+<li><strong>Credit card points</strong>: Check Chase UR, Amex MR, or Capital One mile transfer partners (ANA is a sweet spot at 75K–90K miles RT)</li>
+<li><strong>Days to book</strong>: Tuesday/Wednesday departures are typically cheapest</li>
+<li><strong>Alerts</strong>: Google Flights will email you when prices drop; Hopper will predict optimal buy date</li>
+</ul>
+<h3>Accommodation Strategy</h3>
+<p>Book <strong>free-cancellation</strong> rates now. You can always cancel and rebook if you find better options later. Key platforms:</p>
+<ul>
+<li><a href="https://www.booking.com/" target="_blank" rel="noopener">Booking.com</a> — Best free-cancellation policies</li>
+<li><a href="https://www.agoda.com/" target="_blank" rel="noopener">Agoda</a> — Often cheapest for Asia hotels</li>
+<li><a href="https://www.japanican.com/en/" target="_blank" rel="noopener">Japanican.com</a> — JTB's platform, best ryokan selection</li>
+<li><a href="https://www.japaneseguesthouses.com/" target="_blank" rel="noopener">Japanese Guest Houses</a> — Curated traditional stays</li>
+</ul>
+<hr>
+<h2>June 2026 (4 months out)</h2>
+<p>Lock in all accommodation. Finalize the transportation backbone.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Priority</th><th>Item</th><th>Est. Cost</th><th>Book At</th><th>Deadline</th><th>Status</th></tr></thead><tbody>
+<tr>
+<td>:red_circle: Urgent</td><td>Finalize all accommodation (cancel refundable dupes)</td><td>See above</td><td>Review all bookings</td><td>June 30</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Purchase JR Pass (21-day or 14-day Ordinary)</td><td>$380 (14-day)</td><td>[japanrailpass.net](https://www.japanrailpass.net/en/)</td><td>July 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Flights — final deadline if not yet booked</td><td>$900–1,600 RT</td><td>[Google Flights](https://www.google.com/travel/flights)</td><td>June 30</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Purchase travel insurance</td><td>$80–200 total</td><td>[World Nomads](https://www.worldnomads.com/) / [Allianz](https://www.allianztravelinsurance.com/)</td><td>July 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Pocket Wi-Fi or eSIM research</td><td>$25–60 (2 weeks)</td><td>[Ubigi](https://www.ubigi.com/) / [Airalo](https://www.airalo.com/)</td><td>August 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Study basic Japanese phrases</td><td>Free</td><td>[Duolingo](https://www.duolingo.com/) / [Pimsleur](https://www.pimsleur.com/)</td><td>Ongoing</td><td>[ ]</td></tr>
+</tbody></table></div>
+<h3>JR Pass Decision Guide</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Pass Type</th><th>Duration</th><th>Price (2026 est.)</th><th>Best For</th></tr></thead><tbody>
+<tr>
+<td>JR Pass Ordinary 7-day</td><td>7 days</td><td>$200</td><td>Tokyo–Kyoto–Osaka leg only</td></tr>
+<tr>
+<td>JR Pass Ordinary 14-day</td><td>14 days</td><td>$380</td><td>Full 2-week trip with multiple Shinkansen rides</td></tr>
+<tr>
+<td>JR Pass Ordinary 21-day</td><td>21 days</td><td>$490</td><td>Extended trip beyond 2 weeks</td></tr>
+<tr>
+<td>JR Pass Green (First Class) 14-day</td><td>14 days</td><td>$510</td><td>Wider seats, less crowded cars</td></tr>
+</tbody></table></div>
+<blockquote>
+<p><strong>Note</strong>: As of 2023, JR Pass prices increased significantly. Verify current pricing at <a href="https://www.japanrailpass.net/en/" target="_blank" rel="noopener">japanrailpass.net</a>. The 14-day pass pays for itself if you take at least 2 long-distance Shinkansen rides (e.g., Tokyo–Kyoto round trip alone is ~$270).</p>
+</blockquote>
+<hr>
+<h2>August 2026 (2 months out)</h2>
+<p>Experience bookings open up. Popular restaurants and attractions require advance reservations.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Priority</th><th>Item</th><th>Est. Cost</th><th>Book At</th><th>Deadline</th><th>Status</th></tr></thead><tbody>
+<tr>
+<td>:red_circle: Urgent</td><td>teamLab Borderless tickets (Azabudai Hills, Tokyo)</td><td>$25–33/person</td><td>[teamlab.art](https://www.teamlab.art/e/borderless-azabudai/)</td><td>ASAP — sells out</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>teamLab Planets tickets (Toyosu, Tokyo)</td><td>$25–33/person</td><td>[teamlab.art](https://www.teamlab.art/e/planets/)</td><td>ASAP — sells out</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Michelin restaurant reservations (Tokyo)</td><td>$100–400/person</td><td>[Omakase](https://www.omakase.in/) / [TableAll](https://www.tableall.com/)</td><td>August 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Kaiseki dinner reservations (Kyoto)</td><td>$80–250/person</td><td>[Pocket Concierge](https://pocket-concierge.jp/en/)</td><td>August 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Sushi omakase booking (Tsukiji/Ginza area)</td><td>$80–300/person</td><td>[Omakase](https://www.omakase.in/) / restaurant direct</td><td>August 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Cooking class (ramen, sushi, or bento)</td><td>$60–100/person</td><td>[airKitchen](https://airkitchen.me/) / [cookly](https://www.cookly.me/cooking-class/japan/)</td><td>September 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Ghibli Museum tickets (Mitaka, Tokyo)</td><td>$10/person</td><td>[Lawson Ticket](https://l-tike.com/ghibli/)</td><td>Opens 1st of prior month</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Sumo tournament tickets (if Oct basho in Tokyo)</td><td>$30–200/person</td><td>[Sumo Association](https://www.sumo.or.jp/EnTicket/)</td><td>Check schedule</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Tea ceremony experience (Kyoto)</td><td>$30–80/person</td><td>[Camellia Tea Ceremony](https://tea-kyoto.com/) / [Maikoya](https://mai-ko.com/)</td><td>September 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Kimono rental reservation (Kyoto)</td><td>$30–60/person</td><td>[Yumeyakata](https://www.yumeyakata.com/english/) / [Wargo](https://kyotokimono-rental.com/)</td><td>September 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Sake brewery tour (Fushimi, Kyoto)</td><td>$20–50/person</td><td>[Gekkeikan Okura](https://www.gekkeikan.co.jp/english/) / Viator</td><td>September 2026</td><td>[ ]</td></tr>
+</tbody></table></div>
+<h3>Restaurant Reservation Tips</h3>
+<ul>
+<li><strong>High-end sushi/kaiseki</strong>: Many top restaurants only accept reservations through hotel concierges or booking services like <a href="https://www.tableall.com/" target="_blank" rel="noopener">TableAll</a> and <a href="https://pocket-concierge.jp/en/" target="_blank" rel="noopener">Pocket Concierge</a>. These charge a booking fee ($10–30) but are worth it.</li>
+<li><strong>Tabelog</strong>: Japan's #1 restaurant review site. Use <a href="https://tabelog.com/en/" target="_blank" rel="noopener">tabelog.com/en</a> to research, but many listings require Japanese to book. Use your hotel concierge.</li>
+<li><strong>Michelin Guide Tokyo 2026</strong>: Tokyo has more Michelin stars than any city on Earth. Budget splurge meals strategically.</li>
+<li><strong>Ramen & casual dining</strong>: No reservation needed. Just show up and queue (lines move fast).</li>
+</ul>
+<hr>
+<h2>September 2026 (1 month out)</h2>
+<p>Final experience bookings and logistics.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Priority</th><th>Item</th><th>Est. Cost</th><th>Book At</th><th>Deadline</th><th>Status</th></tr></thead><tbody>
+<tr>
+<td>:red_circle: Urgent</td><td>Shinkansen seat reservations (with JR Pass)</td><td>Free with JR Pass</td><td>JR ticket offices or [SmartEX app](https://smart-ex.jp/en/)</td><td>After arrival, or online</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Confirm all hotel/ryokan bookings</td><td>—</td><td>Email each property</td><td>2 weeks before</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Walking tour — Tokyo (Asakusa/Akihabara/Shibuya)</td><td>$0–60/person</td><td>[Tokyo Localized](https://www.tokyolocalized.com/) (free) / [Viator](https://www.viator.com/)</td><td>September 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Walking tour — Kyoto (Gion/Higashiyama)</td><td>$0–60/person</td><td>[Kyoto Localized](https://www.kyotolocalized.com/) (free) / [MagicalTrip](https://magicaltrip.com/)</td><td>September 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Fushimi Inari guided sunrise tour</td><td>$30–70/person</td><td>[Viator](https://www.viator.com/) / [GetYourGuide](https://www.getyourguide.com/)</td><td>September 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Nara day-trip logistics (deer park, Todai-ji)</td><td>$15 train RT</td><td>No booking needed</td><td>—</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Purchase eSIM or order pocket Wi-Fi</td><td>$25–60 (2 weeks)</td><td>[Airalo](https://www.airalo.com/) / [Ubigi](https://www.ubigi.com/) / [Japan Wireless](https://www.japan-wireless.com/)</td><td>October 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Remaining restaurant reservations</td><td>Varies</td><td>[Tabelog](https://tabelog.com/en/) / hotel concierge</td><td>September 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Airport transfer — NRT/HND to hotel</td><td>$10–36</td><td>[Narita Express](https://www.jreast.co.jp/multi/en/nex/) / [Limousine Bus](https://www.limousinebus.co.jp/en/)</td><td>On arrival</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Nightlife bookings (Golden Gai tour, izakaya crawl)</td><td>$50–100/person</td><td>[MagicalTrip](https://magicaltrip.com/) / [Viator](https://www.viator.com/)</td><td>September 2026</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Day trip to Nikko or Kamakura</td><td>$25–50 train RT</td><td>JR Pass covers Kamakura</td><td>—</td><td>[ ]</td></tr>
+</tbody></table></div>
+<h3>October Festival Awareness</h3>
+<p>Plan around these events — they affect crowds and accommodation:</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Date</th><th>Event</th><th>Location</th><th>Impact</th></tr></thead><tbody>
+<tr>
+<td>Oct 22</td><td>**Jidai Matsuri** (Festival of the Ages)</td><td>Kyoto</td><td>Hotels 2x price, streets closed along parade route</td></tr>
+<tr>
+<td>Oct 22</td><td>**Kurama Fire Festival** (evening)</td><td>Kurama, north Kyoto</td><td>Trains extremely packed after 6pm</td></tr>
+<tr>
+<td>Mid-Oct</td><td>**Autumn Grand Sumo Tournament**</td><td>Check if scheduled</td><td>Tickets sell fast</td></tr>
+<tr>
+<td>Late Oct</td><td>Peak koyo (foliage) begins</td><td>Nikko, Hakone, northern Kyoto</td><td>Crowds peak at famous maple spots</td></tr>
+</tbody></table></div>
+<hr>
+<h2>2 Weeks Before Departure</h2>
+<p>Logistics and digital preparation.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Priority</th><th>Item</th><th>Est. Cost</th><th>Action</th><th>Status</th></tr></thead><tbody>
+<tr>
+<td>:red_circle: Urgent</td><td>Download offline Google Maps for all cities</td><td>Free</td><td>Google Maps app → download Tokyo, Kyoto, Osaka, Hakone regions</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Install & activate eSIM (or confirm pocket Wi-Fi shipment)</td><td>Already purchased</td><td>[Airalo](https://www.airalo.com/) / [Ubigi](https://www.ubigi.com/)</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Print/save JR Pass exchange order (QR code or voucher)</td><td>—</td><td>Email confirmation from [japanrailpass.net](https://www.japanrailpass.net/en/)</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Download essential apps</td><td>Free</td><td>See app list below</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Notify bank/credit card of Japan travel dates</td><td>Free</td><td>Bank app or phone call</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Photocopy passport, store digital copy in cloud</td><td>Free</td><td>Google Drive / iCloud</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Load Suica/Pasmo to Apple Wallet (or plan to buy at airport)</td><td>$20–50 initial load</td><td>Apple Wallet → Add Transit Card → Suica</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Exchange some USD to JPY ($100–200 worth)</td><td>$100–200</td><td>Bank or [Wise](https://wise.com/) debit card</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Create packing list</td><td>Free</td><td>See [Checklists](./09-checklists.md)</td><td>[ ]</td></tr>
+</tbody></table></div>
+<h3>Essential Apps to Download</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>App</th><th>Purpose</th><th>Link</th></tr></thead><tbody>
+<tr>
+<td>**Google Translate**</td><td>Camera translate for menus/signs, offline Japanese pack</td><td>[iOS](https://apps.apple.com/app/google-translate/id414706506) / [Android](https://play.google.com/store/apps/details?id=com.google.android.apps.translate)</td></tr>
+<tr>
+<td>**Navitime for Japan Travel**</td><td>Train routing, better than Google Maps for Japan rail</td><td>[iOS](https://apps.apple.com/app/navitime-for-japan-travel/id910709557) / [Android](https://play.google.com/store/apps/details?id=com.navitime.inbound.walk)</td></tr>
+<tr>
+<td>**Japan Official Travel App**</td><td>Tourism info, disaster alerts, Wi-Fi finder</td><td>[iOS](https://apps.apple.com/app/japan-official-travel-app/id1135024601) / [Android](https://play.google.com/store/apps/details?id=com.jnto.jnto_guide)</td></tr>
+<tr>
+<td>**Suica (Apple Wallet)**</td><td>Contactless transit payments</td><td>Built into Apple Wallet</td></tr>
+<tr>
+<td>**Tabelog**</td><td>Restaurant discovery (Japan's top review site)</td><td>[iOS](https://apps.apple.com/app/tabelog/id763497493) / [Android](https://play.google.com/store/apps/details?id=com.kakaku.tabelog)</td></tr>
+<tr>
+<td>**PayPay**</td><td>QR code payments (widely accepted)</td><td>[iOS](https://apps.apple.com/app/paypay/id1435783608) / [Android](https://play.google.com/store/apps/details?id=jp.ne.paypay.android.app)</td></tr>
+<tr>
+<td>**XE Currency**</td><td>Real-time JPY/USD conversion</td><td>[iOS](https://apps.apple.com/app/xe-currency-converter/id315241195) / [Android](https://play.google.com/store/apps/details?id=com.xe.currency)</td></tr>
+<tr>
+<td>**Google Maps**</td><td>Offline maps, navigation</td><td>Already installed</td></tr>
+</tbody></table></div>
+<hr>
+<h2>1 Week Before Departure</h2>
+<p>Final checks.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Priority</th><th>Item</th><th>Est. Cost</th><th>Action</th><th>Status</th></tr></thead><tbody>
+<tr>
+<td>:red_circle: Urgent</td><td>Check 10-day weather forecast for all cities</td><td>Free</td><td>[weather.com](https://weather.com/) / [tenki.jp](https://tenki.jp/) (Japan's official weather)</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Adjust packing based on forecast (Oct: 55–70F / 13–21C typical)</td><td>—</td><td>Add rain layer, light jacket</td><td>[ ]</td></tr>
+<tr>
+<td>:red_circle: Urgent</td><td>Screenshot all booking confirmations (offline access)</td><td>Free</td><td>Save to phone photo album "Japan Trip"</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Confirm airport pickup/transport plan</td><td>—</td><td>Review Narita Express or Limousine Bus schedule</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Set out-of-office / arrange pet care / mail hold</td><td>—</td><td>USPS mail hold, work calendar</td><td>[ ]</td></tr>
+<tr>
+<td>:yellow_circle: Soon</td><td>Charge all devices, portable batteries</td><td>—</td><td>Ensure 2+ full charges on power bank</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Download entertainment for 11+ hour flight</td><td>Free</td><td>Netflix offline, Kindle books, podcasts</td><td>[ ]</td></tr>
+<tr>
+<td>:green_circle: Nice</td><td>Print communication cards (Japanese phrases)</td><td>Free</td><td>See [Communication Cards](./17-communication-cards.md)</td><td>[ ]</td></tr>
+</tbody></table></div>
+<h3>October Weather Expectations</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>City</th><th>Avg High</th><th>Avg Low</th><th>Rain Days</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>Tokyo</td><td>72F / 22C</td><td>59F / 15C</td><td>8–10</td><td>Mild, occasional typhoon remnants</td></tr>
+<tr>
+<td>Kyoto</td><td>72F / 22C</td><td>55F / 13C</td><td>7–9</td><td>Perfect for walking, cooler mornings</td></tr>
+<tr>
+<td>Osaka</td><td>73F / 23C</td><td>59F / 15C</td><td>7–8</td><td>Similar to Tokyo</td></tr>
+<tr>
+<td>Hakone</td><td>65F / 18C</td><td>50F / 10C</td><td>9–11</td><td>Cooler at elevation, early foliage</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Estimated Total Budget Summary</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Category</th><th>Estimated Cost (2 persons, 14 nights)</th></tr></thead><tbody>
+<tr>
+<td>Flights (round-trip x2)</td><td>$1,600–2,800</td></tr>
+<tr>
+<td>Accommodation (14 nights)</td><td>$1,400–4,200</td></tr>
+<tr>
+<td>JR Pass (14-day x2)</td><td>$760</td></tr>
+<tr>
+<td>Food & Dining</td><td>$1,000–2,000</td></tr>
+<tr>
+<td>Activities & Experiences</td><td>$300–800</td></tr>
+<tr>
+<td>Transport (local trains, buses, taxis)</td><td>$150–300</td></tr>
+<tr>
+<td>eSIM / Pocket Wi-Fi</td><td>$50–120</td></tr>
+<tr>
+<td>Travel Insurance</td><td>$160–400</td></tr>
+<tr>
+<td>Shopping & Souvenirs</td><td>$200–500</td></tr>
+<tr>
+<td>**TOTAL ESTIMATE**</td><td>**$5,620–11,880**</td></tr>
+</tbody></table></div>
+<blockquote>
+<p><strong>Budget-conscious target</strong>: ~$7,000–8,000 for two people with a mix of hotels and 2–3 ryokan nights, moderate dining, and one splurge meal.</p>
+</blockquote>
+<hr>
+<h2>Booking Checklist — Quick Reference</h2>
+<p>Copy this checklist and check items off as you go:</p>
+<pre><code>
+MARCH/APRIL 2026
+[ ] Kyoto ryokan booked
+[ ] Kyoto hotel (Oct 22 Jidai Matsuri) booked
+[ ] Hakone ryokan booked
+[ ] Google Flights alerts set
+[ ] Hopper tracking started
+[ ] Passport validity checked
+
+APRIL 2026
+[ ] Flights booked — Confirmation: ___________
+[ ] Tokyo hotel booked — Confirmation: ___________
+[ ] Kyoto accommodation booked — Confirmation: ___________
+[ ] Hakone ryokan booked — Confirmation: ___________
+[ ] Osaka hotel booked — Confirmation: ___________
+[ ] Travel insurance quote obtained
+
+JUNE 2026
+[ ] All accommodation finalized (duplicates cancelled)
+[ ] JR Pass purchased — Order #: ___________
+[ ] Travel insurance purchased — Policy #: ___________
+[ ] Flights booked if not already
+
+AUGUST 2026
+[ ] teamLab tickets purchased
+[ ] Michelin/kaiseki reservations made
+[ ] Cooking class booked
+[ ] Ghibli Museum tickets (if available)
+[ ] Tea ceremony booked
+
+SEPTEMBER 2026
+[ ] All bookings confirmed via email
+[ ] Walking tours booked
+[ ] Remaining restaurant reservations
+[ ] eSIM purchased or pocket Wi-Fi ordered
+
+2 WEEKS BEFORE
+[ ] Offline maps downloaded
+[ ] eSIM installed/activated
+[ ] JR Pass voucher saved/printed
+[ ] Essential apps installed
+[ ] Bank notified of travel
+[ ] Suica added to Apple Wallet
+[ ] Passport photocopy stored digitally
+
+1 WEEK BEFORE
+[ ] Weather checked, packing adjusted
+[ ] All confirmations screenshotted
+[ ] Devices charged, power bank ready
+[ ] Communication cards printed
+[ ] Entertainment downloaded for flight
+</code></pre>
+<hr>
+<p><em>Last updated: 2026-03-30 | See also: <a href="./10-bookings.md" target="_blank" rel="noopener">Bookings & Links</a> | <a href="./09-checklists.md" target="_blank" rel="noopener">Checklists</a> | <a href="./08-budget.md" target="_blank" rel="noopener">Budget & Costs</a></em></p>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

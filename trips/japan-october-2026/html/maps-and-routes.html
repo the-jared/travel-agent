@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Maps {{TITLE}} Routes</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Maps {{PAGE_TITLE}} Routes</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Maps & Routes — Japan October 2026</h1>
+<blockquote>
+<p><strong>Route:</strong> Tokyo (4 nights) → Hakone (1 night) → Kyoto (3 nights) → Osaka (2 nights) → Hiroshima (1 night) → Tokyo (2 nights)</p>
+</blockquote>
+<p>></p>
+<blockquote>
+<p>All Google Maps links below are clickable and will open directly in the Google Maps app or browser.</p>
+</blockquote>
+<hr>
+<h2>Google Maps Links — Key Locations</h2>
+<h3>Tokyo</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>#</th><th>Location</th><th>Category</th><th>Google Maps Link</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Senso-ji Temple</td><td>Temple</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Senso-ji+Temple+Asakusa+Tokyo+Japan)</td></tr>
+<tr>
+<td>2</td><td>Meiji Shrine</td><td>Shrine</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Meiji+Shrine+Shibuya+Tokyo+Japan)</td></tr>
+<tr>
+<td>3</td><td>Tokyo Skytree</td><td>Observation</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Tokyo+Skytree+Sumida+Tokyo+Japan)</td></tr>
+<tr>
+<td>4</td><td>Shibuya Crossing</td><td>Landmark</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Shibuya+Crossing+Tokyo+Japan)</td></tr>
+<tr>
+<td>5</td><td>Tsukiji Outer Market</td><td>Food</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Tsukiji+Outer+Market+Tokyo+Japan)</td></tr>
+<tr>
+<td>6</td><td>Akihabara Electric Town</td><td>Shopping</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Akihabara+Electric+Town+Tokyo+Japan)</td></tr>
+<tr>
+<td>7</td><td>Shinjuku Gyoen</td><td>Garden</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Shinjuku+Gyoen+National+Garden+Tokyo+Japan)</td></tr>
+<tr>
+<td>8</td><td>Golden Gai</td><td>Nightlife</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Golden+Gai+Shinjuku+Tokyo+Japan)</td></tr>
+<tr>
+<td>9</td><td>teamLab Borderless (Azabudai)</td><td>Art</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=teamLab+Borderless+Azabudai+Hills+Tokyo+Japan)</td></tr>
+<tr>
+<td>10</td><td>Harajuku Takeshita Street</td><td>Shopping</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Takeshita+Street+Harajuku+Tokyo+Japan)</td></tr>
+<tr>
+<td>11</td><td>Ueno Park</td><td>Park</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Ueno+Park+Tokyo+Japan)</td></tr>
+<tr>
+<td>12</td><td>Ameyoko Market</td><td>Market</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Ameyoko+Market+Ueno+Tokyo+Japan)</td></tr>
+<tr>
+<td>13</td><td>Tokyo Tower</td><td>Observation</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Tokyo+Tower+Minato+Tokyo+Japan)</td></tr>
+<tr>
+<td>14</td><td>Nakamise Shopping Street</td><td>Shopping</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Nakamise+Shopping+Street+Asakusa+Tokyo+Japan)</td></tr>
+</tbody></table></div>
+<h3>Kyoto</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>#</th><th>Location</th><th>Category</th><th>Google Maps Link</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Fushimi Inari Taisha</td><td>Shrine</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Fushimi+Inari+Taisha+Kyoto+Japan)</td></tr>
+<tr>
+<td>2</td><td>Kinkaku-ji (Golden Pavilion)</td><td>Temple</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Kinkaku-ji+Golden+Pavilion+Kyoto+Japan)</td></tr>
+<tr>
+<td>3</td><td>Kiyomizu-dera</td><td>Temple</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Kiyomizu-dera+Temple+Kyoto+Japan)</td></tr>
+<tr>
+<td>4</td><td>Arashiyama Bamboo Grove</td><td>Nature</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Arashiyama+Bamboo+Grove+Kyoto+Japan)</td></tr>
+<tr>
+<td>5</td><td>Gion District</td><td>District</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Gion+District+Kyoto+Japan)</td></tr>
+<tr>
+<td>6</td><td>Nishiki Market</td><td>Market</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Nishiki+Market+Kyoto+Japan)</td></tr>
+<tr>
+<td>7</td><td>Philosopher's Path</td><td>Walk</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Philosophers+Path+Kyoto+Japan)</td></tr>
+<tr>
+<td>8</td><td>Nijo Castle</td><td>Castle</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Nijo+Castle+Kyoto+Japan)</td></tr>
+</tbody></table></div>
+<h3>Osaka</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>#</th><th>Location</th><th>Category</th><th>Google Maps Link</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Osaka Castle</td><td>Castle</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Osaka+Castle+Osaka+Japan)</td></tr>
+<tr>
+<td>2</td><td>Dotonbori</td><td>District</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Dotonbori+Osaka+Japan)</td></tr>
+<tr>
+<td>3</td><td>Kuromon Market</td><td>Market</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Kuromon+Ichiba+Market+Osaka+Japan)</td></tr>
+<tr>
+<td>4</td><td>Shinsekai</td><td>District</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Shinsekai+Osaka+Japan)</td></tr>
+<tr>
+<td>5</td><td>Tsutenkaku Tower</td><td>Landmark</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Tsutenkaku+Tower+Osaka+Japan)</td></tr>
+<tr>
+<td>6</td><td>Shinsaibashi Shopping Street</td><td>Shopping</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Shinsaibashi+Shopping+Street+Osaka+Japan)</td></tr>
+</tbody></table></div>
+<h3>Hakone</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>#</th><th>Location</th><th>Category</th><th>Google Maps Link</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Hakone Open-Air Museum</td><td>Museum</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Hakone+Open+Air+Museum+Hakone+Japan)</td></tr>
+<tr>
+<td>2</td><td>Lake Ashi (Ashinoko)</td><td>Lake</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Lake+Ashi+Hakone+Japan)</td></tr>
+<tr>
+<td>3</td><td>Owakudani Valley</td><td>Nature</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Owakudani+Hakone+Japan)</td></tr>
+<tr>
+<td>4</td><td>Hakone Shrine</td><td>Shrine</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Hakone+Shrine+Hakone+Japan)</td></tr>
+</tbody></table></div>
+<h3>Hiroshima</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>#</th><th>Location</th><th>Category</th><th>Google Maps Link</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Hiroshima Peace Memorial Park</td><td>Memorial</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Hiroshima+Peace+Memorial+Park+Hiroshima+Japan)</td></tr>
+<tr>
+<td>2</td><td>Atomic Bomb Dome</td><td>Memorial</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Atomic+Bomb+Dome+Hiroshima+Japan)</td></tr>
+<tr>
+<td>3</td><td>Itsukushima Shrine (Miyajima)</td><td>Shrine</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Itsukushima+Shrine+Miyajima+Hiroshima+Japan)</td></tr>
+<tr>
+<td>4</td><td>Miyajima Island Ferry Terminal</td><td>Transport</td><td>[Open Map](https://www.google.com/maps/search/?api=1&query=Miyajima+Ferry+Terminal+Hiroshima+Japan)</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Multi-Stop Day Routes</h2>
+<p>Each link opens Google Maps with turn-by-turn walking directions for the full route.</p>
+<h3>Tokyo Day 1 — East Side (Asakusa → Ueno → Akihabara)</h3>
+<p><strong>Stops:</strong> Senso-ji → Nakamise Shopping Street → Ameyoko Market → Akihabara</p>
+<p><a href="https://www.google.com/maps/dir/Senso-ji+Temple+Asakusa+Tokyo/Nakamise+Shopping+Street+Asakusa+Tokyo/Ameyoko+Market+Ueno+Tokyo/Akihabara+Station+Tokyo/@35.7105,139.7745,14z/data=!4m26!4m25!1m5!1m1!1s0x60188ec1a4b8e303:0x10e588cc tried!2m2!1d139.7966!2d35.7148!1m5!1m1!1s0x0:0x0!2m2!1d139.7953!2d35.7127!1m5!1m1!1s0x0:0x0!2m2!1d139.7744!2d35.7094!1m5!1m1!1s0x0:0x0!2m2!1d139.7731!2d35.6984!3e2" target="_blank" rel="noopener">Open Full Route in Google Maps</a></p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Leg</th><th>From → To</th><th>Walking Time</th><th>Distance</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Senso-ji → Nakamise Street</td><td>3 min</td><td>250 m</td></tr>
+<tr>
+<td>2</td><td>Nakamise → Ameyoko Market</td><td>20 min</td><td>1.5 km</td></tr>
+<tr>
+<td>3</td><td>Ameyoko → Akihabara</td><td>12 min</td><td>900 m</td></tr>
+<tr>
+<td>**Total**</td><td></td><td>**~35 min walking**</td><td>**~2.7 km**</td></tr>
+</tbody></table></div>
+<p><strong>Direct link:</strong> <a href="https://www.google.com/maps/dir/Sensoji+Temple,+2+Chome-3-1+Asakusa,+Taito+City,+Tokyo/Nakamise-dori,+Asakusa,+Taito+City,+Tokyo/Ameyoko+Shopping+Street,+Ueno,+Taito+City,+Tokyo/Akihabara+Station,+Tokyo/@35.706,139.775,14z/data=!3m1!4b1!4m26!4m25!1m5!1m1!1s0x60188ec1a4b8e303:0x7638e700bc1be0!2m2!1d139.7966!2d35.7148!1m5!1m1!1s0x60188ec1adc09e6b:0x3c2e6da4cf895a60!2m2!1d139.7953!2d35.7127!1m5!1m1!1s0x60188e9c0b489c6f:0x3a65feb3f4114564!2m2!1d139.7744!2d35.7094!1m5!1m1!1s0x60188ea7a213f5e5:0x5765c7f3bce5e89e!2m2!1d139.7731!2d35.6984!3e2" target="_blank" rel="noopener">Senso-ji → Nakamise → Ameyoko → Akihabara</a></p>
+<h3>Tokyo Day 2 — West Side (Harajuku → Shibuya → Shinjuku)</h3>
+<p><strong>Stops:</strong> Meiji Shrine → Takeshita Street (Harajuku) → Shibuya Crossing → Golden Gai (Shinjuku)</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Leg</th><th>From → To</th><th>Walking Time</th><th>Distance</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Meiji Shrine → Takeshita Street</td><td>10 min</td><td>700 m</td></tr>
+<tr>
+<td>2</td><td>Takeshita Street → Shibuya Crossing</td><td>18 min</td><td>1.3 km</td></tr>
+<tr>
+<td>3</td><td>Shibuya → Golden Gai (train recommended)</td><td>5 min by train</td><td>2 stops JR Yamanote</td></tr>
+<tr>
+<td>**Total**</td><td></td><td>**~33 min + train**</td><td>**~2 km walking**</td></tr>
+</tbody></table></div>
+<p><strong>Direct link:</strong> <a href="https://www.google.com/maps/dir/Meiji+Shrine,+1-1+Yoyogikamizonocho,+Shibuya+City,+Tokyo/Takeshita+Street,+Jingumae,+Shibuya+City,+Tokyo/Shibuya+Crossing,+Shibuya,+Tokyo/Golden+Gai,+Kabukicho,+Shinjuku+City,+Tokyo/@35.669,139.699,14z/data=!3m1!4b1!4m26!4m25!1m5!1m1!1s0x60188cb79a4c26e5:0x8fca893bfd7!2m2!1d139.6993!2d35.6764!1m5!1m1!1s0x60188ca148bfb00d:0x7106ec36e8cfb!2m2!1d139.7027!2d35.6715!1m5!1m1!1s0x60188b563060a929:0x3c26e1e82cda1!2m2!1d139.7016!2d35.6595!1m5!1m1!1s0x60188cd5c7ff988b:0x13a3b603660d70a!2m2!1d139.7036!2d35.6938!3e2" target="_blank" rel="noopener">Meiji Shrine → Harajuku → Shibuya → Golden Gai</a></p>
+<h3>Kyoto Day 1 — Eastern Kyoto Circuit</h3>
+<p><strong>Stops:</strong> Fushimi Inari Taisha → Kiyomizu-dera → Gion District → Nishiki Market</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Leg</th><th>From → To</th><th>Transport</th><th>Time</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Fushimi Inari → Kiyomizu-dera</td><td>Bus/train + walk</td><td>30 min</td></tr>
+<tr>
+<td>2</td><td>Kiyomizu-dera → Gion</td><td>Walk downhill</td><td>20 min</td></tr>
+<tr>
+<td>3</td><td>Gion → Nishiki Market</td><td>Walk</td><td>15 min</td></tr>
+<tr>
+<td>**Total**</td><td></td><td></td><td>**~65 min transit**</td></tr>
+</tbody></table></div>
+<p><strong>Direct link:</strong> <a href="https://www.google.com/maps/dir/Fushimi+Inari+Taisha,+68+Fukakusa+Yabunouchicho,+Fushimi+Ward,+Kyoto/Kiyomizu-dera,+1+Chome-294+Kiyomizu,+Higashiyama+Ward,+Kyoto/Gion,+Higashiyama+Ward,+Kyoto/Nishiki+Market,+Nakagyo+Ward,+Kyoto/@34.985,135.770,14z/data=!3m1!4b1!4m26!4m25!1m5!1m1!1s0x6010fb7b10e5b1e7:0xe86ffb4ecd0a7b37!2m2!1d135.7727!2d34.9671!1m5!1m1!1s0x600108d385dcfb51:0x62af658650c434f2!2m2!1d135.7850!2d34.9949!1m5!1m1!1s0x600108c12f89a2af:0xd20a3a5afae0aa0!2m2!1d135.7755!2d35.0036!1m5!1m1!1s0x600108924c23a991:0xcf814e30ca78c2c6!2m2!1d135.7651!2d35.0050!3e2" target="_blank" rel="noopener">Fushimi Inari → Kiyomizu-dera → Gion → Nishiki Market</a></p>
+<h3>Osaka Day 1 — Classic Osaka</h3>
+<p><strong>Stops:</strong> Osaka Castle → Kuromon Market → Shinsekai → Dotonbori</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Leg</th><th>From → To</th><th>Transport</th><th>Time</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Osaka Castle → Kuromon Market</td><td>Subway (Tanimachi Line)</td><td>15 min</td></tr>
+<tr>
+<td>2</td><td>Kuromon Market → Shinsekai</td><td>Walk</td><td>15 min</td></tr>
+<tr>
+<td>3</td><td>Shinsekai → Dotonbori</td><td>Walk</td><td>20 min</td></tr>
+<tr>
+<td>**Total**</td><td></td><td></td><td>**~50 min transit**</td></tr>
+</tbody></table></div>
+<p><strong>Direct link:</strong> <a href="https://www.google.com/maps/dir/Osaka+Castle,+1-1+Osakajo,+Chuo+Ward,+Osaka/Kuromon+Ichiba+Market,+Nipponbashi,+Chuo+Ward,+Osaka/Shinsekai,+Naniwa+Ward,+Osaka/Dotonbori,+Chuo+Ward,+Osaka/@34.668,135.505,14z/data=!3m1!4b1!4m26!4m25!1m5!1m1!1s0x6000e0d4e7286799:0xa507c56b22bbba31!2m2!1d135.5256!2d34.6873!1m5!1m1!1s0x6000e7175e6e64af:0xda24fa0e4ac9eb66!2m2!1d135.5068!2d34.6627!1m5!1m1!1s0x6000e757c4b5e0d5:0x36e9e2e17e9c0!2m2!1d135.5062!2d34.6524!1m5!1m1!1s0x6000e71539fa6eef:0x4e73fc9ce1a8b836!2m2!1d135.5013!2d34.6687!3e2" target="_blank" rel="noopener">Osaka Castle → Kuromon → Shinsekai → Dotonbori</a></p>
+<h3>Hiroshima — Peace Park + Miyajima Island</h3>
+<p><strong>Stops:</strong> Peace Memorial Park → Atomic Bomb Dome → Miyajima Ferry Terminal</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Leg</th><th>From → To</th><th>Transport</th><th>Time</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Peace Park → Atomic Bomb Dome</td><td>Walk</td><td>5 min</td></tr>
+<tr>
+<td>2</td><td>Atomic Bomb Dome → Miyajima Ferry</td><td>JR San'yo Line + JR Miyajima Ferry</td><td>50 min</td></tr>
+<tr>
+<td>**Total**</td><td></td><td></td><td>**~55 min transit**</td></tr>
+</tbody></table></div>
+<p><strong>Direct link:</strong> <a href="https://www.google.com/maps/dir/Hiroshima+Peace+Memorial+Park,+1+Nakajima-cho,+Naka+Ward,+Hiroshima/Atomic+Bomb+Dome,+1-10+Otemachi,+Naka+Ward,+Hiroshima/Miyajima+Ferry+Terminal,+Hatsukaichi,+Hiroshima/@34.37,132.35,12z/data=!3m1!4b1!4m20!4m19!1m5!1m1!1s0x355aa20b5c7e5549:0x8b1a07fdc1b0519e!2m2!1d132.4536!2d34.3915!1m5!1m1!1s0x355aa20b0e682b7f:0x67fa274a18c93be1!2m2!1d132.4536!2d34.3955!1m5!1m1!1s0x355ab912b52f1de7:0x4b4195a9af5f143!2m2!1d132.3033!2d34.3530!3e3" target="_blank" rel="noopener">Peace Park → Atomic Dome → Miyajima Ferry</a></p>
+<hr>
+<h2>Inter-City Routes</h2>
+<p>All legs use the <strong>Japan Rail Pass</strong> (JR Pass) — no additional ticket cost for Shinkansen reserved seats.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>#</th><th>From → To</th><th>Train</th><th>Duration</th><th>Cost (without JR Pass)</th><th>Google Maps Link</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Tokyo → Hakone</td><td>JR Tokaido Line → Odawara, then Hakone Tozan</td><td>~1 hr 30 min</td><td>~¥2,500</td><td>[Open Route](https://www.google.com/maps/dir/Tokyo+Station,+Tokyo/Hakone-Yumoto+Station,+Hakone,+Kanagawa/@35.3,139.2,10z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x60188bfbd89f700b:0x277c49ba34ed38!2m2!1d139.7671!2d35.6812!1m5!1m1!1s0x6019a057aa88b68d:0x1e00be80be4bde48!2m2!1d139.1031!2d35.2327!3e3)</td></tr>
+<tr>
+<td>2</td><td>Hakone → Kyoto</td><td>Odawara → Kyoto (Tokaido Shinkansen Hikari)</td><td>~2 hr 10 min</td><td>~¥11,000</td><td>[Open Route](https://www.google.com/maps/dir/Odawara+Station,+Odawara,+Kanagawa/Kyoto+Station,+Kyoto/@35.0,136.5,8z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x6019a1e0b8e5b7ed:0x5e9d9ab7dac90e4f!2m2!1d139.1521!2d35.2563!1m5!1m1!1s0x600108ae918b02ef:0xb61a446e74a21c08!2m2!1d135.7587!2d34.9856!3e3)</td></tr>
+<tr>
+<td>3</td><td>Kyoto → Osaka</td><td>JR Special Rapid (Tokaido-Sanyo Line)</td><td>~29 min</td><td>~¥580</td><td>[Open Route](https://www.google.com/maps/dir/Kyoto+Station,+Kyoto/Osaka+Station,+Osaka/@34.9,135.6,11z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x600108ae918b02ef:0xb61a446e74a21c08!2m2!1d135.7587!2d34.9856!1m5!1m1!1s0x6000e68d95e3a70b:0xd1b1389c8ca3cd6b!2m2!1d135.4983!2d34.7024!3e3)</td></tr>
+<tr>
+<td>4</td><td>Osaka → Hiroshima</td><td>Sanyo Shinkansen Nozomi/Hikari</td><td>~1 hr 25 min</td><td>~¥10,400</td><td>[Open Route](https://www.google.com/maps/dir/Shin-Osaka+Station,+Osaka/Hiroshima+Station,+Hiroshima/@34.5,133.5,8z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x6000e4d6ece1c667:0xf807dc43f80ef3e4!2m2!1d135.5003!2d34.7334!1m5!1m1!1s0x355a9f41fc1ce5d7:0x7a47dc4e98d88c4f!2m2!1d132.4753!2d34.3978!3e3)</td></tr>
+<tr>
+<td>5</td><td>Hiroshima → Tokyo</td><td>Sanyo/Tokaido Shinkansen Nozomi</td><td>~3 hr 50 min</td><td>~¥19,000</td><td>[Open Route](https://www.google.com/maps/dir/Hiroshima+Station,+Hiroshima/Tokyo+Station,+Tokyo/@35.0,134.5,7z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x355a9f41fc1ce5d7:0x7a47dc4e98d88c4f!2m2!1d132.4753!2d34.3978!1m5!1m1!1s0x60188bfbd89f700b:0x277c49ba34ed38!2m2!1d139.7671!2d35.6812!3e3)</td></tr>
+</tbody></table></div>
+<blockquote>
+<p><strong>Note:</strong> Nozomi trains are NOT covered by the standard JR Pass. Use Hikari or Sakura services instead. If you have the new "Nozomi-inclusive" JR Pass, all trains are available.</p>
+</blockquote>
+<hr>
+<h2>Airport Transfer Step-by-Step</h2>
+<h3>Narita Airport → Shinjuku Station (N'EX — Narita Express)</h3>
+<ol>
+<li>After clearing customs, follow signs to the <strong>B1F JR ticket counter</strong> in the airport basement</li>
+<li>Purchase a <strong>N'EX Tokyo Round Trip Ticket</strong> (¥4,070 for foreign passport holders — show passport)</li>
+<li>Alternatively, use a <strong>Suica/PASMO IC card</strong> (not valid for N'EX reserved seats, though)</li>
+<li>Look for the <strong>JR Narita Express</strong> departure board — trains run every 30-60 minutes</li>
+<li>Board the N'EX on the correct car (check your seat reservation car number)</li>
+<li>Ride direct to <strong>Shinjuku Station</strong> — approximately <strong>1 hour 20 minutes</strong></li>
+<li>At Shinjuku, exit via the <strong>East Exit</strong> or <strong>South Exit</strong> depending on your hotel location</li>
+<li>The train also stops at Tokyo Station (~53 min), Shibuya (~75 min), and Ikebukuro (~85 min)</li>
+</ol>
+<p><strong>Quick reference:</strong></p>
+<ul>
+<li>First train from Narita: ~7:30 AM</li>
+<li>Last train from Narita: ~9:45 PM</li>
+<li>Cost: ¥4,070 (round trip tourist discount) or ¥3,250 (one-way regular)</li>
+</ul>
+<p><a href="https://www.google.com/maps/dir/Narita+International+Airport,+Narita,+Chiba/Shinjuku+Station,+Tokyo/@35.7,140.0,10z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x6022f0a8b0e4b5e3:0x7a0babb4a3a9d0de!2m2!1d140.3929!2d35.7720!1m5!1m1!1s0x60188cd0d6b1ba1f:0x1c32a1f1ecacfdd5!2m2!1d139.7003!2d35.6896!3e3" target="_blank" rel="noopener">Narita Airport → Shinjuku on Google Maps</a></p>
+<h3>Haneda Airport → Central Tokyo (Keikyu Line)</h3>
+<ol>
+<li>After clearing arrivals, follow signs to the <strong>Keikyu Line</strong> (京急線) in the basement level</li>
+<li>Purchase a ticket from the machines (accept IC cards) or tap your <strong>Suica/PASMO</strong> directly</li>
+<li>Board the <strong>Keikyu Airport Express</strong> or <strong>Keikyu Limited Express</strong></li>
+<li>Ride to <strong>Shinagawa Station</strong> — approximately <strong>13 minutes</strong> (¥300)</li>
+<li>At Shinagawa, transfer to the <strong>JR Yamanote Line</strong> (the green circle line) for:</li>
+<li>   - Tokyo Station — 7 min</li>
+<li>   - Shibuya — 17 min</li>
+<li>   - Shinjuku — 22 min</li>
+<li>   - Ueno — 15 min</li>
+<li>Alternatively, some Keikyu trains run directly through to <strong>Asakusa</strong> via Toei Asakusa Line (no transfer needed — check the train's destination board)</li>
+</ol>
+<p><strong>Quick reference:</strong></p>
+<ul>
+<li>First train to Shinagawa: ~5:25 AM</li>
+<li>Last train to Shinagawa: ~12:05 AM (midnight)</li>
+<li>Cost: ¥300 to Shinagawa, ¥600-800 total to most central areas</li>
+</ul>
+<p><a href="https://www.google.com/maps/dir/Haneda+Airport,+Ota+City,+Tokyo/Tokyo+Station,+Chiyoda+City,+Tokyo/@35.62,139.75,12z/data=!3m1!4b1!4m14!4m13!1m5!1m1!1s0x601860f07e24a0c3:0x2e1b7e016cb8e50!2m2!1d139.7798!2d35.5494!1m5!1m1!1s0x60188bfbd89f700b:0x277c49ba34ed38!2m2!1d139.7671!2d35.6812!3e3" target="_blank" rel="noopener">Haneda Airport → Tokyo Station on Google Maps</a></p>
+<hr>
+<h2>Key Addresses in Japanese</h2>
+<p>Print this section or save to your phone. Showing this to a taxi driver or passerby will get you where you need to go.</p>
+<h3>Tokyo</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>English Name</th><th>Japanese Name</th><th>Full Address (Japanese)</th><th>Nearest Station</th></tr></thead><tbody>
+<tr>
+<td>Senso-ji Temple</td><td>浅草寺</td><td>〒111-0032 東京都台東区浅草2丁目3-1</td><td>Asakusa (浅草駅)</td></tr>
+<tr>
+<td>Meiji Shrine</td><td>明治神宮</td><td>〒151-8557 東京都渋谷区代々木神園町1-1</td><td>Meiji-jingumae (明治神宮前駅)</td></tr>
+<tr>
+<td>Tokyo Skytree</td><td>東京スカイツリー</td><td>〒131-0045 東京都墨田区押上1丁目1-2</td><td>Oshiage (押上駅)</td></tr>
+<tr>
+<td>Shibuya Crossing</td><td>渋谷スクランブル交差点</td><td>〒150-0041 東京都渋谷区神南1丁目</td><td>Shibuya (渋谷駅)</td></tr>
+<tr>
+<td>Tsukiji Outer Market</td><td>築地場外市場</td><td>〒104-0045 東京都中央区築地4丁目16-2</td><td>Tsukiji (築地駅)</td></tr>
+<tr>
+<td>Akihabara Electric Town</td><td>秋葉原電気街</td><td>〒101-0021 東京都千代田区外神田1丁目</td><td>Akihabara (秋葉原駅)</td></tr>
+<tr>
+<td>Shinjuku Gyoen</td><td>新宿御苑</td><td>〒160-0014 東京都新宿区内藤町11</td><td>Shinjuku-gyoenmae (新宿御苑前駅)</td></tr>
+<tr>
+<td>Golden Gai</td><td>新宿ゴールデン街</td><td>〒160-0021 東京都新宿区歌舞伎町1丁目1</td><td>Shinjuku (新宿駅)</td></tr>
+</tbody></table></div>
+<h3>Kyoto</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>English Name</th><th>Japanese Name</th><th>Full Address (Japanese)</th><th>Nearest Station</th></tr></thead><tbody>
+<tr>
+<td>Fushimi Inari Taisha</td><td>伏見稲荷大社</td><td>〒612-0882 京都府京都市伏見区深草藪之内町68</td><td>Inari (稲荷駅)</td></tr>
+<tr>
+<td>Kinkaku-ji</td><td>金閣寺</td><td>〒603-8361 京都府京都市北区金閣寺町1</td><td>Bus from Kyoto Stn (バス 金閣寺道)</td></tr>
+<tr>
+<td>Kiyomizu-dera</td><td>清水寺</td><td>〒605-0862 京都府京都市東山区清水1丁目294</td><td>Kiyomizu-Gojo (清水五条駅)</td></tr>
+<tr>
+<td>Nishiki Market</td><td>錦市場</td><td>〒604-8054 京都府京都市中京区錦小路通</td><td>Shijo (四条駅)</td></tr>
+</tbody></table></div>
+<h3>Osaka</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>English Name</th><th>Japanese Name</th><th>Full Address (Japanese)</th><th>Nearest Station</th></tr></thead><tbody>
+<tr>
+<td>Osaka Castle</td><td>大阪城</td><td>〒540-0002 大阪府大阪市中央区大阪城1-1</td><td>Osakajokoen (大阪城公園駅)</td></tr>
+<tr>
+<td>Dotonbori</td><td>道頓堀</td><td>〒542-0071 大阪府大阪市中央区道頓堀1丁目</td><td>Namba (なんば駅)</td></tr>
+<tr>
+<td>Kuromon Market</td><td>黒門市場</td><td>〒542-0073 大阪府大阪市中央区日本橋2丁目4-1</td><td>Nippombashi (日本橋駅)</td></tr>
+</tbody></table></div>
+<h3>Hiroshima</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>English Name</th><th>Japanese Name</th><th>Full Address (Japanese)</th><th>Nearest Station</th></tr></thead><tbody>
+<tr>
+<td>Peace Memorial Park</td><td>平和記念公園</td><td>〒730-0811 広島県広島市中区中島町1-2</td><td>Genbaku-Dome-mae (原爆ドーム前)</td></tr>
+<tr>
+<td>Atomic Bomb Dome</td><td>原爆ドーム</td><td>〒730-0051 広島県広島市中区大手町1-10</td><td>Genbaku-Dome-mae (原爆ドーム前)</td></tr>
+<tr>
+<td>Itsukushima Shrine</td><td>厳島神社</td><td>〒739-0588 広島県廿日市市宮島町1-1</td><td>Miyajimaguchi (宮島口駅) + ferry</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Offline Map Instructions</h2>
+<p>Download these maps <strong>before leaving home</strong> over Wi-Fi. Offline maps work without any data connection for navigation, search, and directions.</p>
+<h3>Google Maps (Primary — Recommended)</h3>
+<ol>
+<li>Open Google Maps on your phone</li>
+<li>Tap your profile picture → <strong>Offline maps</strong> → <strong>Select your own map</strong></li>
+<li>Download the following regions:</li>
+</ol>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Region</th><th>Suggested Area</th><th>Estimated Size</th></tr></thead><tbody>
+<tr>
+<td>Tokyo Metro</td><td>Central 23 wards (Shibuya to Asakusa)</td><td>~250 MB</td></tr>
+<tr>
+<td>Hakone / Odawara</td><td>Odawara to Lake Ashi</td><td>~80 MB</td></tr>
+<tr>
+<td>Kyoto</td><td>Full city + Arashiyama + Fushimi</td><td>~150 MB</td></tr>
+<tr>
+<td>Osaka</td><td>Central Osaka (Umeda to Tennoji)</td><td>~120 MB</td></tr>
+<tr>
+<td>Hiroshima + Miyajima</td><td>Hiroshima city + island</td><td>~100 MB</td></tr>
+<tr>
+<td>**Total**</td><td></td><td>**~700 MB**</td></tr>
+</tbody></table></div>
+<ol>
+<li>Maps expire after 365 days — set auto-update if travelling later</li>
+<li>Offline maps support <strong>driving and walking</strong> directions but <strong>NOT transit directions</strong></li>
+</ol>
+<h3>Maps.me (Backup)</h3>
+<ol>
+<li>Install <strong>Maps.me</strong> (free) from App Store or Google Play</li>
+<li>Open the app → search for "Japan"</li>
+<li>Download the following map files:</li>
+</ol>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Map File</th><th>Size</th></tr></thead><tbody>
+<tr>
+<td>Kanto (Tokyo, Hakone)</td><td>~220 MB</td></tr>
+<tr>
+<td>Kansai (Kyoto, Osaka)</td><td>~150 MB</td></tr>
+<tr>
+<td>Chugoku (Hiroshima)</td><td>~100 MB</td></tr>
+<tr>
+<td>**Total**</td><td>**~470 MB**</td></tr>
+</tbody></table></div>
+<ol>
+<li>Maps.me works fully offline including search and routing</li>
+<li>Has good coverage of hiking trails and smaller paths</li>
+</ol>
+<h3>Tip: Download Both</h3>
+<p>Google Maps has better transit data and street detail. Maps.me has better offline search and trail coverage. Having both is ideal — total ~1.2 GB storage needed.</p>
+<hr>
+<h2>Navigation Tips</h2>
+<h3>Google Maps Transit Is Exceptional in Japan</h3>
+<ul>
+<li>Japan has the <strong>best Google Maps transit coverage in the world</strong></li>
+<li>Real-time train delays, platform numbers, and exact fare breakdowns</li>
+<li>Always shows multiple route options with transfer details</li>
+<li>Works for JR, private railways, subway, bus, and even ferries</li>
+</ul>
+<h3>Search by Station Name, Not Address</h3>
+<ul>
+<li>Japanese addresses are notoriously confusing (block-based, not street-based)</li>
+<li>Always search for the <strong>nearest station name</strong> + landmark name</li>
+<li>Example: search "Senso-ji Asakusa" not "2-3-1 Asakusa, Taito-ku"</li>
+<li>Taxi drivers understand station names far better than street addresses</li>
+</ul>
+<h3>Last Train Times — Do Not Miss These</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>City</th><th>Typical Last Train</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>Tokyo</td><td>11:45 PM - 12:15 AM</td><td>Yamanote Line last train ~12:15 AM</td></tr>
+<tr>
+<td>Kyoto</td><td>~11:30 PM</td><td>Buses stop earlier (~9 PM)</td></tr>
+<tr>
+<td>Osaka</td><td>~12:00 AM</td><td>Midosuji Line last train ~12:05 AM</td></tr>
+<tr>
+<td>Hiroshima</td><td>~11:00 PM</td><td>Streetcars stop ~11:00 PM</td></tr>
+</tbody></table></div>
+<ul>
+<li><strong>Missing the last train</strong> means either a ¥5,000-10,000 taxi ride or waiting at a manga cafe / karaoke until 5 AM first trains</li>
+<li>Google Maps will <strong>warn you</strong> when the last train is approaching — pay attention to the alert</li>
+<li>Friday/Saturday nights are especially risky — trains are packed near last-train time</li>
+</ul>
+<h3>IC Cards (Suica / PASMO)</h3>
+<ul>
+<li>Buy a <strong>Suica</strong> or <strong>PASMO</strong> IC card at any JR station machine (¥500 deposit + charge)</li>
+<li>Tap in, tap out — works on virtually all trains, subways, and buses nationwide</li>
+<li>Also works at convenience stores (7-Eleven, Lawson, FamilyMart), vending machines, and coin lockers</li>
+<li><strong>Apple Wallet Suica</strong> is the best option — add via Wallet app, charge with Apple Pay, no physical card needed</li>
+<li>IC cards work across all cities: buy once in Tokyo, use everywhere</li>
+</ul>
+<h3>Luggage Forwarding (Takkyubin)</h3>
+<ul>
+<li><strong>Do NOT drag large luggage on trains</strong> — it blocks aisles, there is limited space, and Shinkansen overhead racks are small</li>
+<li>Use <strong>Yamato Transport (Kuroneko)</strong> or <strong>Sagawa Express</strong> to forward luggage between hotels</li>
+<li>Cost: ~¥2,000-3,000 per bag, next-day delivery</li>
+<li>Drop off at any convenience store (7-Eleven for Yamato, Lawson for Sagawa) or ask your hotel front desk</li>
+<li>Ship bags the morning you check out → they arrive at your next hotel by the following afternoon</li>
+<li>This is how Japanese travellers do it — embrace it</li>
+</ul>
+<h3>Useful Navigation Phrases</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>English</th><th>Japanese</th><th>Romaji</th></tr></thead><tbody>
+<tr>
+<td>Where is ___ station?</td><td>___駅はどこですか？</td><td>___ eki wa doko desu ka?</td></tr>
+<tr>
+<td>Please go to ___</td><td>___までお願いします</td><td>___ made onegaishimasu</td></tr>
+<tr>
+<td>How much is it?</td><td>いくらですか？</td><td>Ikura desu ka?</td></tr>
+<tr>
+<td>Is this the right platform?</td><td>このホームで合っていますか？</td><td>Kono homu de atte imasu ka?</td></tr>
+<tr>
+<td>Last train</td><td>終電</td><td>Shuden</td></tr>
+<tr>
+<td>Transfer</td><td>乗り換え</td><td>Norikae</td></tr>
+</tbody></table></div>
+<hr>
+<p><em>Last updated: March 2026. Verify all links and transit times closer to your October travel dates — schedules may change seasonally.</em></p>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

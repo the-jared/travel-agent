@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Post-Trip Guide</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Post-Trip Guide</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Post-Trip Guide — Japan October 2026</h1>
+<blockquote>
+<p>Everything you need to handle in the first week after returning home.</p>
+</blockquote>
+<hr>
+<h2>1. Jet Lag Recovery (Eastbound US Return)</h2>
+<p>Returning from Japan to the US is eastbound travel, which is harder on the body than westbound. Japan is 13-17 hours ahead of US time zones, effectively meaning your body thinks it's tomorrow.</p>
+<h3>Recovery Protocol</h3>
+<p><strong>Rule of thumb:</strong> ~1.5 days of adjustment per timezone crossed. For a 13-hour difference (US East Coast), expect 7-10 days for full recovery. For 16-hour difference (US West Coast), expect 10-14 days.</p>
+<p><strong>Day 1-2 (arrival day + next day):</strong></p>
+<ul>
+<li>Get morning sunlight immediately (within 30 min of waking). Walk outside for 20-30 min. This is the single most powerful reset signal.</li>
+<li>Do NOT nap, no matter how tired you are. If you absolutely must, limit to 20 min before 2:00 PM.</li>
+<li>Eat meals at local mealtimes even if not hungry. Meals are a circadian cue.</li>
+<li>Take 0.5-1mg melatonin at your new local bedtime (not before 9:00 PM). Low dose is more effective than high dose.</li>
+<li>Avoid caffeine after 12:00 PM.</li>
+<li>Go to bed at your normal local bedtime (not earlier, even if exhausted).</li>
+</ul>
+<p><strong>Day 3-5:</strong></p>
+<ul>
+<li>Continue morning light exposure (30 min outdoor walk).</li>
+<li>Continue melatonin at bedtime.</li>
+<li>You'll likely wake at 3:00-5:00 AM. Don't fight it too hard — get up, keep lights dim, avoid screens. Try to stay in bed until 5:30 AM minimum.</li>
+<li>Light exercise (walk, yoga) in the morning. No intense workouts in the evening.</li>
+</ul>
+<p><strong>Day 6-10:</strong></p>
+<ul>
+<li>Waking time normalizes. Stop melatonin once you're sleeping through to 6:00 AM.</li>
+<li>Energy dips in the afternoon are normal — push through without caffeine if possible.</li>
+<li>Full cognitive performance returns around day 10-14.</li>
+</ul>
+<h3>What NOT to Do</h3>
+<ul>
+<li>Do NOT take sleeping pills (they knock you out but don't reset your clock)</li>
+<li>Do NOT stay up all night to "force" adjustment</li>
+<li>Do NOT wear sunglasses in the morning (you need that light)</li>
+<li>Do NOT drink alcohol to help sleep (it fragments sleep architecture)</li>
+</ul>
+<hr>
+<h2>2. US Customs & Duty-Free Allowance</h2>
+<h3>Duty-Free Limits (Per Person)</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Category</th><th>Allowance</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>General goods</td><td>**$800**</td><td>Total value of purchases abroad</td></tr>
+<tr>
+<td>Alcohol</td><td>1 liter</td><td>Must be 21+</td></tr>
+<tr>
+<td>Cigarettes</td><td>200 (1 carton)</td><td>Or 100 cigars</td></tr>
+<tr>
+<td>Gifts</td><td>Included in $800</td><td>No separate gift exemption</td></tr>
+</tbody></table></div>
+<h3>Items to Declare</h3>
+<ul>
+<li>All food items (packaged snacks are usually fine; fresh produce/meat is NOT)</li>
+<li>All purchases over $800 combined value</li>
+<li>Any items purchased for others / commercial purposes</li>
+</ul>
+<h3>Japan-Specific Customs Notes</h3>
+<ul>
+<li><strong>Japanese whisky:</strong> 1 liter duty-free. Additional bottles taxed at ~$2.50/750ml (federal) plus state rates. Worth bringing extra if you found good bottles.</li>
+<li><strong>Green tea / matcha:</strong> Packaged tea is fine to bring back. Declare on the form.</li>
+<li><strong>Wagashi / snacks:</strong> Packaged sweets, rice crackers, Kit Kats = all fine. No fresh items.</li>
+<li><strong>Knives (Japanese kitchen knives):</strong> Legal to bring back in checked luggage. Not duty-free if over $800 total purchases.</li>
+<li><strong>Ceramics / pottery:</strong> No restrictions. Wrap well in clothes in checked bag.</li>
+<li><strong>Prescription medications:</strong> Bring original packaging and prescription documentation.</li>
+</ul>
+<h3>CBP Declaration Tips</h3>
+<ul>
+<li>Keep receipts for major purchases</li>
+<li>Estimate prices for small items (konbini snacks, small souvenirs)</li>
+<li>If over $800: you pay duty on the amount above $800 (usually 3-5% for most goods)</li>
+<li>Fill out CBP Declaration Form 6059B on the plane (one per family)</li>
+</ul>
+<hr>
+<h2>3. Expense Reconciliation</h2>
+<h3>Template</h3>
+<p>Track all trip expenses and reconcile against your budget.</p>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Category</th><th>Budgeted</th><th>Actual</th><th>Variance</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>**Flights**</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>**Accommodations**</td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td>- Tokyo hotel</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- Kyoto ryokan</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- Kyoto hotel</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- Osaka hotel</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>**Transport**</td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td>- JR Pass</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- Suica/local transit</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- Taxis</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- Hakone Free Pass</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>**Food & Drink**</td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td>- Restaurants</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- Street food / konbini</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- Bars / drinks</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>**Activities**</td><td></td><td></td><td></td><td></td></tr>
+<tr>
+<td>- Temple / museum entry</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- TeamLab</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- Cooking class</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>- Walking tours</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>**Shopping**</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>**Pocket WiFi / SIM**</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>**Travel Insurance**</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>**Miscellaneous**</td><td>$</td><td>$</td><td>$</td><td></td></tr>
+<tr>
+<td>**TOTAL**</td><td>**$**</td><td>**$**</td><td>**$**</td><td></td></tr>
+</tbody></table></div>
+<h3>Reconciliation Steps</h3>
+<ol>
+<li>[ ] Download credit card transactions for the trip dates</li>
+<li>[ ] Convert JPY transactions to USD at the actual exchange rate charged</li>
+<li>[ ] Add cash withdrawals and estimate cash spending by category</li>
+<li>[ ] Fill in the table above</li>
+<li>[ ] Note any budget overruns and why (useful for future trip planning)</li>
+<li>[ ] File receipts for any items you might return or claim on insurance</li>
+</ol>
+<p><strong>JPY to USD conversion note:</strong> Use the rate on your credit card statement, not Google's rate. Your bank's rate is what you actually paid.</p>
+<hr>
+<h2>4. Review Reminders</h2>
+<p>Leave reviews within 1-2 weeks while memories are fresh. Good reviews help small businesses and future travelers.</p>
+<h3>Where to Review</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb1" ><label for="cb1"><strong>Google Maps</strong> — Review restaurants, hotels, and attractions you loved. Add photos.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb2" ><label for="cb2"><strong>Booking.com / Agoda</strong> — Review your hotels (you'll get email prompts)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb3" ><label for="cb3"><strong>TripAdvisor</strong> — Review standout experiences, especially hidden gems</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb4" ><label for="cb4"><strong>Tabelog</strong> — If you created an account, review restaurants (supports English)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb5" ><label for="cb5"><strong>Airbnb</strong> — If you used any Airbnb experiences or stays</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb6" ><label for="cb6"><strong>Google Flights</strong> — Rate your airline experience</label></li>
+</ul>
+<h3>What to Review</h3>
+<p>Prioritize reviews for:</p>
+<ul>
+<li>Small/family-run restaurants (your review has more impact)</li>
+<li>Ryokan (future travelers rely heavily on reviews for these)</li>
+<li>Any hidden gems from <a href="./06-hidden-gems.md" target="_blank" rel="noopener">06-hidden-gems.md</a> — help them get discovered (or stay hidden, your call)</li>
+<li>Walking tour guides (tips and reviews are their livelihood)</li>
+<li>Bad experiences (factual, not emotional — helps others avoid)</li>
+</ul>
+<hr>
+<h2>5. Loyalty Points Checklist</h2>
+<p>Ensure all points are credited correctly within 30 days of return.</p>
+<h3>Airlines</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb7" ><label for="cb7">Check airline account for miles credited from flights</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb8" ><label for="cb8">If miles are missing: submit claim with booking reference + boarding pass photo</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb9" ><label for="cb9">Check for any partner airline credit (Star Alliance, OneWorld, SkyTeam)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb10" ><label for="cb10">Note status progress toward next tier</label></li>
+</ul>
+<h3>Hotels</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb11" ><label for="cb11">Verify hotel loyalty points posted (Marriott, Hilton, IHG, Hyatt, etc.)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb12" ><label for="cb12">If missing: contact hotel chain with confirmation number</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb13" ><label for="cb13">Check for any bonus point promotions that were active during your stay</label></li>
+</ul>
+<h3>Credit Cards</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb14" ><label for="cb14">Verify travel category bonus points (many cards give 3-5x on travel/dining)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb15" ><label for="cb15">Check for any trip-specific promotions or offers you activated</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb16" ><label for="cb16">Review foreign transaction fees charged (if your card charges them, consider switching for future trips)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb17" ><label for="cb17">Submit any travel insurance claims if applicable (delayed flights, lost bags)</label></li>
+</ul>
+<h3>Other Programs</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb18" ><label for="cb18">JR Pass — no loyalty program, but save your pass as a souvenir</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb19" ><label for="cb19">JAL / ANA domestic flights — ensure Mileage Club credit if applicable</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb20" ><label for="cb20">Check if any restaurant bookings earned points (Pocket Concierge, etc.)</label></li>
+</ul>
+<hr>
+<h2>6. Photo Organization</h2>
+<h3>Week 1 After Return</h3>
+<ol>
+<li>[ ] <strong>Import all photos</strong> from all devices (phone, camera, partner's phone) into one location</li>
+<li>[ ] <strong>Back up immediately</strong> — cloud (Google Photos, iCloud, Amazon Photos) AND local (external drive)</li>
+<li>[ ] <strong>Delete obvious trash</strong> — blurry shots, duplicates, accidental screenshots. Don't be precious; if it's blurry, delete it.</li>
+</ol>
+<h3>Week 2 After Return</h3>
+<ol>
+<li>[ ] <strong>Organize by day/location</strong> — Create folders or albums:</li>
+<li>   - <code>Day 01 - Tokyo Arrival</code></li>
+<li>   - <code>Day 02 - Tokyo Shibuya Shinjuku</code></li>
+<li>   - <code>Day 03 - Hakone Day Trip</code></li>
+<li>   - etc.</li>
+<li>[ ] <strong>Star/favorite your best 50-100 photos</strong> — These are your "hero shots" for sharing</li>
+<li>[ ] <strong>Edit hero shots</strong> — Basic adjustments: exposure, contrast, color temperature. Japan photos often benefit from slightly boosted warm tones.</li>
+</ol>
+<h3>Week 3-4 After Return</h3>
+<ol>
+<li>[ ] <strong>Create a shared album</strong> for travel companions</li>
+<li>[ ] <strong>Select 20-30 photos</strong> for social media / sharing (if desired)</li>
+<li>[ ] <strong>Consider a photo book</strong> — Services: <a href="https://www.artifactuprising.com" target="_blank" rel="noopener">Artifact Uprising</a>, <a href="https://www.shutterfly.com" target="_blank" rel="noopener">Shutterfly</a>, <a href="https://photos.google.com" target="_blank" rel="noopener">Google Photos books</a></li>
+<li>[ ] <strong>Archive raw files</strong> — If you shot RAW, keep the originals on an external drive. They're large but future-proof.</li>
+</ol>
+<h3>Photo Metadata</h3>
+<ul>
+<li>Ensure location data is on (GPS tagging) so you can always find where a photo was taken</li>
+<li>If your camera doesn't geotag, sync timestamps with your phone photos to approximate locations later</li>
+</ul>
+<hr>
+<h2>7. Follow-Up Actions</h2>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb21" ><label for="cb21">Send thank-you messages to anyone who helped (tour guides, hotel staff who went above and beyond)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb22" ><label for="cb22">Cancel any Japan-specific subscriptions (pocket WiFi, data plans)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb23" ><label for="cb23">Return pocket WiFi device (if rented with return envelope)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb24" ><label for="cb24">Check Suica card balance — cards can be refunded at JR stations, or keep for next trip (balance doesn't expire for 10 years)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb25" ><label for="cb25">Update your trip notes in this folder with any corrections or additions while memory is fresh</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb26" ><label for="cb26">Start a "next time" list — places you wanted to visit but didn't get to</label></li>
+</ul>
+<hr>
+<h2>8. Tax-Free Shopping Refund Check</h2>
+<p>If you used Japan's tax-free shopping (8-10% consumption tax removed at purchase):</p>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb27" ><label for="cb27">Confirm all tax-free items left Japan with you (customs may have checked at departure)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb28" ><label for="cb28">Tax-free receipts stapled to your passport can now be removed</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb29" ><label for="cb29">If any tax-free purchases were consumed in Japan (opened food, used cosmetics), you technically owe the tax — in practice this is not enforced for small amounts</label></li>
+</ul>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

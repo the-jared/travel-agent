@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Step-by-Step Guides</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Step-by-Step Guides</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Step-by-Step Guides — Japan October 2026</h1>
+<p>Detailed navigation instructions between every major leg of the trip. Each guide includes platform numbers, ticket info, estimated times, and a Google Maps link.</p>
+<hr>
+<h2>1. Narita Airport → Shinjuku Hotel</h2>
+<p><strong>Mode:</strong> Narita Express (N'EX) | <strong>Time:</strong> ~85 min | <strong>Cost:</strong> ¥3,250 (or JR Pass)</p>
+<ol>
+<li>Clear customs and follow signs to <strong>"Trains / 電車"</strong> on level B1</li>
+<li>Look for the <strong>JR East Travel Service Center</strong> (green signs) — buy a Narita Express ticket or activate your JR Pass here</li>
+<li>Tap through the JR ticket gate and follow signs to the <strong>N'EX platform</strong> (usually tracks 1-2 at Terminal 1, track 1 at Terminal 2/3)</li>
+<li>Board the <strong>Narita Express bound for Shinjuku</strong> (check the car — the train splits at Tokyo Station; front cars go to Shinjuku)</li>
+<li>Ride ~85 minutes; the train is reserved seating, so find your assigned seat</li>
+<li>Exit at <strong>Shinjuku Station</strong> — follow signs to the <strong>South Exit / 南口</strong></li>
+<li>Cross the street to the <strong>Busta Shinjuku</strong> side; most Shinjuku hotels are within 10 min walk of the South Exit</li>
+</ol>
+<p><strong>Google Maps:</strong> <a href="https://www.google.com/maps/dir/Narita+International+Airport,+Narita,+Chiba/Shinjuku+Station,+Shinjuku,+Tokyo" target="_blank" rel="noopener">Narita Airport → Shinjuku Station</a></p>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>If arriving after 9 PM, N'EX service may be limited — check the last train (~9:45 PM from Narita)</li>
+<li>Alternative: Airport Limousine Bus to Shinjuku (~100 min, ¥3,200) — easier with heavy luggage</li>
+<li>Charge your Suica/Pasmo at the airport for local transit once you arrive</li>
+</ul>
+<hr>
+<h2>2. Shinjuku → Hakone (Romancecar)</h2>
+<p><strong>Mode:</strong> Odakyu Romancecar | <strong>Time:</strong> ~85 min | <strong>Cost:</strong> ¥2,330 (base + surcharge)</p>
+<ol>
+<li>From your hotel, head to <strong>Shinjuku Station West Exit</strong> side</li>
+<li>Follow signs for <strong>Odakyu Line / 小田急線</strong> (separate from JR gates — look for the blue Odakyu signs)</li>
+<li>Go to the <strong>Odakyu Sightseeing Service Center</strong> (ground floor near the West Exit) to buy a <strong>Hakone Free Pass</strong> (¥6,100 for 2 days) — this covers the Romancecar surcharge is separate</li>
+<li>Buy the <strong>Romancecar limited express surcharge</strong> (¥1,110) at the ticket window or machine — this is in addition to the Free Pass</li>
+<li>Go to the <strong>Odakyu platforms</strong> (usually platforms 2-3 for Romancecar) — check the departure board</li>
+<li>Board the Romancecar — all reserved seating. Window seats on the left side offer the best views</li>
+<li>Ride 85 min to <strong>Hakone-Yumoto Station / 箱根湯本</strong></li>
+<li>At Hakone-Yumoto, exit and find the <strong>bus terminal</strong> directly outside for connections to your ryokan area</li>
+</ol>
+<p><strong>Google Maps:</strong> <a href="https://www.google.com/maps/dir/Shinjuku+Station,+Tokyo/Hakone-Yumoto+Station,+Hakone,+Kanagawa" target="_blank" rel="noopener">Shinjuku Station → Hakone-Yumoto Station</a></p>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>Book Romancecar seats online at <a href="https://www.web-odakyu.com/e-romancecar/" target="_blank" rel="noopener">romancecar.com</a> up to 1 month ahead — window seats sell out on weekends</li>
+<li>The Hakone Free Pass covers buses, ropeways, boats, and the return trip (regular express, not Romancecar)</li>
+<li>Front-observation car (展望車) is a special treat — book early</li>
+</ul>
+<hr>
+<h2>3. Hakone → Kyoto (via Odawara Shinkansen)</h2>
+<p><strong>Mode:</strong> Local train + Shinkansen Hikari | <strong>Time:</strong> ~2.5 hrs total | <strong>Cost:</strong> Covered by JR Pass (or ~¥11,000)</p>
+<ol>
+<li>From your ryokan, take a <strong>bus or Hakone Tozan train</strong> to <strong>Hakone-Yumoto Station</strong> (Hakone Free Pass covers this)</li>
+<li>At Hakone-Yumoto, board the <strong>Odakyu Line to Odawara</strong> (3 stops, ~15 min) — use your Hakone Free Pass</li>
+<li>At <strong>Odawara Station / 小田原駅</strong>, exit Odakyu and follow signs to <strong>JR Shinkansen / 新幹線</strong> (it's a short walk through the station)</li>
+<li>Tap through the <strong>JR Shinkansen gate</strong> with your JR Pass or buy a ticket at the machine</li>
+<li>Go to <strong>platforms 5-6</strong> and board the <strong>Hikari or Kodama toward Kyoto/Shin-Osaka</strong> (do NOT take the Nozomi — it's not covered by JR Pass)</li>
+<li>Ride to <strong>Kyoto Station / 京都駅</strong> (~2 hours from Odawara on Hikari)</li>
+<li>Exit the Shinkansen gate at Kyoto Station — you'll be on the <strong>Hachijo (south) side</strong></li>
+</ol>
+<p><strong>Google Maps:</strong> <a href="https://www.google.com/maps/dir/Hakone-Yumoto+Station,+Hakone,+Kanagawa/Kyoto+Station,+Kyoto" target="_blank" rel="noopener">Hakone-Yumoto → Kyoto Station</a></p>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>Hikari stops at Odawara roughly every hour — check the timetable at <a href="https://www.hyperdia.com/" target="_blank" rel="noopener">JR East Timetable</a></li>
+<li>Send luggage ahead to Kyoto via <strong>Takkyubin</strong> (luggage forwarding) from your ryokan for ¥2,000-2,500 — travel light on Shinkansen</li>
+<li>Sit on the <strong>right side (seats D/E)</strong> for Mt. Fuji views on a clear day</li>
+</ul>
+<hr>
+<h2>4. Kyoto → Osaka (JR Special Rapid)</h2>
+<p><strong>Mode:</strong> JR Special Rapid (新快速) | <strong>Time:</strong> ~29 min | <strong>Cost:</strong> ¥580 (or JR Pass)</p>
+<ol>
+<li>At <strong>Kyoto Station</strong>, enter the JR gates (central gate is easiest)</li>
+<li>Go to <strong>platforms 2-3</strong> (JR Kyoto Line / Biwako Line)</li>
+<li>Board the <strong>Special Rapid (新快速 / Shin-Kaisoku)</strong> bound for <strong>Osaka / Shin-Osaka / Himeji</strong></li>
+<li>Ride 29 minutes to <strong>Osaka Station / 大阪駅</strong> (do not get off at Shin-Osaka unless your hotel is there)</li>
+<li>Exit at Osaka Station — the <strong>Central Exit / 中央口</strong> leads to the main concourse with access to all lines</li>
+</ol>
+<p><strong>Google Maps:</strong> <a href="https://www.google.com/maps/dir/Kyoto+Station,+Kyoto/Osaka+Station,+Osaka" target="_blank" rel="noopener">Kyoto Station → Osaka Station</a></p>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>Trains run every 15 min; no reservation needed — just show up and board</li>
+<li>This is a local commuter train, so it can be crowded during rush hours (8-9 AM, 5-7 PM)</li>
+<li>If heading to Namba/Dotonbori area, transfer at Osaka Station to the <strong>Midosuji Line</strong> (red line, subway)</li>
+</ul>
+<hr>
+<h2>5. Osaka → Hiroshima (Shinkansen Sakura)</h2>
+<p><strong>Mode:</strong> Sanyo Shinkansen Sakura | <strong>Time:</strong> ~1 hr 25 min | <strong>Cost:</strong> Covered by JR Pass (or ~¥10,000)</p>
+<ol>
+<li>From Osaka Station, take the <strong>JR Kyoto Line</strong> one stop to <strong>Shin-Osaka Station / 新大阪駅</strong> (~4 min)</li>
+<li>At Shin-Osaka, follow signs for <strong>Shinkansen / 新幹線</strong> and go through the Shinkansen ticket gates</li>
+<li>Go to <strong>platforms 20-27</strong> (Sanyo Shinkansen)</li>
+<li>Board the <strong>Sakura or Hikari bound for Hiroshima / Hakata</strong> (avoid Nozomi — not covered by JR Pass)</li>
+<li>Ride ~1 hr 25 min to <strong>Hiroshima Station / 広島駅</strong></li>
+<li>Exit the Shinkansen gate — the <strong>South Exit / 南口</strong> leads to the streetcar (tram) and bus stops</li>
+</ol>
+<p><strong>Google Maps:</strong> <a href="https://www.google.com/maps/dir/Shin-Osaka+Station,+Osaka/Hiroshima+Station,+Hiroshima" target="_blank" rel="noopener">Shin-Osaka Station → Hiroshima Station</a></p>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>Sakura has comfortable 2+2 seating in regular cars (wider than Hikari's 3+2)</li>
+<li>Reserve a seat in the <strong>non-reserved cars 1-5</strong> if you don't want to queue at the ticket office</li>
+<li>Ekiben (station bento) from Shin-Osaka are excellent — grab one for the ride</li>
+</ul>
+<hr>
+<h2>6. Hiroshima → Miyajima Island (Train + Ferry)</h2>
+<p><strong>Mode:</strong> JR San'yo Line + JR Ferry | <strong>Time:</strong> ~55 min total | <strong>Cost:</strong> Covered by JR Pass (or ~¥590)</p>
+<ol>
+<li>At <strong>Hiroshima Station</strong>, enter the JR gates and go to <strong>platform 1</strong></li>
+<li>Board the <strong>JR San'yo Line bound for Iwakuni</strong> (runs every 15-20 min)</li>
+<li>Ride ~26 min to <strong>Miyajimaguchi Station / 宮島口駅</strong></li>
+<li>Exit the station and walk straight ahead ~5 min to the <strong>JR Miyajima Ferry Terminal</strong> (follow the crowds and signs)</li>
+<li>Board the <strong>JR Ferry</strong> (not the competing Matsudai ferry) — the JR ferry is covered by JR Pass</li>
+<li>Ride ~10 min to <strong>Miyajima Island</strong> — the JR ferry takes a route that passes close to the floating torii gate (especially the outbound afternoon trip)</li>
+<li>Exit the ferry terminal on Miyajima; the <strong>Itsukushima Shrine</strong> is a 10-minute walk to the right along the waterfront</li>
+</ol>
+<p><strong>Google Maps:</strong> <a href="https://www.google.com/maps/dir/Hiroshima+Station,+Hiroshima/Itsukushima+Shrine,+Miyajima,+Hatsukaichi" target="_blank" rel="noopener">Hiroshima Station → Itsukushima Shrine</a></p>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>Last JR ferry back to mainland is around <strong>10:15 PM</strong> — but last trains back to Hiroshima are earlier (~11 PM)</li>
+<li>The torii gate is best seen at <strong>high tide</strong> for the floating effect or <strong>low tide</strong> to walk up to it — check tide tables</li>
+<li>Deer roam freely on Miyajima — guard your food and paper maps</li>
+</ul>
+<hr>
+<h2>7. Hiroshima → Kyoto/Osaka (Return Shinkansen)</h2>
+<p><strong>Mode:</strong> Sanyo Shinkansen Sakura/Hikari | <strong>Time:</strong> ~1 hr 25 min to Shin-Osaka, ~1 hr 45 min to Kyoto</p>
+<ol>
+<li>At <strong>Hiroshima Station</strong>, enter the Shinkansen gates</li>
+<li>Go to <strong>platforms 1-2</strong> (Sanyo Shinkansen eastbound)</li>
+<li>Board the <strong>Sakura or Hikari bound for Shin-Osaka / Tokyo</strong></li>
+<li>Exit at <strong>Shin-Osaka</strong> (transfer to JR for Osaka) or continue to <strong>Kyoto Station</strong></li>
+</ol>
+<p><strong>Google Maps:</strong> <a href="https://www.google.com/maps/dir/Hiroshima+Station,+Hiroshima/Kyoto+Station,+Kyoto" target="_blank" rel="noopener">Hiroshima Station → Kyoto Station</a></p>
+<hr>
+<h2>8. Key Station Navigation Tips</h2>
+<h3>Shinjuku Station (World's Busiest)</h3>
+<ul>
+<li><strong>200+ exits</strong> — always know which exit you need before arriving</li>
+<li><strong>JR Lines:</strong> Central area (platforms 1-16)</li>
+<li><strong>Odakyu Line:</strong> West side, separate gate (for Hakone Romancecar)</li>
+<li><strong>Metro (Marunouchi Line):</strong> Underground, west side — follow red "M" signs</li>
+<li><strong>Key exits:</strong> South Exit (Busta Shinjuku bus terminal, hotels), East Exit (Kabukicho), West Exit (Odakyu, government buildings)</li>
+<li><strong>Tip:</strong> Use Google Maps indoor navigation — it works inside Shinjuku Station</li>
+</ul>
+<h3>Kyoto Station</h3>
+<ul>
+<li><strong>Shinkansen gates:</strong> South side (Hachijo Exit) — platforms 11-14</li>
+<li><strong>JR local lines:</strong> North side — platforms 0-10</li>
+<li><strong>Bus terminal:</strong> North side, directly outside the Central Exit — this is where you catch buses to Kinkaku-ji, Fushimi Inari, etc.</li>
+<li><strong>Tourist Info Center:</strong> 2nd floor, north side — get a bus day pass here (¥700)</li>
+<li><strong>Tip:</strong> The station has a rooftop terrace (free) with great city views — take the escalators on the west side all the way up</li>
+</ul>
+<h3>Tokyo Station</h3>
+<ul>
+<li><strong>Marunouchi side (west):</strong> Classic red-brick facade, closest to Imperial Palace</li>
+<li><strong>Yaesu side (east):</strong> Modern, shopping/restaurants, highway buses</li>
+<li><strong>Tokaido Shinkansen:</strong> Platforms 14-19 (central area)</li>
+<li><strong>Tohoku/Hokuriku Shinkansen:</strong> Platforms 20-23 (north area)</li>
+<li><strong>JR Yamanote/local lines:</strong> Platforms 1-10</li>
+<li><strong>Tip:</strong> Character Street (underground on Yaesu side) has official shops for anime/character goods</li>
+</ul>
+<h3>Osaka Station / Umeda Area</h3>
+<ul>
+<li><strong>Osaka Station (JR):</strong> Above ground, main concourse</li>
+<li><strong>Umeda (Hankyu/Hanshin):</strong> Connected underground — follow signs carefully</li>
+<li><strong>Midosuji Line (subway):</strong> Underground, look for red "M" — this takes you to Namba/Shinsaibashi</li>
+<li><strong>Tip:</strong> The area around Osaka/Umeda has 3 different stations that are all walkable but confusingly named differently</li>
+</ul>
+<h3>Shin-Osaka Station</h3>
+<ul>
+<li><strong>Shinkansen platforms:</strong> Upper level (platforms 20-27)</li>
+<li><strong>Local JR lines:</strong> Lower level — JR Kyoto Line to Osaka Station (platform 1-2, 4 min)</li>
+<li><strong>Midosuji Line (subway):</strong> Underground — connects to Namba without transferring</li>
+<li><strong>Tip:</strong> If you just need a quick Shinkansen transfer, stay on the upper level</li>
+</ul>
+<hr>
+<h2>General Navigation Tips</h2>
+<ol>
+<li><strong>Download Google Maps offline</strong> for all of Kansai and Kanto regions before you leave — station Wi-Fi is spotty</li>
+<li><strong>Hyperdia or Navitime</strong> apps give exact platform numbers and transfer times for all Japanese trains</li>
+<li><strong>Follow the Japanese commuters</strong> — during rush hour, stand in the marked queues on platforms</li>
+<li><strong>Yellow tactile strips</strong> on platforms mark the safe standing line — never stand beyond them</li>
+<li><strong>Ekiben shops</strong> are always near Shinkansen gates — grab a meal for long rides</li>
+<li><strong>Coin lockers</strong> are at every major station (¥300-700 depending on size) — use them to ditch your bags for day trips</li>
+<li><strong>IC cards (Suica/Pasmo)</strong> work on all local trains, buses, and convenience stores — charge at any station machine</li>
+<li><strong>Last trains</strong> are typically around <strong>midnight</strong> — plan your nightlife accordingly</li>
+</ol>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

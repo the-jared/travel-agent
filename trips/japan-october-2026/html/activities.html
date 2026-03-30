@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Activities {{TITLE}} Experiences</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Activities {{PAGE_TITLE}} Experiences</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Activities Guide — Japan October 2026</h1>
+<blockquote>
+<p>Curated experiences for a solo foodie traveler seeking cultural immersion.</p>
+<p>October is one of Japan's best months: mild weather (15-22C), autumn colors starting, fewer typhoons than September.</p>
+</blockquote>
+<hr>
+<h2>Tokyo (4-5 Days)</h2>
+<h3>Temples & Shrines</h3>
+<p><strong>Senso-ji Temple (Asakusa)</strong></p>
+<ul>
+<li>Tokyo's oldest temple, founded 628 AD</li>
+<li>Arrive by 6:30 AM to avoid crowds — the Kaminarimon gate and Nakamise-dori shopping street are magical when empty</li>
+<li>Walk the full approach: Thunder Gate -> Nakamise-dori -> Hozomon Gate -> Main Hall</li>
+<li>Free entry to grounds; treasure house ~300 JPY</li>
+<li>Don't miss: Asakusa-jinja (adjacent Shinto shrine), five-story pagoda, incense cauldron ritual</li>
+<li>Nearby: Kappabashi "Kitchen Street" for knife shopping (10 min walk)</li>
+<li>Station: Asakusa (Ginza Line, Asakusa Line)</li>
+</ul>
+<p><strong>Meiji Shrine (Meiji Jingu)</strong></p>
+<ul>
+<li>Dedicated to Emperor Meiji and Empress Shoken, set in 170 acres of forest</li>
+<li>Walk the gravel path through the torii gates — the towering camphor wood torii is Japan's largest</li>
+<li>Write a wish on an ema (wooden plaque, ~500 JPY)</li>
+<li>Check schedule for traditional wedding processions (weekends, usually 10 AM-2 PM)</li>
+<li>Free entry to main shrine; Inner Garden 500 JPY (iris garden, Kiyomasa's Well)</li>
+<li>Allow 1-1.5 hours</li>
+<li>Station: Harajuku (JR Yamanote Line) or Meiji-jingumae (Chiyoda/Fukutoshi Lines)</li>
+</ul>
+<h3>Art & Digital</h3>
+<p><strong>TeamLab Borderless (Azabudai Hills)</strong></p>
+<ul>
+<li>Relocated to Azabudai Hills in 2024 — the new space is larger and more immersive</li>
+<li>Book tickets 2-3 weeks in advance online (advance purchase only)</li>
+<li>Tickets: ~3,800 JPY adults</li>
+<li>Wear white/light clothing for better interaction with projections</li>
+<li>Go on a weekday; arrive right at opening (10 AM) or after 5 PM</li>
+<li>Allow 2-3 hours minimum</li>
+<li>The EN Tea House inside serves tea with digital flowers blooming in your cup (~500 JPY)</li>
+<li>Station: Kamiyacho or Azabudai Hills direct access</li>
+</ul>
+<h3>Neighborhoods & Street Culture</h3>
+<p><strong>Akihabara (Electric Town)</strong></p>
+<ul>
+<li>Multi-floor electronics stores: Yodobashi Camera (8 floors), Akky</li>
+<li>Retro gaming: Super Potato (5F, must-visit), Trader (multiple locations)</li>
+<li>Anime/manga: Mandarake Complex (8 floors of collectibles), Animate</li>
+<li>Maid cafes: @Home Cafe for the classic experience (~2,000 JPY with drink + photo)</li>
+<li>Gachapon: dedicated capsule toy floors in Don Quijote</li>
+<li>Best time: afternoon into evening when neon lights up</li>
+<li>Allow 3-4 hours to explore properly</li>
+<li>Station: Akihabara (JR Yamanote, Hibiya Line)</li>
+</ul>
+<p><strong>Yanaka District</strong></p>
+<ul>
+<li>Tokyo's best-preserved old neighborhood — survived WWII bombing and modernization</li>
+<li>Yanaka Ginza shopping street: try menchi-katsu (fried meat croquette), cat-tail donuts</li>
+<li>Yanaka Cemetery: atmospheric walk, especially with early autumn color</li>
+<li>Gallery-hopping: SCAI The Bathhouse (contemporary art in a 200-year-old bathhouse)</li>
+<li>Nezu Shrine: stunning vermillion torii tunnel (mini Fushimi Inari feel)</li>
+<li>Kayaba Coffee: historic kissaten (1938), serves thick toast and tamago sandwiches</li>
+<li>Allow half day for a leisurely wander</li>
+<li>Station: Nippori (JR Yamanote Line) or Sendagi (Chiyoda Line)</li>
+</ul>
+<p><strong>Golden Gai (Shinjuku)</strong></p>
+<ul>
+<li>6 narrow alleys with 200+ tiny bars, most seating 6-10 people</li>
+<li>Cover charge: typically 500-1,500 JPY per bar (always ask before sitting)</li>
+<li>Solo-friendly bars: Albatross (3 floors, famous staircase), Champion (tourist-friendly), Death Match in Hell (horror theme)</li>
+<li>Bar-hopping strategy: 1-2 drinks per bar, visit 3-4 bars in an evening</li>
+<li>Best time: 8 PM-midnight; many bars closed Sun/Mon</li>
+<li>Some bars have "no tourists" signs — respect this and move on</li>
+<li>Eat dinner first (Omoide Yokocho is across the tracks for yakitori)</li>
+<li>Station: Shinjuku (any line), 5-minute walk</li>
+</ul>
+<h3>Markets & Food</h3>
+<p><strong>Tsukiji Outer Market</strong></p>
+<ul>
+<li>The inner wholesale market moved to Toyosu, but the outer market thrives with 400+ stalls</li>
+<li>Arrive 7-8 AM for freshest selection and shortest queues</li>
+<li>Must-try: tamago-yaki (sweet egg, ~200 JPY), fresh uni on rice (~1,500 JPY), tuna skewers, hojicha from Maruyama Nori</li>
+<li>Turret Coffee: cult-following pour-over in a repurposed turret truck (expect 20 min queue)</li>
+<li>Allow 2-3 hours for grazing breakfast</li>
+<li>Station: Tsukiji (Hibiya Line) or Tsukijishijo (Oedo Line)</li>
+</ul>
+<p><strong>Depachika (Department Store Basements)</strong></p>
+<ul>
+<li>Isetan Shinjuku: best overall, incredible wagashi (Japanese sweets) floor</li>
+<li>Daimaru Tokyo Station: grab bento boxes for shinkansen rides</li>
+<li>Mitsukoshi Ginza: luxury sweets, free samples if you're polite</li>
+<li>Go around 6-7 PM for discount stickers on bento and prepared foods (up to 50% off)</li>
+</ul>
+<h3>Hands-On Experiences</h3>
+<p><strong>Cooking Class</strong></p>
+<ul>
+<li>Recommended: Tokyo Kitchen (Tsukiji area) — small group, market tour + cooking</li>
+<li>Typical menu: dashi from scratch, seasonal sushi rolls, miso soup, tempura</li>
+<li>~8,000-12,000 JPY for half-day class including market visit</li>
+<li>Book 1-2 weeks ahead; morning classes pair well with Tsukiji visit</li>
+<li>Alternative: Buddha Bellies (Asakusa) for ramen-making class (~7,000 JPY)</li>
+</ul>
+<p><strong>Sumo</strong></p>
+<ul>
+<li>October is between tournaments (next: November in Fukuoka), so no live basho in Tokyo</li>
+<li>Instead: watch morning practice (keiko) at a sumo stable</li>
+<li>  - Arashio Stable: free viewing through a window, no reservation needed, arrive 7:30 AM</li>
+<li>  - Other stables require Japanese-language contact or a tour operator (~3,000-5,000 JPY)</li>
+<li>Ryogoku area: Sumo Museum (free, inside Kokugikan), chanko-nabe restaurants</li>
+<li>Recommended chanko: Chanko Tomoegata or Chanko Kawasaki (lunch ~1,500 JPY)</li>
+</ul>
+<h3>Gardens & Parks</h3>
+<p><strong>Rikugien Garden</strong></p>
+<ul>
+<li>Edo-period strolling garden, one of Tokyo's finest</li>
+<li>October: early autumn color beginning, especially the central pond area</li>
+<li>Illumination events sometimes run in late October/November — check schedule</li>
+<li>Entry: 300 JPY; allow 1-1.5 hours</li>
+<li>Combine with Yanaka (15 min by train)</li>
+<li>Station: Komagome (JR Yamanote Line, Namboku Line)</li>
+</ul>
+<p><strong>Shinjuku Gyoen</strong></p>
+<ul>
+<li>144 acres combining Japanese, French, and English garden styles</li>
+<li>Chrysanthemum exhibition often runs in October/November</li>
+<li>Entry: 500 JPY; no alcohol allowed</li>
+<li>Perfect for a midday rest between activities</li>
+<li>Station: Shinjuku-gyoenmae (Marunouchi Line)</li>
+</ul>
+<hr>
+<h2>Kyoto (3-4 Days)</h2>
+<h3>Temples & Shrines</h3>
+<p><strong>Fushimi Inari Taisha (Sunrise Visit)</strong></p>
+<ul>
+<li>10,000+ vermillion torii gates winding up Mt. Inari</li>
+<li>CRITICAL: arrive at sunrise (around 6 AM in October) — the lower gates are empty, light filters through perfectly</li>
+<li>Full hike to summit: 2-3 hours round trip, 233m elevation</li>
+<li>The first 30 minutes of trail are the iconic tunnel shots</li>
+<li>Yotsutsuji intersection (halfway): panoramic Kyoto views, good turnaround point if short on time</li>
+<li>Free entry, open 24 hours</li>
+<li>Kitsune (fox) ema at the shrine office are unique souvenirs</li>
+<li>Station: Inari (JR Nara Line, 5 min from Kyoto Station)</li>
+</ul>
+<p><strong>Kinkaku-ji (Golden Pavilion)</strong></p>
+<ul>
+<li>The gold-leaf covered pavilion reflected in the mirror pond</li>
+<li>Arrive at 9 AM opening; gets extremely crowded by 11 AM</li>
+<li>Entry: 500 JPY (receive a calligraphy charm as your ticket)</li>
+<li>Allow 45 min-1 hour</li>
+<li>Combine with Ryoan-ji (famous rock garden, 15 min walk) and Ninna-ji</li>
+</ul>
+<p><strong>Kiyomizu-dera</strong></p>
+<ul>
+<li>Wooden stage jutting out from a hillside with sweeping city views</li>
+<li>October: early momiji (maple) color framing the main hall</li>
+<li>Entry: 400 JPY; evening illuminations in late October/November (check dates)</li>
+<li>The Otowa Waterfall at the base: drink from one of three streams (love, school, longevity)</li>
+<li>Walk the Higashiyama district streets below (Sannen-zaka, Ninen-zaka)</li>
+<li>Allow 2-3 hours including the walking streets</li>
+</ul>
+<p><strong>Daitoku-ji Temple Complex</strong></p>
+<ul>
+<li>Zen temple compound with multiple sub-temples, far fewer tourists</li>
+<li>Highlights: Daisen-in (famous dry landscape garden), Koto-in (moss and maple path), Zuiho-in (Christian-influenced rock garden)</li>
+<li>Sub-temple entry: 400-600 JPY each; visit 2-3</li>
+<li>Excellent for zen meditation experience (see below)</li>
+<li>Allow half day</li>
+</ul>
+<h3>Cultural Experiences</h3>
+<p><strong>Tea Ceremony (Chado)</strong></p>
+<ul>
+<li>Recommended: Camellia Garden (near Kenninji) — intimate, English-speaking host, traditional tatami room</li>
+<li>~3,000-5,000 JPY for a 60-90 min ceremony with wagashi sweet</li>
+<li>Learn: proper entry, how to turn the bowl, appreciating the seasonal scroll and flowers</li>
+<li>Alternative: En (Gion area) for a more casual experience (~2,500 JPY)</li>
+<li>Book 3-5 days ahead</li>
+</ul>
+<p><strong>Kimono Rental & Wearing</strong></p>
+<ul>
+<li>Recommended: Yumeyakata (multiple locations) — high-quality kimono selection</li>
+<li>Full rental: ~5,000-8,000 JPY for the day (includes dressing, accessories, hair styling)</li>
+<li>Pick up morning (9-10 AM), return by 5-6 PM</li>
+<li>Best areas to wear: Higashiyama, Arashiyama, Gion</li>
+<li>October weather is perfect for comfortable kimono wearing</li>
+<li>Photos at bamboo grove, temple gates, and stone-paved streets are spectacular</li>
+<li>Men's kimono available too — less common but very striking</li>
+</ul>
+<p><strong>Zen Meditation (Zazen)</strong></p>
+<ul>
+<li>Shunko-in Temple (Myoshinji complex): English-language zazen sessions</li>
+<li>  - ~2,000 JPY, 60-90 min including garden tour and tea</li>
+<li>  - Reverend Takafumi Kawakami leads sessions; book via website</li>
+<li>Alternative: Taizo-in (also Myoshinji) — quieter, more traditional setting</li>
+<li>Wear comfortable, dark-colored clothing; no shorts</li>
+</ul>
+<p><strong>Pottery / Ceramics</strong></p>
+<ul>
+<li>Kyoto is the home of Kiyomizu-yaki pottery (400+ year tradition)</li>
+<li>Recommended: Zuikoudo (Higashiyama) — hand-painting workshop on pre-formed pieces</li>
+<li>  - ~3,500 JPY, 1-2 hours; shipped to your address after firing</li>
+<li>For wheel-throwing: Asahi Pottery (Gojo area), ~5,000-7,000 JPY</li>
+<li>Visit Kiyomizu-yaki shops on Gojo-zaka (pottery slope) for buying</li>
+</ul>
+<h3>Neighborhoods & Markets</h3>
+<p><strong>Gion District</strong></p>
+<ul>
+<li>Kyoto's most famous geisha (geiko) district</li>
+<li>Best geiko/maiko spotting: Hanamikoji-dori around 5:30-6:30 PM (heading to evening engagements)</li>
+<li>Photography etiquette: do NOT block, chase, or touch geiko/maiko — Gion has posted rules</li>
+<li>Gion Corner: 1-hour show featuring tea ceremony, ikebana, gagaku, and maiko dance (~3,150 JPY)</li>
+<li>Yasaka Shrine at the district's edge: free entry, atmospheric at dusk</li>
+</ul>
+<p><strong>Nishiki Market ("Kyoto's Kitchen")</strong></p>
+<ul>
+<li>400m covered shopping street with 100+ stalls and shops</li>
+<li>Must-try: yuba (tofu skin), pickled vegetables, matcha anything, dashi-maki tamago, grilled mochi</li>
+<li>Aritsugu: legendary knife shop (since 1560), will engrave your name</li>
+<li>Best time: 10 AM-12 PM (stalls close by 5-6 PM, some earlier)</li>
+<li>Station: Shijo (Karasuma Line) or Kawaramachi (Hankyu)</li>
+</ul>
+<p><strong>Arashiyama</strong></p>
+<ul>
+<li>Bamboo Grove: arrive before 8 AM — by 10 AM it's shoulder-to-shoulder</li>
+<li>Togetsukyo Bridge: iconic bridge with mountain backdrop</li>
+<li>Monkey Park Iwatayama: 15 min uphill hike, feed wild macaques with Kyoto city views (~550 JPY)</li>
+<li>Tenryu-ji Temple: stunning garden with borrowed scenery of Arashiyama mountains (500 JPY garden only)</li>
+<li>Sagano Scenic Railway (Torokko): 25 min riverside ride, book ahead in October for autumn color (~880 JPY)</li>
+<li>Lunch: try Arashiyama yoshimura for soba with river views</li>
+</ul>
+<h3>Sake & Drinks</h3>
+<p><strong>Fushimi Sake District</strong></p>
+<ul>
+<li>Kyoto's historic sake brewing area (Gekkeikan, Kizakura, and 20+ breweries)</li>
+<li>Gekkeikan Okura Sake Museum: history + tasting (~400 JPY with 3 tastes)</li>
+<li>Kizakura Kappa Country: free museum, restaurant with sake flights and craft beer</li>
+<li>Torisei: sake brewery restaurant, pour your own from vending-style machines (~100-300 JPY per glass)</li>
+<li>Best strategy: combine with morning Fushimi Inari visit (10 min walk between them)</li>
+</ul>
+<p><strong>Uji (Day Trip)</strong></p>
+<ul>
+<li>20 min by train from Kyoto — birthplace of Japanese matcha culture</li>
+<li>Byodo-in Temple: the building on the 10-yen coin, stunning with autumn color (600 JPY)</li>
+<li>Nakamura Tokichi: legendary tea house (since 1854), matcha soba and parfait (expect 30+ min queue)</li>
+<li>Tsuen Tea: the oldest tea shop in the world (since 1160)</li>
+<li>Omotesando street: matcha ice cream, matcha beer, matcha everything</li>
+<li>Half-day trip; combine with afternoon Philosopher's Path</li>
+</ul>
+<hr>
+<h2>Osaka (2-3 Days)</h2>
+<h3>Must-See Attractions</h3>
+<p><strong>Dotonbori</strong></p>
+<ul>
+<li>Osaka's neon-lit food paradise along the Dotonbori canal</li>
+<li>The Glico Running Man sign: iconic photo spot on Ebisu Bridge</li>
+<li>Must-eat street food:</li>
+<li>  - Takoyaki: Wanaka or Creo-Ru (8 pieces ~600-800 JPY)</li>
+<li>  - Okonomiyaki: Mizuno (Michelin Bib Gourmand, expect 30 min queue) or Fukutaro</li>
+<li>  - Kushikatsu: Daruma (follow the angry chef sign; rule: no double-dipping in communal sauce)</li>
+<li>  - Gyoza: Osaka Ohsho for cheap and excellent (~300 JPY for 6)</li>
+<li>Best time: 6-10 PM when the neon is blazing and energy peaks</li>
+<li>Station: Namba (multiple lines)</li>
+</ul>
+<p><strong>Osaka Castle</strong></p>
+<ul>
+<li>Iconic 16th-century castle (concrete reconstruction, but striking exterior)</li>
+<li>The surrounding park is excellent for early autumn color</li>
+<li>Castle tower: 600 JPY, observation deck with city views</li>
+<li>Museum inside covers Toyotomi Hideyoshi and Osaka's history</li>
+<li>Allow 1.5-2 hours including park walking</li>
+<li>Station: Osakajokoen (JR Loop) or Tanimachi 4-chome (Tanimachi/Chuo Lines)</li>
+</ul>
+<p><strong>Kuromon Ichiba Market ("Osaka's Kitchen")</strong></p>
+<ul>
+<li>170+ stalls in a covered market</li>
+<li>Famous for: giant grilled scallops (~500 JPY), sea urchin, eel on rice, wagyu skewers (~1,000 JPY)</li>
+<li>Puffer fish (fugu) tasting available at several stalls (~1,000-2,000 JPY for a portion)</li>
+<li>Best time: 9-11 AM; many stalls close by 4 PM</li>
+<li>Station: Nippombashi (Sakaisuji/Sennichimae Lines)</li>
+</ul>
+<p><strong>Shinsekai</strong></p>
+<ul>
+<li>Retro neighborhood built in 1912, modeled after NYC (north) and Paris (south)</li>
+<li>Tsutenkaku Tower: kitschy landmark with observation deck (900 JPY)</li>
+<li>Kushikatsu central: Jan Jan Yokocho alley lined with deep-fry shops</li>
+<li>Spa World: massive onsen theme park with themed international baths (~1,500 JPY)</li>
+<li>  - Tattoo-friendly on designated floors/times — check current policy</li>
+<li>Billiards, retro arcades, shogi parlors — very local, gritty Osaka atmosphere</li>
+<li>Station: Shin-Imamiya (JR) or Dobutsuen-mae (Midosuji/Sakaisuji Lines)</li>
+</ul>
+<h3>Day Trip: Kobe</h3>
+<p><strong>Getting There</strong></p>
+<ul>
+<li>Osaka to Kobe (Sannomiya): 20-30 min by JR, Hankyu, or Hanshin lines (~410 JPY JR)</li>
+</ul>
+<p><strong>Kobe Beef Experience</strong></p>
+<ul>
+<li>Mouriya: the most famous (lunch sets from ~6,000 JPY for sirloin teppanyaki)</li>
+<li>Ishida: excellent quality, slightly more local feel (~5,000-8,000 JPY lunch)</li>
+<li>Wanto Burger: casual Kobe beef burger (~1,500 JPY) if you want the taste without the splurge</li>
+<li>Lunch service is significantly cheaper than dinner at the same restaurants</li>
+<li>Look for the official Kobe Beef certification mark (chrysanthemum logo)</li>
+</ul>
+<p><strong>Kobe Sights</strong></p>
+<ul>
+<li>Kitano-cho: European-style "ijinkan" (foreigner mansions) from the 1800s</li>
+<li>Nunobiki Herb Garden: ropeway up the mountain, herb gardens, city/port views (~2,000 JPY round trip)</li>
+<li>Kobe Sake District (Nada): Hakutsuru Sake Brewery Museum (free, tastings included)</li>
+<li>Chinatown (Nankinmachi): smaller than Yokohama's but excellent nikuman (pork buns, ~400 JPY)</li>
+</ul>
+<hr>
+<h2>Hakone (1-2 Days)</h2>
+<h3>Hakone Loop Circuit</h3>
+<p>The classic sightseeing route — a loop using different transport modes. All covered by the Hakone Free Pass (~6,100 JPY from Shinjuku, 2-day pass; includes round-trip train).</p>
+<p><strong>The Loop (recommended order):</strong></p>
+<ol>
+<li><strong>Hakone-Yumoto to Gora</strong> — Hakone Tozan Railway (switchback mountain train, 40 min)</li>
+<li><strong>Gora to Sounzan</strong> — Cable car (10 min)</li>
+<li><strong>Sounzan to Togendai</strong> — Hakone Ropeway (30 min, crosses volcanic Owakudani valley)</li>
+<li>   - Stop at Owakudani: eat a black egg (kuro-tamago) boiled in sulfuric hot springs — said to add 7 years to your life (~500 JPY for 5 eggs)</li>
+<li>   - Mt. Fuji views from the ropeway on clear days (morning has best visibility in October)</li>
+<li><strong>Togendai to Hakone-machi</strong> — Pirate ship across Lake Ashi (30 min)</li>
+<li>   - The "pirate ship" is kitschy but the lake and mountain views are spectacular</li>
+<li><strong>Hakone-machi to Hakone-Yumoto</strong> — Hakone Tozan Bus (35 min)</li>
+</ol>
+<p><strong>Tips:</strong></p>
+<ul>
+<li>Start early (8-9 AM) to complete the loop comfortably</li>
+<li>October weather can close the ropeway if volcanic gases are high — check morning of</li>
+<li>The loop works in either direction; clockwise (as above) is slightly less crowded</li>
+</ul>
+<h3>Hakone Open-Air Museum</h3>
+<ul>
+<li>Outdoor sculpture park with works by Picasso, Henry Moore, and more</li>
+<li>Picasso Pavilion: 300+ works in a dedicated building</li>
+<li>Hot spring foot bath inside the museum grounds</li>
+<li>Great in any weather — October's mild temps and potential autumn color make it ideal</li>
+<li>Entry: 1,600 JPY; allow 2-3 hours</li>
+<li>Station: Chokoku-no-Mori (Hakone Tozan Railway)</li>
+</ul>
+<h3>Onsen (Hot Springs)</h3>
+<p><strong>Tattoo-Friendly Options:</strong></p>
+<ul>
+<li>Hakone Yuryo: modern facility, private open-air baths available (~1,500 JPY public, ~4,500 JPY private for 1 hour)</li>
+<li>Tenzan Tohji-kyo: outdoor mountain onsen, more rustic feel (~1,300 JPY); ask about tattoo policy (has varied)</li>
+<li>Private onsen in ryokan: many ryokan offer in-room or reservable private baths — easiest solution for tattooed travelers</li>
+</ul>
+<p><strong>Ryokan (Traditional Inn) Experience:</strong></p>
+<ul>
+<li>A ryokan stay is one of Japan's essential experiences: tatami room, futon, yukata robe, multi-course kaiseki dinner, onsen</li>
+<li>Budget: ~15,000-30,000 JPY/person including dinner and breakfast</li>
+<li>Recommended: Fukuzumiro (since 1890, atmospheric old building), Yama no Chaya (riverside, tattoo-friendly private onsen)</li>
+<li>Book 2-4 weeks ahead for October weekends</li>
+</ul>
+<h3>Mt. Fuji Views</h3>
+<ul>
+<li>Best viewing: early morning (before clouds build), from the ropeway or Lake Ashi south shore</li>
+<li>October is good visibility month — better than summer humidity</li>
+<li>Hakone-machi/Moto-Hakone: classic "Fuji over torii gate at Lake Ashi" photo spot (Hakone Shrine lakeside torii)</li>
+<li>If Fuji is hidden by clouds, the Hakone Shrine torii gate shot is still excellent</li>
+</ul>
+<hr>
+<h2>Hiroshima (1-2 Days)</h2>
+<h3>Peace Memorial Park & Museum</h3>
+<ul>
+<li>Entry: 200 JPY for the museum</li>
+<li>Allow 2-3 hours for museum + park</li>
+<li>Emotionally heavy — the museum's 2019 renovation made it even more impactful with personal artifacts and stories</li>
+<li>A-Bomb Dome (Genbaku Dome): the skeletal ruin preserved exactly as it stood after the blast</li>
+<li>Children's Peace Monument: decorated with thousands of origami cranes</li>
+<li>Cenotaph: frames the Peace Flame and A-Bomb Dome in alignment</li>
+<li>Visit the museum first (opens 8:30 AM), then walk the park grounds</li>
+</ul>
+<h3>Miyajima Island (Itsukushima)</h3>
+<p><strong>Getting There:</strong></p>
+<ul>
+<li>Hiroshima to Miyajima-guchi: JR Sanyo Line (25 min) + ferry (10 min, JR ferry free with rail pass)</li>
+</ul>
+<p><strong>Highlights:</strong></p>
+<ul>
+<li>The "floating" torii gate: partially submerged at high tide, walkable at low tide</li>
+<li>  - Check tide tables in advance to plan which experience you prefer</li>
+<li>  - Photography tip: high tide with reflections at golden hour is the classic shot</li>
+<li>Itsukushima Shrine: the vermillion shrine built over water (300 JPY)</li>
+<li>Mt. Misen: ropeway up (1,100 JPY one-way, 2,000 JPY round trip), hike down through primeval forest (~1.5 hours descent)</li>
+<li>Friendly deer wander everywhere (unlike Nara, they're slightly less aggressive)</li>
+<li>Must-eat: momiji manju (maple-shaped cakes, ~100 JPY each) — try fresh-fried version</li>
+<li>Grilled oysters: Miyajima is famous for them (~500-1,000 JPY for a plate)</li>
+<li>Omotesando shopping street: conger eel rice (anago-meshi), wooden rice scoops (shamoji)</li>
+<li>Allow at least 4-5 hours; a full day is better if hiking Mt. Misen</li>
+</ul>
+<hr>
+<h2>October-Specific Events & Conditions</h2>
+<h3>Jidai Matsuri (Festival of the Ages) — October 22</h3>
+<ul>
+<li>One of Kyoto's three great festivals</li>
+<li>A 2 km procession of 2,000 participants in historical costumes spanning 1,000 years of Kyoto history</li>
+<li>Route: Kyoto Imperial Palace to Heian Shrine (~2 PM arrival at shrine)</li>
+<li>Free to watch from the street; paid seating at Imperial Palace (~2,000 JPY, reserve ahead)</li>
+<li>Best viewing: along Oike-dori or near Heian Shrine for the finale</li>
+<li>Arrives at Heian Shrine around 2:30 PM</li>
+<li>Plan your Kyoto days around Oct 22 to catch this</li>
+</ul>
+<h3>Sports Day (October 12, 2026)</h3>
+<ul>
+<li>National holiday — expect more domestic tourists at popular spots</li>
+<li>Some businesses may be closed; transit runs on holiday schedule</li>
+<li>Plan for indoor activities or less-popular destinations</li>
+<li>Bonus: festive atmosphere, possible local sports events in parks</li>
+</ul>
+<h3>Halloween</h3>
+<ul>
+<li>Shibuya Halloween (Oct 31 weekend): massive street gathering, cosplay, controlled chaos</li>
+<li>  - Tokyo police have restricted vehicle access in recent years; check 2026 status</li>
+<li>  - Costumes range from elaborate anime cosplay to creative absurdity</li>
+<li>Osaka: Dotonbori and Amerikamura get festive</li>
+<li>Theme parks: Universal Studios Japan (Osaka) goes all-out for Halloween Horror Nights</li>
+<li>  - Book tickets well in advance; expect massive crowds</li>
+</ul>
+<h3>Autumn Foliage Status (Koyo)</h3>
+<p>October is the <strong>beginning</strong> of koyo season — it starts in the north and mountains, reaching major cities in November.</p>
+<p><strong>What to expect in October:</strong></p>
+<ul>
+<li><strong>Hakone</strong>: early color by mid-late October, especially at higher elevations</li>
+<li><strong>Kyoto</strong>: mostly green in early-mid October; first hints of color by late October around Eikando and Tofuku-ji</li>
+<li><strong>Tokyo</strong>: green through October; peak not until mid-November</li>
+<li><strong>Nikko</strong> (optional day trip from Tokyo): peak color mid-October to early November — the best foliage option during this trip window</li>
+<li><strong>Hiroshima/Miyajima</strong>: similar to Kyoto, late October for earliest color</li>
+</ul>
+<p><strong>Best October foliage spots on this itinerary:</strong></p>
+<ol>
+<li>Hakone (ropeway views, Lake Ashi area)</li>
+<li>Uji (Byodo-in surroundings)</li>
+<li>Philosopher's Path (early turning trees)</li>
+<li>Arashiyama (mountain backdrop may show hints)</li>
+</ol>
+<h3>Seasonal Food (October Highlights)</h3>
+<ul>
+<li><strong>Sanma (pacific saury)</strong>: grilled whole, peak season — find at izakaya everywhere, ~500-800 JPY</li>
+<li><strong>Matsutake mushroom</strong>: Japan's prized autumn fungus, in rice (matsutake gohan), soup, or grilled — expensive but worth one splurge (~2,000-5,000 JPY for a dish)</li>
+<li><strong>Kuri (chestnut)</strong>: in wagashi, mont blanc desserts, kuri gohan (chestnut rice)</li>
+<li><strong>Shinmai (new rice)</strong>: the year's first harvest, noticeably fluffier and sweeter</li>
+<li><strong>Kabocha (pumpkin)</strong>: in tempura, soup, and desserts</li>
+<li><strong>Nashi (Japanese pear)</strong>: crisp and juicy, available at every convenience store</li>
+<li><strong>Kaki (persimmon)</strong>: both sweet (fuyu) and astringent (hachiya) varieties</li>
+<li><strong>Sake</strong>: autumn releases (hiyaoroshi) — aged over summer, rich and mellow. Perfect season for sake tasting</li>
+<li><strong>Seasonal sweets</strong>: chestnut yokan, sweet potato daifuku, momiji manju at peak freshness</li>
+</ul>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

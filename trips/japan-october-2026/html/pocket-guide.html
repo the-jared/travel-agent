@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Pocket Guide</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Pocket Guide</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Pocket Guide — Japan Quick Reference</h1>
+<p><em>Save this file for offline access on your phone.</em></p>
+<hr>
+<h2>Emergency Numbers</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Service</th><th>Number</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>**Police**</td><td>**110**</td><td>English support available (request it)</td></tr>
+<tr>
+<td>**Ambulance / Fire**</td><td>**119**</td><td>Say "kyuukyuu" (ambulance) or "kaji" (fire)</td></tr>
+<tr>
+<td>**Japan Tourist Hotline**</td><td>**050-3816-2787**</td><td>24/7, English/Chinese/Korean. Travel help, lost items, emergencies. YOUR BEST FRIEND.</td></tr>
+<tr>
+<td>**US Embassy Tokyo**</td><td>03-3224-5000</td><td>Akasaka, Minato-ku. For passport loss, legal trouble.</td></tr>
+<tr>
+<td>**Emergency from mobile**</td><td>110 or 119</td><td>Works without SIM. Provide location in English; they will assist.</td></tr>
+<tr>
+<td>**Lost phone / item on train**</td><td>Ask station staff</td><td>JR Lost & Found: 050-2016-1601. Items are almost always recovered in Japan.</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Top 10 Survival Phrases</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>English</th><th>Japanese (Romanized)</th><th>Japanese</th><th>When to Use</th></tr></thead><tbody>
+<tr>
+<td>Thank you</td><td>**Arigatou gozaimasu**</td><td>ありがとうございます</td><td>Constantly. After every interaction.</td></tr>
+<tr>
+<td>Excuse me / Sorry</td><td>**Sumimasen**</td><td>すみません</td><td>Getting attention, apologizing, passing through crowds</td></tr>
+<tr>
+<td>Please (when asking)</td><td>**Onegaishimasu**</td><td>お願いします</td><td>After pointing at a menu item, requesting something</td></tr>
+<tr>
+<td>Yes / No</td><td>**Hai / Iie**</td><td>はい / いいえ</td><td>Answering questions</td></tr>
+<tr>
+<td>I don't understand</td><td>**Wakarimasen**</td><td>わかりません</td><td>When someone speaks rapid Japanese to you</td></tr>
+<tr>
+<td>Do you speak English?</td><td>**Eigo wa hanasemasu ka?**</td><td>英語は話せますか？</td><td>Try this before giving up on communication</td></tr>
+<tr>
+<td>Where is ___?</td><td>**___ wa doko desu ka?**</td><td>___はどこですか？</td><td>Finding stations, bathrooms, restaurants</td></tr>
+<tr>
+<td>How much?</td><td>**Ikura desu ka?**</td><td>いくらですか？</td><td>Shopping, street food stalls</td></tr>
+<tr>
+<td>This one, please</td><td>**Kore o kudasai**</td><td>これをください</td><td>Pointing at food, menu items, products</td></tr>
+<tr>
+<td>Check, please</td><td>**Okaikei onegaishimasu**</td><td>お会計お願いします</td><td>Restaurants — or just gesture "check please"</td></tr>
+</tbody></table></div>
+<p><strong>Bonus phrases:</strong></p>
+<ul>
+<li>"Oishii!" (おいしい) = Delicious! — Say this to any chef and watch them light up.</li>
+<li>"Kanpai!" (乾杯) = Cheers! — Essential for izakaya drinking.</li>
+<li>"Toire wa doko desu ka?" (トイレはどこですか？) = Where is the toilet?</li>
+</ul>
+<hr>
+<h2>Hotel Address in Japanese (For Taxis)</h2>
+<p>Show this to your taxi driver. Fill in your current hotel before going out:</p>
+<pre><code>
+ホテル名: ___________________________
+(Hotel Name)
+
+住所: ___________________________
+(Address)
+
+電話番号: ___________________________
+(Phone Number)
+</code></pre>
+<p><strong>Tip:</strong> Screenshot your hotel's name and address in Japanese from Google Maps. Taxi drivers may not read English addresses but will always recognize Japanese text or a map pin.</p>
+<p><strong>Taxi basics:</strong></p>
+<ul>
+<li>Doors open and close AUTOMATICALLY. Do not touch the door.</li>
+<li>No tipping. Ever.</li>
+<li>Payment: Cash preferred. Major taxis accept IC cards and credit cards.</li>
+<li>Say your destination or show the address. "_____ made onegaishimasu" = "To _____, please."</li>
+</ul>
+<hr>
+<h2>Tipping Rule</h2>
+<h3>NEVER TIP. ANYWHERE. EVER.</h3>
+<ul>
+<li>Not at restaurants. Not at hotels. Not in taxis. Not at bars.</li>
+<li>Tipping can be considered <strong>confusing or even rude</strong>. Staff may chase you down to return the money thinking you forgot it.</li>
+<li>Service charges (10-15%) are included at upscale restaurants automatically.</li>
+<li>If you want to show gratitude, say "Arigatou gozaimasu" with a slight bow. That means more than money.</li>
+</ul>
+<hr>
+<h2>Key Cultural Rules</h2>
+<h3>Shoes</h3>
+<ul>
+<li><strong>Remove shoes</strong> when entering: homes, ryokans, some restaurants (look for a genkan/entryway with shoe shelves), temple interiors, fitting rooms.</li>
+<li>Wear provided slippers indoors. Switch to separate toilet slippers in the bathroom (and switch BACK when you leave — the #1 tourist mistake).</li>
+</ul>
+<h3>Trains</h3>
+<ul>
+<li><strong>No talking on the phone.</strong> Set to silent mode (called "manner mode" in Japan).</li>
+<li><strong>No eating on local trains.</strong> Shinkansen is fine — bento boxes are part of the experience.</li>
+<li><strong>Stand on the correct side of escalators:</strong> Left in Tokyo, Right in Osaka/Kyoto.</li>
+<li><strong>Queue in marked lines</strong> on the platform. Let passengers off before boarding.</li>
+</ul>
+<h3>Eating</h3>
+<ul>
+<li><strong>Say "itadakimasu"</strong> (いただきます) before eating — means "I humbly receive."</li>
+<li><strong>Slurp your noodles.</strong> It's polite and shows enjoyment. Seriously — slurp loudly at ramen shops.</li>
+<li><strong>Don't stick chopsticks upright in rice.</strong> It resembles a funeral ritual.</li>
+<li><strong>Don't pass food chopstick-to-chopstick.</strong> Also a funeral association.</li>
+<li><strong>Don't pour your own drink</strong> in a group setting. Pour for others; they'll pour for you.</li>
+</ul>
+<h3>Onsen (Hot Spring Baths)</h3>
+<ul>
+<li><strong>Wash thoroughly</strong> at the shower stations BEFORE entering the bath.</li>
+<li><strong>No swimsuits.</strong> Everyone is naked. It's normal and no one is looking at you.</li>
+<li><strong>Tattoos:</strong> Some onsen ban tattoos. Options: ask beforehand, use cover-up bandages, or book a private bath (kashikiri buro).</li>
+<li><strong>Bring a small towel</strong> to the bathing area (provided). Do NOT put it in the water — fold it on your head.</li>
+</ul>
+<h3>General Manners</h3>
+<ul>
+<li><strong>Don't blow your nose in public.</strong> Sniffling is acceptable; honking into a tissue is not.</li>
+<li><strong>Bow slightly</strong> when greeting, thanking, or saying goodbye. A small nod is fine for tourists.</li>
+<li><strong>Don't eat while walking.</strong> Find a bench or stand near the food stall. Exception: festival/market settings.</li>
+<li><strong>Trash cans are rare.</strong> Carry a small bag for your garbage. Dispose at konbini or your hotel.</li>
+</ul>
+<hr>
+<h2>Transit Quick Tips</h2>
+<h3>Last Trains</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>City</th><th>Approximate Last Train</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>**Tokyo**</td><td>~12:00-12:30 AM</td><td>Yamanote Line last train varies by direction. Check Navitime app.</td></tr>
+<tr>
+<td>**Kyoto**</td><td>~11:30 PM-12:00 AM</td><td>Buses stop earlier (~11 PM). Subway runs slightly later.</td></tr>
+<tr>
+<td>**Osaka**</td><td>~12:00-12:20 AM</td><td>Midosuji Line runs latest.</td></tr>
+</tbody></table></div>
+<p><strong>If you miss the last train:</strong></p>
+<ol>
+<li>Taxi (expensive: ¥3,000-10,000+ depending on distance)</li>
+<li>Karaoke until the first train (~5:00 AM) — the classic Japanese move</li>
+<li>Manga cafe (Manga Kissa) — reclinable seats, drinks, showers. ~¥1,500-2,500 for the night.</li>
+<li>24-hour McDonald's — the budget last resort</li>
+</ol>
+<h3>Suica / IC Card Tips</h3>
+<ul>
+<li>Tap in, tap out. If you tap in and don't tap out, the card locks. Ask station staff to fix it.</li>
+<li>Recharge at any ticket machine (look for IC card / Suica buttons). Accepts cash and sometimes credit cards.</li>
+<li>Works at konbini (7-Eleven, Lawson, FamilyMart), vending machines, and many restaurants.</li>
+<li>Balance limit: ¥20,000.</li>
+</ul>
+<h3>Shinkansen Tips</h3>
+<ul>
+<li><strong>Reserved seats:</strong> Use your JR Pass at a ticket machine or counter to reserve seats for free. Recommended for popular routes.</li>
+<li><strong>Unreserved cars:</strong> Cars 1-3 on most Hikari/Kodama trains. Queue early at the platform for busy departures.</li>
+<li><strong>Luggage:</strong> Oversized bags (3 sides totaling 160+ cm) require a free reservation for the luggage storage area behind the last row. Book at the ticket counter or online.</li>
+<li><strong>Food:</strong> Buy an ekiben (station bento) and drinks before boarding. There is no food cart on most services anymore.</li>
+</ul>
+<hr>
+<h2>Useful Conversions</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Japan</th><th>US Equivalent</th></tr></thead><tbody>
+<tr>
+<td>¥100</td><td>~$0.69</td></tr>
+<tr>
+<td>¥500</td><td>~$3.45</td></tr>
+<tr>
+<td>¥1,000</td><td>~$6.90</td></tr>
+<tr>
+<td>¥5,000</td><td>~$34.50</td></tr>
+<tr>
+<td>¥10,000</td><td>~$69.00</td></tr>
+<tr>
+<td>20C</td><td>68F</td></tr>
+<tr>
+<td>15C</td><td>59F</td></tr>
+<tr>
+<td>1 km</td><td>0.62 miles</td></tr>
+</tbody></table></div>
+<p><em>(Based on approximate rate of $1 = ¥145)</em></p>
+<hr>
+<h2>WiFi Backup</h2>
+<p>If your eSIM fails:</p>
+<ul>
+<li><strong>Free WiFi</strong> at all konbini (7-Eleven, Lawson, FamilyMart) — connect to their network, accept terms.</li>
+<li><strong>Japan Connected-free Wi-Fi app</strong> — One registration, access to thousands of free hotspots.</li>
+<li><strong>Starbucks / McDonald's</strong> — Reliable free WiFi.</li>
+<li><strong>Train stations</strong> — JR stations and Tokyo Metro stations have free WiFi (often slow).</li>
+<li><strong>Pocket WiFi rental</strong> — Available at airports (Global WiFi, iVideo). ~$5-8/day.</li>
+</ul>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

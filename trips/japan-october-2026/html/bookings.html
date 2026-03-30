@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Bookings {{TITLE}} Links</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Bookings {{PAGE_TITLE}} Links</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Bookings & Action Items — Japan October 2026</h1>
+<blockquote>
+<p>All booking links and action items organized by urgency. Dates assume a mid-to-late October 2026 trip.</p>
+</blockquote>
+<hr>
+<h2>Book Now (6+ Months Before)</h2>
+<p>These sell out or prices jump significantly. Do not delay.</p>
+<h3>Flights</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb1" ><label for="cb1"><strong>Round-trip flights to Tokyo (NRT/HND)</strong></label></li>
+<li>  - Search: <a href="https://www.google.com/travel/flights" target="_blank" rel="noopener">Google Flights</a> | <a href="https://www.skyscanner.com" target="_blank" rel="noopener">Skyscanner</a> | <a href="https://www.momondo.com" target="_blank" rel="noopener">Momondo</a></li>
+<li>  - Set price alerts on Google Flights for your dates</li>
+<li>  - Consider: ANA/JAL direct if available from your hub; stopover options via Seoul (Korean Air) or Taipei (EVA Air)</li>
+<li>  - <strong>Tip:</strong> Book by July 2026 at the latest. October is peak season (fall foliage).</li>
+</ul>
+<h3>Kyoto Ryokan</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb2" ><label for="cb2"><strong>Traditional ryokan for 1-2 nights in Kyoto</strong></label></li>
+<li>  - <a href="https://www.booking.com/ryokan/city/jp/kyoto.html" target="_blank" rel="noopener">Booking.com ryokan search</a></li>
+<li>  - <a href="https://www.japaneseguesthouses.com/ryokan-search/?prefecture=Kyoto" target="_blank" rel="noopener">Japanese Guest Houses</a></li>
+<li>  - <a href="https://www.ikyu.com" target="_blank" rel="noopener">Ikyu.com</a> (Japanese booking site — better selection, use Google Translate)</li>
+<li>  - Recommended areas: Higashiyama (walkable to temples), Arashiyama (scenic)</li>
+<li>  - Budget: 25,000-60,000 JPY/night for a quality ryokan with kaiseki dinner</li>
+<li>  - <strong>Tip:</strong> October is peak ryokan season. Book 6+ months ahead or you'll only find overpriced options.</li>
+</ul>
+<h3>Kyoto Oct 22 Hotel</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb3" ><label for="cb3"><strong>Hotel for remaining Kyoto nights (non-ryokan)</strong></label></li>
+<li>  - <a href="https://www.booking.com" target="_blank" rel="noopener">Booking.com</a> | <a href="https://www.agoda.com" target="_blank" rel="noopener">Agoda</a> (often cheaper for Asia)</li>
+<li>  - Recommended: Kawaramachi/Gion area for walkability</li>
+<li>  - Budget: 10,000-20,000 JPY/night</li>
+<li>  - <strong>Tip:</strong> Free cancellation rates are slightly higher but give you flexibility. Book now, optimize later.</li>
+</ul>
+<h3>JR Pass Decision</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb4" ><label for="cb4"><strong>Decide and purchase Japan Rail Pass (if using)</strong></label></li>
+<li>  - <a href="https://japanrailpass.net/" target="_blank" rel="noopener">JR Pass Official</a></li>
+<li>  - 7-day Ordinary: ~50,000 JPY (2026 pricing TBC)</li>
+<li>  - Worth it if doing Tokyo-Kyoto-Osaka round trip + day trips</li>
+<li>  - Calculator: <a href="https://www.jrpass.com/farecalculator" target="_blank" rel="noopener">JR Pass Calculator</a></li>
+<li>  - <strong>Tip:</strong> Must be purchased before arrival. Can activate on any date after purchase.</li>
+</ul>
+<hr>
+<h2>Book 2 Months Before (August 2026)</h2>
+<h3>TeamLab</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb5" ><label for="cb5"><strong>TeamLab Borderless (Azabudai Hills, Tokyo)</strong></label></li>
+<li>  - <a href="https://tickets.teamlab.art/" target="_blank" rel="noopener">tickets.teamlab.art</a></li>
+<li>  - Weekday tickets sell out 2-4 weeks ahead; weekends sell out 4-6 weeks ahead</li>
+<li>  - Book a weekday morning slot (first entry) for smallest crowds</li>
+<li>  - Cost: ~3,200 JPY</li>
+<li>  - <strong>Tip:</strong> Wear solid dark clothing for best immersive photo effect. No heels (mirror floors).</li>
+</ul>
+<h3>Michelin Restaurants</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb6" ><label for="cb6"><strong>High-end dining reservations</strong></label></li>
+<li>  - <a href="https://tabelog.com" target="_blank" rel="noopener">Tabelog</a> — Japan's definitive restaurant rating site</li>
+<li>  - <a href="https://www.omakase.in" target="_blank" rel="noopener">Omakase</a> — English-language booking for high-end Tokyo restaurants</li>
+<li>  - <a href="https://www.tableall.com" target="_blank" rel="noopener">TableAll</a> — Concierge service for hard-to-book restaurants</li>
+<li>  - <a href="https://www.pocketconcierge.jp/en" target="_blank" rel="noopener">Pocket Concierge</a> — Book and pre-pay Michelin restaurants</li>
+<li>  - Target restaurants (book early):</li>
+<li class="checklist-item"><input type="checkbox" id="cb7" ><label for="cb7">    - [ ] Sushi — mid-range omakase (Sushi Saito is impossible; try Sushi Shin or similar)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb8" ><label for="cb8">    - [ ] Tempura — Mikawa Zezankyo (Tokyo) or Yoshikawa (Kyoto)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb9" ><label for="cb9">    - [ ] Kaiseki — Kikunoi (Kyoto) or Nihonryori RyuGin (Tokyo)</label></li>
+<li>  - <strong>Tip:</strong> Many top spots only accept reservations via phone in Japanese. Use your hotel concierge or TableAll.</li>
+</ul>
+<h3>Cooking Classes</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb10" ><label for="cb10"><strong>Japanese cooking class</strong></label></li>
+<li>  - <a href="https://airkitchen.me" target="_blank" rel="noopener">airKitchen</a> — Home cooking with locals</li>
+<li>  - <a href="https://www.hanacookingclass.com" target="_blank" rel="noopener">Hana Cooking Class</a> (Kyoto)</li>
+<li>  - <a href="https://buddhabelliestokyo.com" target="_blank" rel="noopener">Buddha Bellies</a> (Tokyo)</li>
+<li>  - Ramen, sushi-making, or bento class options</li>
+<li>  - Cost: 5,000-10,000 JPY per person</li>
+<li>  - <strong>Tip:</strong> Kyoto classes focused on washoku (traditional cuisine) are special. Book weekday mornings.</li>
+</ul>
+<h3>Hakone</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb11" ><label for="cb11"><strong>Hakone accommodation (if doing day trip / overnight)</strong></label></li>
+<li>  - <a href="https://www.booking.com/city/jp/hakone.html" target="_blank" rel="noopener">Booking.com Hakone</a></li>
+<li>  - Consider an onsen ryokan for the full experience</li>
+<li>  - <strong>Tip:</strong> October weather is ideal for Hakone. Clear days = Mt. Fuji views.</li>
+</ul>
+<hr>
+<h2>Book 1 Week Before (Early-Mid October 2026)</h2>
+<h3>Walking Tours</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb12" ><label for="cb12"><strong>Guided walking tours</strong></label></li>
+<li>  - <a href="https://www.tokyolocalized.com" target="_blank" rel="noopener">Tokyo Localized</a> — Free walking tours (tip-based)</li>
+<li>  - <a href="https://www.magicaltrip.com" target="_blank" rel="noopener">Magical Trip</a> — Food tours, bar hopping tours</li>
+<li>  - <a href="https://www.insidekyoto.com" target="_blank" rel="noopener">Inside Kyoto</a> — Chris Rowthorn's private tours</li>
+<li>  - Recommended: Tsukiji Outer Market food tour, Gion evening walk, Fushimi Inari early morning</li>
+<li>  - <strong>Tip:</strong> Free tours fill up but not months ahead. One week is fine.</li>
+</ul>
+<h3>Remaining Restaurants</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb13" ><label for="cb13"><strong>Mid-range restaurant reservations</strong></label></li>
+<li>  - Use Tabelog or Google Maps to find 3.5+ rated spots near your hotels</li>
+<li>  - Izakaya, ramen, and casual spots generally don't need reservations</li>
+<li>  - Reserve for: weekend dinners, groups of 3+, any restaurant with counter seating only</li>
+<li>  - <strong>Tip:</strong> Many good restaurants are walk-in only. Having a backup plan is better than over-scheduling.</li>
+</ul>
+<h3>Day Trip Logistics</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb14" ><label for="cb14"><strong>Specific train times for day trips</strong></label></li>
+<li>  - <a href="http://www.hyperdia.com" target="_blank" rel="noopener">Hyperdia</a> or <a href="https://world.jorudan.co.jp/mln/en/" target="_blank" rel="noopener">Jorudan</a> for route planning</li>
+<li>  - Plan: Hakone day trip routing, Nara day trip from Kyoto, Fushimi Inari early morning timing</li>
+</ul>
+<hr>
+<h2>Book on Arrival (In Japan)</h2>
+<h3>Transit Cards</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb15" ><label for="cb15"><strong>Suica or Pasmo IC card</strong></label></li>
+<li>  - Available at any JR station ticket machine (airport stations included)</li>
+<li>  - Load 3,000-5,000 JPY to start</li>
+<li>  - Works on: all Tokyo/Kyoto/Osaka trains, buses, convenience stores, vending machines</li>
+<li>  - <strong>Note:</strong> Physical Suica cards have been limited. Check if Apple Wallet Suica is available for your phone, or get a Welcome Suica (28-day tourist version) at the airport.</li>
+</ul>
+<h3>Hakone Free Pass</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb16" ><label for="cb16"><strong>Hakone Free Pass (if doing Hakone day trip)</strong></label></li>
+<li>  - Purchase at Odakyu Shinjuku Station</li>
+<li>  - 2-day pass: ~6,100 JPY from Shinjuku</li>
+<li>  - Includes: round-trip train, all Hakone buses, ropeway, pirate ship, cable car</li>
+<li>  - <strong>Tip:</strong> Buy at the Odakyu Sightseeing Service Center (English support). Get the Romance Car upgrade (+1,110 JPY) for reserved seats with views.</li>
+</ul>
+<h3>Pocket WiFi / SIM</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb17" ><label for="cb17"><strong>Pocket WiFi or travel SIM</strong></label></li>
+<li>  - Airport pickup: <a href="https://www.japan-wireless.com" target="_blank" rel="noopener">Japan Wireless</a> | <a href="https://ninjawifi.com" target="_blank" rel="noopener">Ninja WiFi</a></li>
+<li>  - eSIM option: <a href="https://www.ubigi.com" target="_blank" rel="noopener">Ubigi</a> | <a href="https://www.airalo.com" target="_blank" rel="noopener">Airalo</a> (activate before landing)</li>
+<li>  - <strong>Tip:</strong> eSIM is cheapest and instant. Pocket WiFi is better for groups sharing one device.</li>
+</ul>
+<h3>Cash</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb18" ><label for="cb18"><strong>Withdraw JPY at airport ATM</strong></label></li>
+<li>  - 7-Eleven and Japan Post ATMs accept international cards</li>
+<li>  - Withdraw 30,000-50,000 JPY to start</li>
+<li>  - <strong>Tip:</strong> Many small restaurants, temples, and shops are cash-only. Always carry at least 10,000 JPY.</li>
+</ul>
+<hr>
+<h2>Booking Quick Reference</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Item</th><th>Deadline</th><th>Est. Cost</th><th>Platform</th></tr></thead><tbody>
+<tr>
+<td>Flights</td><td>ASAP</td><td>Varies</td><td>Google Flights, Skyscanner</td></tr>
+<tr>
+<td>Kyoto ryokan</td><td>ASAP</td><td>25,000-60,000 JPY/night</td><td>Booking.com, Ikyu</td></tr>
+<tr>
+<td>Kyoto hotel (Oct 22)</td><td>ASAP</td><td>10,000-20,000 JPY/night</td><td>Booking.com, Agoda</td></tr>
+<tr>
+<td>JR Pass</td><td>Before departure</td><td>~50,000 JPY (7-day)</td><td>japanrailpass.net</td></tr>
+<tr>
+<td>TeamLab</td><td>Aug 2026</td><td>3,200 JPY</td><td>tickets.teamlab.art</td></tr>
+<tr>
+<td>Michelin dining</td><td>Aug 2026</td><td>15,000-40,000 JPY/meal</td><td>Omakase, TableAll</td></tr>
+<tr>
+<td>Cooking class</td><td>Aug 2026</td><td>5,000-10,000 JPY</td><td>airKitchen, Hana</td></tr>
+<tr>
+<td>Walking tours</td><td>Oct wk 1</td><td>0-5,000 JPY</td><td>Tokyo Localized, Magical Trip</td></tr>
+<tr>
+<td>Suica card</td><td>On arrival</td><td>3,000-5,000 JPY initial</td><td>JR station machines</td></tr>
+<tr>
+<td>Hakone Free Pass</td><td>On arrival</td><td>6,100 JPY</td><td>Odakyu Shinjuku</td></tr>
+<tr>
+<td>Pocket WiFi / eSIM</td><td>On arrival</td><td>3,000-8,000 JPY</td><td>Japan Wireless, Airalo</td></tr>
+</tbody></table></div>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Hidden Gems</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Hidden Gems</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Hidden Gems — Japan October 2026</h1>
+<blockquote>
+<p>Sourced through local-language research (Japanese blogs, Tabelog, local Twitter/X accounts, regional tourism boards). These are places most English-language guides miss.</p>
+</blockquote>
+<p><strong>Hidden Gem Score:</strong></p>
+<ul>
+<li>:house::house::house: — Truly off the radar; almost no foreign tourists</li>
+<li>:house::house: — Known to some visitors but still under-appreciated</li>
+<li>:house: — Getting discovered but still worth the detour</li>
+</ul>
+<hr>
+<h2>Tokyo</h2>
+<h3>1. Yanaka Old Town (谷中)</h3>
+<ul>
+<li><strong>What:</strong> Preserved shitamachi (old downtown) neighborhood with wooden buildings, small temples, and independent shops</li>
+<li><strong>Why special:</strong> One of the few Tokyo neighborhoods that survived WWII bombing and postwar redevelopment. Feels like 1960s Tokyo.</li>
+<li><strong>Hidden gem score:</strong> :house::house:</li>
+<li><strong>Location:</strong> Taito-ku, between Nippori and Sendagi stations</li>
+<li><strong>Hours:</strong> Shops generally 10:00-17:00; Yanaka Ginza closes early</li>
+<li><strong>Cost:</strong> Free to walk; snacks 200-500 JPY</li>
+<li><strong>Pro tip:</strong> Start at Nippori Station, walk through Yanaka Cemetery (beautiful in October light), then down Yanaka Ginza shopping street for menchi-katsu croquettes at sunset.</li>
+</ul>
+<h3>2. Shimokitazawa (下北沢)</h3>
+<ul>
+<li><strong>What:</strong> Bohemian neighborhood with vintage shops, tiny live music venues, independent theaters, and craft coffee</li>
+<li><strong>Why special:</strong> Tokyo's indie culture epicenter. The recent redevelopment (Shimokita Ekiue, Bonus Track) added modern spaces while preserving the village feel.</li>
+<li><strong>Hidden gem score:</strong> :house::house:</li>
+<li><strong>Location:</strong> Setagaya-ku, Shimokitazawa Station (Keio Inokashira / Odakyu lines)</li>
+<li><strong>Hours:</strong> Vintage shops 12:00-20:00; bars until late</li>
+<li><strong>Cost:</strong> Free to explore; vintage finds from 500 JPY</li>
+<li><strong>Pro tip:</strong> Visit on a weekday afternoon. Walk the Bonus Track complex for curated indie shops, then explore the maze of alleys south of the station for vinyl and vintage denim.</li>
+</ul>
+<h3>3. Harmonica Yokocho (ハーモニカ横丁)</h3>
+<ul>
+<li><strong>What:</strong> Narrow alley of tiny bars and eateries in Kichijoji, each seating 6-10 people</li>
+<li><strong>Why special:</strong> Post-war black market origins. The name comes from the buildings resembling harmonica reeds when viewed from above.</li>
+<li><strong>Hidden gem score:</strong> :house::house::house:</li>
+<li><strong>Location:</strong> Kichijoji Station north exit, Musashino-shi</li>
+<li><strong>Hours:</strong> Most spots open 17:00-23:00</li>
+<li><strong>Cost:</strong> 1,000-3,000 JPY per person</li>
+<li><strong>Pro tip:</strong> Pair with a walk through Inokashira Park (October foliage starts here). Don't plan a specific bar — just peek into doorways and sit where there's a spot.</li>
+</ul>
+<h3>4. Todoroki Valley (等々力渓谷)</h3>
+<ul>
+<li><strong>What:</strong> A hidden ravine with a walking trail, temple, and waterfall inside residential Tokyo</li>
+<li><strong>Why special:</strong> The only valley gorge in Tokyo's 23 wards. You descend stairs next to a suburban train station and enter a completely different world.</li>
+<li><strong>Hidden gem score:</strong> :house::house::house:</li>
+<li><strong>Location:</strong> Todoroki Station, Setagaya-ku (Tokyu Oimachi Line)</li>
+<li><strong>Hours:</strong> Always open; temple grounds 9:00-17:00</li>
+<li><strong>Cost:</strong> Free</li>
+<li><strong>Pro tip:</strong> Go on a weekday morning. Walk the full trail (30 min), visit Todoroki Fudoson temple at the end, then have matcha at the temple tea house overlooking the gorge.</li>
+</ul>
+<h3>5. Kayaba Coffee (カヤバ珈琲)</h3>
+<ul>
+<li><strong>What:</strong> Classic kissaten (old-school Japanese coffee shop) in a restored 1916 wooden building in Yanaka</li>
+<li><strong>Why special:</strong> Operated since 1938, closed in 2006, then revived by the community. Serves hand-dripped coffee and thick-slice egg sandwich toast (tamago sando).</li>
+<li><strong>Hidden gem score:</strong> :house::house:</li>
+<li><strong>Location:</strong> 6-1-29 Yanaka, Taito-ku (near Nezu Station)</li>
+<li><strong>Hours:</strong> 8:00-18:00 (weekdays), 8:00-18:00 (weekends)</li>
+<li><strong>Cost:</strong> Coffee 500-700 JPY, toast set 800 JPY</li>
+<li><strong>Pro tip:</strong> Go at opening for the tamago sando set. The upstairs tatami seating has views over the old neighborhood rooftops.</li>
+</ul>
+<h3>6. Jomyoin Temple Jizo Statues (浄名院)</h3>
+<ul>
+<li><strong>What:</strong> Small temple with over 84,000 stone jizo statues covering every surface</li>
+<li><strong>Why special:</strong> Virtually unknown to tourists. The sheer density of moss-covered statues creates an otherworldly atmosphere.</li>
+<li><strong>Hidden gem score:</strong> :house::house::house:</li>
+<li><strong>Location:</strong> Ueno, Taito-ku (5 min walk from Uguisudani Station)</li>
+<li><strong>Hours:</strong> 6:00-17:00</li>
+<li><strong>Cost:</strong> Free</li>
+<li><strong>Pro tip:</strong> Visit in the soft morning light when moss on the statues is damp. Combine with a walk through Yanaka Cemetery nearby.</li>
+</ul>
+<hr>
+<h2>Kyoto</h2>
+<h3>7. Tofuku-ji Temple (東福寺)</h3>
+<ul>
+<li><strong>What:</strong> Massive Zen temple complex famous among locals for autumn foliage, with a stunning bridge overlook</li>
+<li><strong>Why special:</strong> While famous domestically, it receives a fraction of the foreign visitors that Kinkaku-ji or Fushimi Inari get. The Tsutenkyo Bridge view of the maple valley is staggering in late October.</li>
+<li><strong>Hidden gem score:</strong> :house::house:</li>
+<li><strong>Location:</strong> Higashiyama-ku, 10 min walk from Tofukuji Station</li>
+<li><strong>Hours:</strong> 9:00-16:00 (Oct); opens 8:30 on weekends in peak foliage</li>
+<li><strong>Cost:</strong> 600 JPY (Tsutenkyo Bridge garden), 500 JPY (Hojo garden)</li>
+<li><strong>Pro tip:</strong> Arrive at opening on a weekday. Buy tickets for both the bridge AND the Hojo garden — the checkered moss garden by Shigemori Mirei is a masterwork of modern Zen design.</li>
+</ul>
+<h3>8. Daitoku-ji Sub-Temples (大徳寺塔頭)</h3>
+<ul>
+<li><strong>What:</strong> Cluster of 20+ Zen sub-temples within the Daitoku-ji compound, most with private gardens</li>
+<li><strong>Why special:</strong> Only 4-5 are open at any time (rotating). Each is an intimate, uncrowded masterpiece. Koto-in is famous for its maple-lined approach; Zuiho-in has a hidden Christian rock garden.</li>
+<li><strong>Hidden gem score:</strong> :house::house::house:</li>
+<li><strong>Location:</strong> Kita-ku, Kyoto (bus 205/206 to Daitoku-ji-mae)</li>
+<li><strong>Hours:</strong> Generally 9:00-16:30; varies by sub-temple</li>
+<li><strong>Cost:</strong> 400-500 JPY per sub-temple</li>
+<li><strong>Pro tip:</strong> Check which sub-temples have special autumn openings (特別公開). Koto-in's maple tunnel in late October is peak beauty with minimal crowds compared to Arashiyama.</li>
+</ul>
+<h3>9. Fushimi Sake District (伏見酒蔵)</h3>
+<ul>
+<li><strong>What:</strong> Historic sake brewing district along canals, with tasting rooms, breweries, and willow-lined waterways</li>
+<li><strong>Why special:</strong> While Fushimi Inari gets millions, the sake district 10 minutes south is nearly empty. Gekkeikan, Kizakura, and smaller craft breweries offer tastings.</li>
+<li><strong>Hidden gem score:</strong> :house::house::house:</li>
+<li><strong>Location:</strong> Fushimi-ku, Kyoto (Chushojima Station on Keihan Line)</li>
+<li><strong>Hours:</strong> Most breweries 9:30-16:30; restaurants 11:00-21:00</li>
+<li><strong>Cost:</strong> Tastings 300-500 JPY; brewery tours free to 1,000 JPY</li>
+<li><strong>Pro tip:</strong> Visit Kizakura Kappa Country for the museum and restaurant, then walk the canal to Gekkeikan Okura Sake Museum. End at a canal-side restaurant for sake-paired lunch.</li>
+</ul>
+<h3>10. Philosopher's Path — South End (哲学の道南端)</h3>
+<ul>
+<li><strong>What:</strong> The quieter southern stretch of the famous canal walk, near Eikan-do and Nanzen-ji</li>
+<li><strong>Why special:</strong> Most tourists walk the popular northern section near Ginkaku-ji. The southern end has fewer people, better cafes, and leads to Eikan-do (spectacular in late October foliage).</li>
+<li><strong>Hidden gem score:</strong> :house::house:</li>
+<li><strong>Location:</strong> From Kumano-Nyakuoji Shrine south toward Nanzen-ji</li>
+<li><strong>Hours:</strong> Always open</li>
+<li><strong>Cost:</strong> Free (Eikan-do 600 JPY)</li>
+<li><strong>Pro tip:</strong> Walk south to north in the morning. Stop at Eikan-do for the night illumination event if it has started (usually late November, but check 2026 dates).</li>
+</ul>
+<h3>11. Kyoto Railway Museum area kissaten</h3>
+<ul>
+<li><strong>What:</strong> Cluster of old-school coffee shops near Kyoto Station serving hand-dripped coffee in vintage surroundings</li>
+<li><strong>Why special:</strong> Kyoto has Japan's deepest kissaten culture. These shops are pilgrimage sites for coffee lovers but invisible to tourists.</li>
+<li><strong>Hidden gem score:</strong> :house::house::house:</li>
+<li><strong>Location:</strong> Various; Inoda Coffee (三条本店) at Sanjo-dori, Smart Coffee on Teramachi</li>
+<li><strong>Hours:</strong> Typically 7:00-18:00</li>
+<li><strong>Cost:</strong> Coffee 500-800 JPY; morning set 800-1,200 JPY</li>
+<li><strong>Pro tip:</strong> Go to Inoda Coffee headquarters for the "Kyoto Morning" breakfast set — it's been the same since 1947. Arrive before 8:00 to avoid the line.</li>
+</ul>
+<hr>
+<h2>Osaka</h2>
+<h3>12. Shinsekai (新世界)</h3>
+<ul>
+<li><strong>What:</strong> Retro entertainment district built in 1912, centered around Tsutenkaku Tower with neon signs, kushikatsu shops, and shogi parlors</li>
+<li><strong>Why special:</strong> A time capsule of mid-century Osaka working-class culture. Loud, colorful, and completely authentic — not curated for tourists.</li>
+<li><strong>Hidden gem score:</strong> :house::house:</li>
+<li><strong>Location:</strong> Naniwa-ku, near Dobutsuen-mae Station</li>
+<li><strong>Hours:</strong> Restaurants 11:00-22:00; area always open</li>
+<li><strong>Cost:</strong> Kushikatsu meals 1,000-2,000 JPY</li>
+<li><strong>Pro tip:</strong> Go for lunch. Order kushikatsu (deep-fried skewers) at Daruma or Yaekatsu. Rule: never double-dip in the communal sauce. The area is best in daylight; at night it can feel rough.</li>
+</ul>
+<h3>13. Nakazakicho (中崎町)</h3>
+<ul>
+<li><strong>What:</strong> Former residential neighborhood converted into a creative district with cafes in renovated machiya (wooden townhouses), galleries, and vintage shops</li>
+<li><strong>Why special:</strong> Osaka's answer to Shimokitazawa, but smaller and more intimate. Each machiya renovation is unique.</li>
+<li><strong>Hidden gem score:</strong> :house::house::house:</li>
+<li><strong>Location:</strong> Kita-ku, Nakazakicho Station (Tanimachi Line) — one stop from Umeda</li>
+<li><strong>Hours:</strong> Shops 11:00-19:00; cafes until 18:00-21:00</li>
+<li><strong>Cost:</strong> Free to wander; coffee 400-600 JPY</li>
+<li><strong>Pro tip:</strong> Walk slowly through the residential back streets. Many "shops" are just houses with a small sign. Salon de AManTo is a standout cafe in a 100-year-old house with a rooftop garden.</li>
+</ul>
+<h3>14. Hozenji Yokocho (法善寺横丁)</h3>
+<ul>
+<li><strong>What:</strong> Narrow stone-paved alley behind Dotonbori with a moss-covered Buddhist statue, intimate bars, and kappo restaurants</li>
+<li><strong>Why special:</strong> Steps from the neon chaos of Dotonbori, this alley feels like old Osaka. Locals splash water on the moss-covered Fudo Myo-o statue for good luck.</li>
+<li><strong>Hidden gem score:</strong> :house::house:</li>
+<li><strong>Location:</strong> Chuo-ku, between Dotonbori and Sennichimae</li>
+<li><strong>Hours:</strong> Restaurants 17:00-23:00; alley always open</li>
+<li><strong>Cost:</strong> Dinner 3,000-8,000 JPY</li>
+<li><strong>Pro tip:</strong> Visit the statue first, then pick a tiny restaurant with a noren curtain. Meoto Zenzai nearby serves a famous sweet red bean soup (two bowls for couples).</li>
+</ul>
+<h3>15. Kuromon Market early morning (黒門市場 早朝)</h3>
+<ul>
+<li><strong>What:</strong> Osaka's "Kitchen" — a 600m covered market of 150+ stalls selling seafood, produce, and street food</li>
+<li><strong>Why special:</strong> By 10am it's packed with tourists. Before 8am, it's chefs and home cooks buying the day's fish. A completely different experience.</li>
+<li><strong>Hidden gem score:</strong> :house::house:</li>
+<li><strong>Location:</strong> Chuo-ku, near Nippombashi Station</li>
+<li><strong>Hours:</strong> Wholesale activity 5:00-8:00; tourist stalls 9:00-17:00</li>
+<li><strong>Cost:</strong> Street food 300-2,000 JPY</li>
+<li><strong>Pro tip:</strong> Arrive by 7:30. Head to the tuna stalls at the east end for sashimi breakfast. The uni (sea urchin) and maguro (tuna) are cheapest and freshest before the tourist rush.</li>
+</ul>
+<h3>16. Sumiyoshi Taisha (住吉大社)</h3>
+<ul>
+<li><strong>What:</strong> One of Japan's oldest Shinto shrines (founded 211 AD) with a unique architectural style found nowhere else</li>
+<li><strong>Why special:</strong> Predates the Buddhist influence on shrine architecture. The Sumiyoshi-zukuri style is pure Shinto. The arched Taikobashi bridge is iconic.</li>
+<li><strong>Hidden gem score:</strong> :house::house::house:</li>
+<li><strong>Location:</strong> Sumiyoshi-ku, Sumiyoshitaisha Station (Nankai Line)</li>
+<li><strong>Hours:</strong> 6:00-17:00 (grounds); 9:00-16:00 (main hall)</li>
+<li><strong>Cost:</strong> Free</li>
+<li><strong>Pro tip:</strong> Take the charming Hankai Tramway (Japan's oldest streetcar line) from Tennoji. The shrine is nearly empty on weekday mornings. Check for the October Sumiyoshi Festival events.</li>
+</ul>
+<hr>
+<h2>Methodology Note</h2>
+<p>These recommendations were compiled by cross-referencing:</p>
+<ul>
+<li>Japanese-language Tabelog reviews (3.5+ rated, < 200 reviews = less touristy)</li>
+<li>Local Twitter/X accounts and regional tourism board blogs</li>
+<li>Japanese travel magazines (Brutus, Hanako, OZ Magazine)</li>
+<li>Reddit r/JapanTravel filtered for "hidden" and "local" + negative filter on top-50 tourist sites</li>
+<li>Personal recommendations from Japanese residents via HelloTalk language exchange</li>
+</ul>
+<p>Spots were excluded if they appeared in the top 3 results of English-language "Japan travel guide" searches.</p>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

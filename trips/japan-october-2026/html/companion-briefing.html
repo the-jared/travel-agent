@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Companion Briefing</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Companion Briefing</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Trip Briefing — Japan October 2026</h1>
+<blockquote>
+<p>Shareable one-pager for emergency contacts, family, or quick personal reference.</p>
+</blockquote>
+<hr>
+<h2>Trip Snapshot</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>**Where**</th><th>Japan — Tokyo, Hakone, Kyoto, Osaka, Hiroshima</th></tr></thead><tbody>
+<tr>
+<td>**When**</td><td>October 2026, 14 days</td></tr>
+<tr>
+<td>**Who**</td><td>Solo traveler</td></tr>
+<tr>
+<td>**Flight**</td><td>[To be filled — update before departure]</td></tr>
+<tr>
+<td>**Hotels**</td><td>Multiple — see full itinerary</td></tr>
+<tr>
+<td>**Budget**</td><td>~$3,500-5,000 total (including flights)</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Emergency Contacts</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Service</th><th>Number</th></tr></thead><tbody>
+<tr>
+<td>**Police**</td><td>110</td></tr>
+<tr>
+<td>**Ambulance / Fire**</td><td>119</td></tr>
+<tr>
+<td>**Japan Tourist Hotline** (24/7, English)</td><td>050-3816-2787</td></tr>
+<tr>
+<td>**US Embassy Tokyo**</td><td>03-3224-5000</td></tr>
+<tr>
+<td>**US Embassy Osaka**</td><td>06-6315-5900</td></tr>
+<tr>
+<td>**Emergency from mobile**</td><td>110 or 119 (works without area code)</td></tr>
+</tbody></table></div>
+<p><strong>US Embassy Tokyo Address:</strong> 1-10-5 Akasaka, Minato-ku, Tokyo 107-8420</p>
+<p><strong>US Consulate Osaka Address:</strong> 2-11-5 Nishitenma, Kita-ku, Osaka 530-8543</p>
+<p><strong>Travel Insurance Policy #:</strong> [Fill in before departure]</p>
+<p><strong>Insurance Emergency Line:</strong> [Fill in before departure]</p>
+<hr>
+<h2>Day-by-Day Summary</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Day</th><th>Date</th><th>Location</th><th>Highlights</th></tr></thead><tbody>
+<tr>
+<td>1</td><td>Oct TBD</td><td>Tokyo (arrive)</td><td>Land at Narita, N'EX to Shinjuku, check in, explore neighborhood</td></tr>
+<tr>
+<td>2</td><td>—</td><td>Tokyo</td><td>Tsukiji Outer Market, Senso-ji, Akihabara, Shibuya evening</td></tr>
+<tr>
+<td>3</td><td>—</td><td>Tokyo</td><td>Meiji Shrine, Harajuku, Shinjuku Gyoen, Golden Gai</td></tr>
+<tr>
+<td>4</td><td>—</td><td>Tokyo</td><td>TeamLab, Odaiba, or Yanaka old-town; prep for Hakone</td></tr>
+<tr>
+<td>5</td><td>—</td><td>Hakone</td><td>Romancecar from Shinjuku, Hakone loop (ropeway, boat, museum), ryokan + onsen</td></tr>
+<tr>
+<td>6</td><td>—</td><td>Hakone → Kyoto</td><td>Morning onsen, Shinkansen via Odawara to Kyoto, evening Gion walk</td></tr>
+<tr>
+<td>7</td><td>—</td><td>Kyoto</td><td>Fushimi Inari (early), Nishiki Market, Kinkaku-ji, Arashiyama bamboo</td></tr>
+<tr>
+<td>8</td><td>—</td><td>Kyoto</td><td>Philosopher's Path, Ginkaku-ji, tea ceremony, Pontocho dinner</td></tr>
+<tr>
+<td>9</td><td>—</td><td>Kyoto</td><td>Nara day trip (deer park, Todai-ji), evening Kyoto free</td></tr>
+<tr>
+<td>10</td><td>—</td><td>Kyoto → Osaka</td><td>Morning temple, train to Osaka, Dotonbori street food crawl</td></tr>
+<tr>
+<td>11</td><td>—</td><td>Osaka</td><td>Osaka Castle, Shinsekai, Kuromon Market, night out in Namba</td></tr>
+<tr>
+<td>12</td><td>—</td><td>Osaka → Hiroshima</td><td>Shinkansen to Hiroshima, Peace Memorial, Miyajima Island</td></tr>
+<tr>
+<td>13</td><td>—</td><td>Hiroshima → Osaka/Kyoto</td><td>Morning Miyajima, return east, last shopping/sightseeing</td></tr>
+<tr>
+<td>14</td><td>—</td><td>Departure</td><td>Pack, airport transfer, depart</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Cultural Quick Reference — The Big 3 Rules</h2>
+<ol>
+<li><strong>Shoes off</strong> — Remove shoes when entering homes, ryokans, some restaurants, and temples. Look for a raised floor or shoe rack at the entrance. Slippers are usually provided.</li>
+<li><strong>Quiet in public transit</strong> — Trains and buses are silent zones. Phone calls are a no-go. Set your phone to silent (マナーモード). Speak softly if you must.</li>
+<li><strong>No tipping, ever</strong> — Tipping is not customary and can cause confusion or offense. The price on the menu is what you pay. Service is already exceptional.</li>
+</ol>
+<hr>
+<h2>Essential Phrases</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>English</th><th>Japanese</th><th>Pronunciation</th></tr></thead><tbody>
+<tr>
+<td>Thank you</td><td>ありがとうございます</td><td>ah-ree-GAH-toh go-zah-ee-MAHSS</td></tr>
+<tr>
+<td>Excuse me / Sorry</td><td>すみません</td><td>soo-mee-mah-SEN</td></tr>
+<tr>
+<td>Yes / No</td><td>はい / いいえ</td><td>HAI / ee-EH</td></tr>
+<tr>
+<td>Where is ___?</td><td>___はどこですか？</td><td>___ wa DOH-koh dess-KAH?</td></tr>
+<tr>
+<td>How much?</td><td>いくらですか？</td><td>ee-KOO-rah dess-KAH?</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Money Quick Reference</h2>
+<ul>
+<li><strong>Currency:</strong> Japanese Yen (¥ / JPY)</li>
+<li><strong>No tipping</strong> — never, anywhere</li>
+<li><strong>Cash is still important</strong> — many small restaurants and shops are cash-only</li>
+<li><strong>Best ATMs:</strong> 7-Eleven (7-Bank) and Japan Post ATMs accept international cards 24/7</li>
+<li><strong>IC Card (Suica/Pasmo):</strong> Rechargeable transit card that also works at convenience stores and vending machines</li>
+<li><strong>Budget per day:</strong> ~$150-250/day (mid-range, including accommodation)</li>
+<li><strong>Approximate costs:</strong> Bowl of ramen ¥900-1,200 (~$6-8), convenience store meal ¥500-800 (~$3-5), temple entry ¥300-600 (~$2-4)</li>
+</ul>
+<hr>
+<h2>What to Do If Something Goes Wrong</h2>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Situation</th><th>Action</th></tr></thead><tbody>
+<tr>
+<td>**Lost passport**</td><td>Go to US Embassy/Consulate immediately with a photo ID copy</td></tr>
+<tr>
+<td>**Medical emergency**</td><td>Call 119, go to nearest hospital; Tourist Hotline can help with translation</td></tr>
+<tr>
+<td>**Lost/stolen item on train**</td><td>Go to the station's Lost & Found (忘れ物センター); Japanese return rate is remarkably high</td></tr>
+<tr>
+<td>**Need English help**</td><td>Call Tourist Hotline 050-3816-2787 (24/7, multilingual)</td></tr>
+<tr>
+<td>**Natural disaster**</td><td>Follow NHK World alerts, shelter in place; download the Safety Tips app</td></tr>
+</tbody></table></div>
+<hr>
+<h2>Key App Downloads (Before Departure)</h2>
+<ul>
+<li><strong>Google Maps</strong> (with offline maps for Japan)</li>
+<li><strong>Navitime / Japan Travel</strong> (train navigation)</li>
+<li><strong>Google Translate</strong> (with Japanese offline pack + camera mode)</li>
+<li><strong>Safety Tips</strong> (Japan disaster alerts in English)</li>
+<li><strong>Suica app</strong> (if iPhone — add virtual Suica to Apple Wallet)</li>
+</ul>
+<hr>
+<p><em>Last updated: [Update before departure]</em></p>
+<p><em>Full itinerary and details: See 00-overview.md and linked files</em></p>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

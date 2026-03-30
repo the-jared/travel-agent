@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Checklists</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Checklists</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Checklists — Japan October 2026</h1>
+<h2>Pre-Trip (2-4 Months Before)</h2>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb1" ><label for="cb1"><strong>Passport</strong> — Valid for duration of stay (Japan does not require 6-month validity, but check your airline's policy). Renew if expiring before January 2027.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb2" ><label for="cb2"><strong>Visa check</strong> — US citizens are <strong>visa-free for up to 90 days</strong> as a tourist. No application needed. Just show up with a return ticket.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb3" ><label for="cb3"><strong>Book flights</strong> — Target booking window: June-August 2026 for best October prices. Consider open-jaw (into Tokyo NRT/HND, out of Osaka KIX).</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb4" ><label for="cb4"><strong>Book accommodations</strong> — Especially ryokans (Hakone/Kyoto) and Kyoto hotels (autumn leaf season demand). Cancel-free bookings first, optimize later.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb5" ><label for="cb5"><strong>Order JR Pass</strong> — Purchase exchange voucher online at japanrailpass.net. 7-day Ordinary pass recommended.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb6" ><label for="cb6"><strong>Travel insurance</strong> — Purchase coverage for medical, trip cancellation, and lost baggage. World Nomads or SafetyWing.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb7" ><label for="cb7"><strong>Register on Visit Japan Web</strong> — <a href="https://vjw.digital.go.jp" target="_blank" rel="noopener">vjw.digital.go.jp</a>. Pre-register immigration, customs, and quarantine info. Generates QR codes for faster arrival processing.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb8" ><label for="cb8"><strong>Research eSIM options</strong> — Ubigi, Airalo, or Holafly. Buy before departure, activate on arrival. Unlimited data plans ~$20-30 for 14 days.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb9" ><label for="cb9"><strong>Download apps:</strong></label></li>
+<li class="checklist-item"><input type="checkbox" id="cb10" ><label for="cb10">  - [ ] <strong>Google Maps</strong> — Download offline maps for Tokyo, Kyoto, Osaka</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb11" ><label for="cb11">  - [ ] <strong>Suica/Mobile Suica</strong> — Add to Apple Wallet (iPhone) or Google Pay</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb12" ><label for="cb12">  - [ ] <strong>Google Translate</strong> — Download Japanese offline language pack + camera translation</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb13" ><label for="cb13">  - [ ] <strong>Navitime or Japan Travel by Navitime</strong> — Best for train schedules and route planning</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb14" ><label for="cb14">  - [ ] <strong>Tabelog</strong> — Japan's top restaurant review app (like Yelp but accurate)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb15" ><label for="cb15">  - [ ] <strong>PayPay</strong> — Japan's popular mobile payment (optional but useful)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb16" ><label for="cb16"><strong>Book key experiences</strong> — TeamLab, any Michelin restaurants, cooking classes, popular ryokans</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb17" ><label for="cb17"><strong>Notify bank/credit card company</strong> — Inform them of Japan travel dates to avoid fraud blocks</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb18" ><label for="cb18"><strong>Check credit card foreign transaction fees</strong> — Use a no-FTF card (Chase Sapphire, Capital One Venture, etc.)</label></li>
+</ul>
+<hr>
+<h2>1 Week Before Departure</h2>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb19" ><label for="cb19"><strong>Confirm all bookings</strong> — Hotels, flights, any pre-booked activities. Print or save confirmations offline.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb20" ><label for="cb20"><strong>Activate eSIM</strong> — Install the eSIM profile (don't activate data yet — do that on landing).</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb21" ><label for="cb21"><strong>Withdraw cash</strong> — Get ~$300 USD worth of Japanese yen from your bank (better rate than airport exchanges). Or plan to withdraw at 7-Eleven ATMs on arrival.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb22" ><label for="cb22"><strong>Print key documents:</strong></label></li>
+<li class="checklist-item"><input type="checkbox" id="cb23" ><label for="cb23">  - [ ] Flight itinerary (outbound + return)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb24" ><label for="cb24">  - [ ] JR Pass exchange voucher</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb25" ><label for="cb25">  - [ ] Hotel confirmations (first and last hotel at minimum)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb26" ><label for="cb26">  - [ ] Travel insurance policy number and emergency contact</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb27" ><label for="cb27">  - [ ] Visit Japan Web QR codes (screenshot works too)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb28" ><label for="cb28"><strong>Share itinerary</strong> — Send trip details to a trusted contact back home.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb29" ><label for="cb29"><strong>Check weather forecast</strong> — October in Japan: 15-22C (59-72F). Chance of typhoon early October (rare but possible). Pack layers.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb30" ><label for="cb30"><strong>Charge devices</strong> — Japan uses Type A plugs (same as US). No adapter needed for American electronics.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb31" ><label for="cb31"><strong>Set up Suica in Apple Wallet</strong> — Add a Suica card to iPhone Wallet and load ¥2,000-3,000 initial balance.</label></li>
+</ul>
+<hr>
+<h2>Packing Checklist — October Layers</h2>
+<h3>Clothing (October: 15-22C / 59-72F, occasional rain)</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb32" ><label for="cb32"><strong>Light jacket or packable down</strong> — Mornings and evenings get cool, especially in Kyoto</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb33" ><label for="cb33"><strong>Long-sleeve shirts</strong> (3-4) — Layers are key</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb34" ><label for="cb34"><strong>T-shirts</strong> (3-4) — For warmer midday hours</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb35" ><label for="cb35"><strong>Pants/jeans</strong> (2-3) — At least one pair that's comfortable for all-day walking</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb36" ><label for="cb36"><strong>Shorts</strong> (1) — Optional, for warmer early-October days</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb37" ><label for="cb37"><strong>Light sweater or hoodie</strong> (1-2) — Temple visits in the morning can be chilly</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb38" ><label for="cb38"><strong>Rain jacket or compact umbrella</strong> — October has moderate rainfall. A packable rain shell beats an umbrella for mobility.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb39" ><label for="cb39"><strong>Walking shoes</strong> — THE most important item. You will walk 15,000-25,000 steps daily. Broken-in sneakers or trail shoes. NOT new shoes.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb40" ><label for="cb40"><strong>Slip-on shoes</strong> — For temples, ryokans, and restaurants where you remove shoes constantly. Easy on/off is essential. Vans slip-ons, loafers, or similar.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb41" ><label for="cb41"><strong>Socks</strong> (5-6 pairs) — You'll be taking shoes on/off at temples. Clean, presentable socks matter. No holes.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb42" ><label for="cb42"><strong>Sleepwear</strong> (1 set) — Ryokans provide yukata, but hostels/hotels may not.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb43" ><label for="cb43"><strong>Underwear</strong> (5-6) — Coin laundry available everywhere; pack for ~5 days and wash.</label></li>
+</ul>
+<h3>Toiletries & Health</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb44" ><label for="cb44">Prescription medications (bring extra + copy of prescription)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb45" ><label for="cb45">Sunscreen — October sun is deceptive</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb46" ><label for="cb46">Lip balm</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb47" ><label for="cb47">Hand sanitizer</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb48" ><label for="cb48">Bandages / blister pads — For the walking. Bring more than you think.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb49" ><label for="cb49">Basic pain reliever (ibuprofen/acetaminophen) — Japanese pharmacies have different formulations</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb50" ><label for="cb50">Allergy meds if needed</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb51" ><label for="cb51">Earplugs — Essential for capsule hotels and hostels</label></li>
+</ul>
+<h3>Tech</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb52" ><label for="cb52">Phone + charger (USB-C or Lightning)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb53" ><label for="cb53">Portable battery pack (10,000+ mAh) — Long days, heavy phone use for maps/translation</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb54" ><label for="cb54">Earbuds/headphones — For Shinkansen, flights, and unwinding</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb55" ><label for="cb55">Camera + charger (optional — phone cameras are great now)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb56" ><label for="cb56">Universal adapter — NOT needed for US travelers (Japan uses Type A, same as US)</label></li>
+</ul>
+<h3>Bags</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb57" ><label for="cb57"><strong>Main bag</strong> — 40-55L backpack or small rolling suitcase. Takkyubin-friendly size. Remember: you'll navigate train station stairs.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb58" ><label for="cb58"><strong>Day pack</strong> — Small backpack or crossbody bag for daily exploration. Must fit: water bottle, rain layer, snacks, portable charger.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb59" ><label for="cb59"><strong>Packing cubes</strong> — Highly recommended for staying organized across 4+ hotels.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb60" ><label for="cb60"><strong>Reusable bag</strong> — Japan charges for plastic bags (¥3-5). Bring a foldable tote.</label></li>
+</ul>
+<h3>Documents & Money</h3>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb61" ><label for="cb61">Passport</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb62" ><label for="cb62">Flight tickets (printed or digital)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb63" ><label for="cb63">JR Pass voucher</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb64" ><label for="cb64">Hotel confirmations</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb65" ><label for="cb65">Travel insurance card/document</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb66" ><label for="cb66">Credit card (no foreign transaction fees)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb67" ><label for="cb67">Debit card (backup ATM access)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb68" ><label for="cb68">Japanese yen cash (¥30,000-50,000)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb69" ><label for="cb69">Copy of passport (photo page) — Keep separate from passport</label></li>
+</ul>
+<hr>
+<h2>Day-of-Departure Checklist</h2>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb70" ><label for="cb70">Passport in carry-on (NOT checked bag)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb71" ><label for="cb71">Phone charged to 100%</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb72" ><label for="cb72">Portable battery charged</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb73" ><label for="cb73">eSIM installed (activate data on landing)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb74" ><label for="cb74">Visit Japan Web QR codes accessible offline</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb75" ><label for="cb75">Yen cash in wallet</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb76" ><label for="cb76">Snacks for the flight (plane food isn't enough for 11-12 hours)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb77" ><label for="cb77">Neck pillow / eye mask for sleeping on the flight</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb78" ><label for="cb78">Compression socks for the long flight (optional but helps)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb79" ><label for="cb79">Entertainment downloaded (movies, podcasts, books — no WiFi on many flights)</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb80" ><label for="cb80">Home secured — Lights on timer, mail held, thermostat adjusted</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb81" ><label for="cb81">Someone knows your itinerary and flight details</label></li>
+</ul>
+<hr>
+<h2>Arrival Day in Japan</h2>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb82" ><label for="cb82"><strong>Turn on eSIM data</strong> — Switch to Japan eSIM profile in Settings.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb83" ><label for="cb83"><strong>Immigration</strong> — Have your Visit Japan Web QR code ready. Typical wait: 20-60 min.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb84" ><label for="cb84"><strong>Customs</strong> — Show QR code. Usually waved through for tourists.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb85" ><label for="cb85"><strong>Exchange JR Pass voucher</strong> — Find the JR ticket office (Midori no Madoguchi) at the airport. Exchange voucher for actual pass. Set activation date for when you'll need it (not necessarily today).</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb86" ><label for="cb86"><strong>Get Suica card</strong> — If not using Mobile Suica, buy a physical card at a JR ticket machine. ¥500 deposit + ¥2,000-3,000 initial charge.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb87" ><label for="cb87"><strong>Withdraw cash at 7-Eleven ATM</strong> — Inside the airport or at the first 7-Eleven you see. Withdraw ¥30,000-50,000 to start.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb88" ><label for="cb88"><strong>Get to your hotel:</strong></label></li>
+<li>  - From Narita: N'EX to Tokyo Station (60 min, ¥3,250)</li>
+<li>  - From Haneda: Keikyu Line to Shinagawa (15 min, ¥300)</li>
+<li class="checklist-item"><input type="checkbox" id="cb89" ><label for="cb89"><strong>Check in and rest</strong> — Don't try to do too much on arrival day. Jet lag is real (13-17 hour time difference from US).</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb90" ><label for="cb90"><strong>Evening:</strong> Walk the neighborhood, find a local ramen shop or konbini for dinner. Get oriented.</label></li>
+</ul>
+<hr>
+<h2>Return Home Checklist</h2>
+<ul style="list-style: none; padding-left: 0;">
+<li class="checklist-item"><input type="checkbox" id="cb91" ><label for="cb91"><strong>Ship luggage to airport</strong> — Use Takkyubin 2 days before departure. Drop at hotel front desk or nearest konbini.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb92" ><label for="cb92"><strong>Return Suica card</strong> (if physical) — Get your ¥500 deposit back at any JR ticket counter. Or keep it as a souvenir.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb93" ><label for="cb93"><strong>Last-minute souvenirs</strong> — Airport duty-free shops at NRT and KIX have excellent Japanese snack selections (often cheaper than city shops).</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb94" ><label for="cb94"><strong>Tax-free shopping</strong> — If you made tax-free purchases, customs may check the sealed bags. Keep receipts stapled in your passport.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb95" ><label for="cb95"><strong>Eat one last meal</strong> — Airport ramen at Narita is genuinely good. Don't rush past it.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb96" ><label for="cb96"><strong>Check in online</strong> — Most airlines allow check-in 24 hours before departure.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb97" ><label for="cb97"><strong>Arrive at airport 3 hours early</strong> — Japanese airports are efficient, but security and immigration can have lines during peak hours.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb98" ><label for="cb98"><strong>Fill out departure card</strong> — If required (sometimes provided on the plane or at the gate).</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb99" ><label for="cb99"><strong>Switch eSIM back</strong> — Deactivate Japan eSIM, reactivate your home carrier.</label></li>
+<li class="checklist-item"><input type="checkbox" id="cb100" ><label for="cb100"><strong>Adjust watch/phone</strong> — Time zones will auto-update, but mentally prepare for the date-line weirdness (you may "gain" a day flying east).</label></li>
+</ul>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>

@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>japan-october-2026 — Photo Guide</title>
+  <style>
+    /* === Reset & Base === */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --text-secondary: #555555;
+      --border: #e0e0e0;
+      --accent: #2563eb;
+      --accent-hover: #1d4ed8;
+      --surface: #f8f9fa;
+      --header-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.08);
+      --code-bg: #f1f3f5;
+      --table-stripe: #f8f9fa;
+      --success: #16a34a;
+      --warning: #d97706;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0f0f0f;
+        --text: #e8e8e8;
+        --text-secondary: #a0a0a0;
+        --border: #2a2a2a;
+        --accent: #60a5fa;
+        --accent-hover: #93bbfd;
+        --surface: #1a1a1a;
+        --header-bg: #0f0f0f;
+        --shadow: rgba(0, 0, 0, 0.3);
+        --code-bg: #1e1e1e;
+        --table-stripe: #1a1a1a;
+      }
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                   "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+                   "Apple Color Emoji", "Segoe UI Emoji";
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      padding: 0;
+      margin: 0;
+    }
+
+    /* === Sticky Header === */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--header-bg);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 3px var(--shadow);
+      padding: 0.75rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .site-header h1 {
+      font-size: 1rem;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .site-header .nav-links {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.85rem;
+    }
+
+    .site-header .nav-links a {
+      color: var(--accent);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .site-header .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* === Main Content === */
+    .content {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem 4rem;
+    }
+
+    /* === Typography === */
+    h1 { font-size: 1.75rem; font-weight: 700; margin: 2rem 0 1rem; line-height: 1.25; }
+    h2 { font-size: 1.375rem; font-weight: 600; margin: 1.75rem 0 0.75rem; line-height: 1.3; border-bottom: 1px solid var(--border); padding-bottom: 0.3rem; }
+    h3 { font-size: 1.125rem; font-weight: 600; margin: 1.5rem 0 0.5rem; line-height: 1.35; }
+    h4 { font-size: 1rem; font-weight: 600; margin: 1.25rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+
+    /* === Links === */
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { color: var(--accent-hover); text-decoration: underline; }
+
+    /* === Lists === */
+    ul, ol { margin: 0 0 1rem; padding-left: 1.5rem; }
+    li { margin-bottom: 0.35rem; }
+    li > ul, li > ol { margin-top: 0.35rem; margin-bottom: 0; }
+
+    /* === Blockquotes === */
+    blockquote {
+      border-left: 3px solid var(--accent);
+      padding: 0.5rem 1rem;
+      margin: 0 0 1rem;
+      background: var(--surface);
+      color: var(--text-secondary);
+      border-radius: 0 4px 4px 0;
+    }
+
+    blockquote p:last-child { margin-bottom: 0; }
+
+    /* === Code === */
+    code {
+      background: var(--code-bg);
+      padding: 0.15rem 0.35rem;
+      border-radius: 3px;
+      font-size: 0.9em;
+      font-family: "SF Mono", "Fira Code", "Fira Mono", Menlo, Consolas, monospace;
+    }
+
+    pre {
+      background: var(--code-bg);
+      padding: 1rem;
+      border-radius: 6px;
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      line-height: 1.45;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      font-size: 0.85rem;
+    }
+
+    /* === Tables === */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 0 0 1rem;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    th, td {
+      padding: 0.6rem 0.75rem;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+
+    th {
+      background: var(--surface);
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    tr:nth-child(even) td {
+      background: var(--table-stripe);
+    }
+
+    /* === Horizontal Rules === */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 2rem 0;
+    }
+
+    /* === Checkboxes (Interactive) === */
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+      padding: 0.25rem 0;
+    }
+
+    .checklist-item input[type="checkbox"] {
+      margin-top: 0.3rem;
+      width: 1.1rem;
+      height: 1.1rem;
+      accent-color: var(--accent);
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+
+    .checklist-item label {
+      cursor: pointer;
+      flex: 1;
+    }
+
+    .checklist-item input[type="checkbox"]:checked + label {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    /* === Images === */
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 6px;
+      margin: 0.5rem 0;
+    }
+
+    /* === Emoji & Icons === */
+    .emoji { font-style: normal; }
+
+    /* === Utility === */
+    .text-muted { color: var(--text-secondary); }
+    .text-small { font-size: 0.85rem; }
+    .mb-0 { margin-bottom: 0; }
+
+    /* === Footer === */
+    .site-footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      border-top: 1px solid var(--border);
+      margin-top: 3rem;
+    }
+
+    /* === Print Styles === */
+    @media print {
+      .site-header { position: static; box-shadow: none; border-bottom: 2px solid #000; }
+      .site-header .nav-links { display: none; }
+      body { font-size: 11pt; color: #000; background: #fff; }
+      .content { max-width: 100%; padding: 0; }
+      a { color: #000; text-decoration: underline; }
+      a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #555; }
+      a[href^="#"]::after, a[href^="javascript"]::after { content: ""; }
+      .nav-links a[href]::after { content: ""; }
+      blockquote { border-left-color: #000; background: none; }
+      pre, code { background: #f5f5f5; }
+      table { font-size: 9pt; }
+      h1, h2, h3 { page-break-after: avoid; }
+      tr, img, blockquote { page-break-inside: avoid; }
+      .no-print { display: none !important; }
+    }
+
+    /* === Mobile Adjustments === */
+    @media (max-width: 480px) {
+      .content { padding: 1.25rem 1rem 3rem; }
+      h1 { font-size: 1.5rem; }
+      h2 { font-size: 1.2rem; }
+      table { font-size: 0.8rem; }
+      th, td { padding: 0.4rem 0.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <h1>japan-october-2026 — Photo Guide</h1>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="itinerary.html">Itinerary</a>
+      <a href="pocket-guide.html">Pocket Guide</a>
+    </nav>
+  </header>
+  <main class="content">
+<h1>Photo Guide — Japan October 2026</h1>
+<blockquote>
+<p>Best photo spots per city with optimal timing, gear tips, and composition notes. October is ideal for photography: soft autumn light, early foliage, and clear post-rain skies.</p>
+</blockquote>
+<hr>
+<h2>Sunrise Spots (5:45-6:30 AM in late October)</h2>
+<h3>Fushimi Inari Taisha (伏見稲荷大社) — Kyoto</h3>
+<ul>
+<li><strong>What:</strong> Thousands of vermillion torii gates winding up a mountain</li>
+<li><strong>Optimal time:</strong> Arrive by 5:30 AM. Gates are empty until ~7:00 AM. By 9:00 AM it's a wall of people.</li>
+<li><strong>Best shot:</strong> Tunnel of gates on the lower path, shooting uphill with no people. The light filtering through gaps creates orange-on-orange magic.</li>
+<li><strong>Composition:</strong> Use the curve of the tunnel as a leading line. Shoot both with and without a person for scale.</li>
+<li><strong>Gear:</strong> Wide angle (16-24mm) for tunnel immersion; 50-85mm for compressed gate stacking.</li>
+<li><strong>Pro tip:</strong> The less-visited paths on the backside of the mountain (descending via the alternate route) have gates with peeling paint and moss — more atmospheric, zero crowds.</li>
+</ul>
+<h3>Senso-ji Temple (浅草寺) — Tokyo</h3>
+<ul>
+<li><strong>What:</strong> Tokyo's oldest temple with the iconic Kaminarimon gate and five-story pagoda</li>
+<li><strong>Optimal time:</strong> Arrive 5:30 AM. The Nakamise shopping street is shuttered but the temple is open. Dawn light hits the main hall beautifully.</li>
+<li><strong>Best shot:</strong> Kaminarimon gate with the massive red lantern, empty street behind. Pagoda reflected in puddles after rain.</li>
+<li><strong>Composition:</strong> Shoot the gate straight-on and centered. For the pagoda, step back to the Nakamise street side and use the row of closed shops as a frame.</li>
+<li><strong>Gear:</strong> 24-35mm for the gate; 70-200mm for compressing the pagoda against city buildings.</li>
+<li><strong>Pro tip:</strong> Return at night (until 23:00) when the temple and pagoda are illuminated. The contrast of red temple against blue-hour sky is spectacular.</li>
+</ul>
+<h3>Arashiyama Bamboo Grove (嵐山竹林) — Kyoto</h3>
+<ul>
+<li><strong>What:</strong> Towering bamboo forest with a winding path</li>
+<li><strong>Optimal time:</strong> Be at the grove by 6:00 AM. By 8:00 AM tour buses arrive. Early morning mist in October is common and gorgeous.</li>
+<li><strong>Best shot:</strong> Looking straight up through the bamboo canopy. The path curving away with a lone figure.</li>
+<li><strong>Composition:</strong> Vertical shots looking up work best. Use a person in a kimono (rental shops open at 9:00) for a classic shot, or shoot the empty path at dawn.</li>
+<li><strong>Gear:</strong> Ultra-wide (14-20mm) for looking up; 35-50mm for the path perspective.</li>
+</ul>
+<hr>
+<h2>Sunset Spots (5:00-5:30 PM in late October)</h2>
+<h3>Shibuya Sky (渋谷スカイ) — Tokyo</h3>
+<ul>
+<li><strong>What:</strong> Open-air rooftop observation deck atop Shibuya Scramble Square, 230m high</li>
+<li><strong>Optimal time:</strong> Book the 4:00 PM or 4:30 PM slot. You'll catch golden hour, sunset, AND the city lights turning on.</li>
+<li><strong>Best shot:</strong> The Shibuya Crossing from directly above. The infinity edge with sunset. Tokyo Tower and Mt. Fuji silhouette on clear days.</li>
+<li><strong>Composition:</strong> Shoot straight down at the scramble crossing. Use the edge railing for leading lines. Panoramas work incredibly well here.</li>
+<li><strong>Gear:</strong> Wide angle essential. Phone cameras work great here (computational photography handles the dynamic range well).</li>
+<li><strong>Pro tip:</strong> Tripods are not allowed, but you can rest your camera on the railing. The net barrier is invisible at wide apertures (shoot f/2.8 or wider pressed against the net).</li>
+</ul>
+<h3>Arashiyama — Togetsukyo Bridge (渡月橋) — Kyoto</h3>
+<ul>
+<li><strong>What:</strong> Iconic wooden bridge spanning the Hozu River with mountains behind</li>
+<li><strong>Optimal time:</strong> 4:30-5:15 PM. The mountains behind the bridge catch the last golden light. October foliage beginning to turn adds warm tones.</li>
+<li><strong>Best shot:</strong> The bridge with autumn-tinted mountains. Boats on the river with bridge in background.</li>
+<li><strong>Composition:</strong> Shoot from the south bank looking north for mountain backdrop. From upstream (west) for the classic postcard angle with the bridge and mountains.</li>
+<li><strong>Gear:</strong> 24-70mm zoom for versatility; 70-200mm to compress the bridge against mountains.</li>
+</ul>
+<h3>Osaka Umeda Sky Building (空中庭園展望台)</h3>
+<ul>
+<li><strong>What:</strong> Futuristic floating garden observatory connecting two towers, 173m high</li>
+<li><strong>Optimal time:</strong> 4:30 PM entry. Sunset from the open-air rooftop level.</li>
+<li><strong>Best shot:</strong> The dramatic escalator tunnel ascending to the observatory. Sunset over Osaka with the city grid below.</li>
+<li><strong>Composition:</strong> Use the circular opening in the roof as a natural frame. The escalator tube makes a killer perspective shot.</li>
+<li><strong>Gear:</strong> Wide angle for the architecture; any lens for sunset.</li>
+<li><strong>Pro tip:</strong> Less crowded than Shibuya Sky and arguably a more interesting building to photograph.</li>
+</ul>
+<hr>
+<h2>Night Photography</h2>
+<h3>Golden Gai (ゴールデン街) — Tokyo</h3>
+<ul>
+<li><strong>What:</strong> Six narrow alleys of 200+ tiny bars, each seating 5-10 people, covered in stickers and neon</li>
+<li><strong>Optimal time:</strong> 8:00-10:00 PM. Early enough for fewer crowds, late enough for the neon to be blazing.</li>
+<li><strong>Best shot:</strong> The narrow alleys with warm light spilling from doorways. Close-ups of hand-painted signs. A lone figure in the alley.</li>
+<li><strong>Composition:</strong> Shoot down the length of an alley. Use the narrow walls as a natural frame. Shoot from low (knee height) for a more dramatic perspective.</li>
+<li><strong>Gear:</strong> 35mm f/1.4 or 50mm f/1.4 — you need fast glass. ISO 1600-6400 is fine for the gritty aesthetic.</li>
+<li><strong>Pro tip:</strong> Ask before photographing people or bar interiors. Some bars have a "no photos" policy. The alleys themselves are fair game.</li>
+</ul>
+<h3>Dotonbori Neon (道頓堀) — Osaka</h3>
+<ul>
+<li><strong>What:</strong> Canal-side strip of massive animated neon signs, including the iconic Glico Running Man</li>
+<li><strong>Optimal time:</strong> 7:00-9:00 PM for maximum neon. Signs are on until ~midnight.</li>
+<li><strong>Best shot:</strong> The Glico Running Man from the Ebisu Bridge. The full canal reflection of neon signs. The crab and dragon 3D signs.</li>
+<li><strong>Composition:</strong> From Ebisu Bridge, shoot the Glico sign centered. For reflections, get to the canal-level walkway and shoot along the water surface.</li>
+<li><strong>Gear:</strong> 24-35mm from the bridge; 50-85mm for individual signs. Tripod for long-exposure reflections on the canal.</li>
+<li><strong>Pro tip:</strong> The canal walkway below Ebisu Bridge is where you get the neon reflections in the water. Arrive early to claim a spot on the railing.</li>
+</ul>
+<h3>Miyajima Torii Gate (厳島神社大鳥居) — Day Trip from Osaka/Hiroshima</h3>
+<ul>
+<li><strong>What:</strong> The "floating" torii gate in the sea (recently renovated, looks pristine)</li>
+<li><strong>Optimal time:</strong> Check tide tables. High tide = gate appears to float. Night illumination until 23:00.</li>
+<li><strong>Best shot:</strong> Gate at high tide with sunset behind. Night illumination with reflections.</li>
+<li><strong>Composition:</strong> From the shore at Itsukushima Shrine for the classic straight-on shot. Walk to the left side of the island for an angle with mountains behind.</li>
+<li><strong>Gear:</strong> 70-200mm for compression from shore; 24-70mm if you wade out at low tide.</li>
+<li><strong>Note:</strong> This requires a day trip from Osaka (2h by shinkansen to Hiroshima + ferry) or an overnight. Plan accordingly.</li>
+</ul>
+<hr>
+<h2>Mt. Fuji from Hakone</h2>
+<h3>Hakone Ropeway / Owakudani (大涌谷)</h3>
+<ul>
+<li><strong>What:</strong> Volcanic valley with sulfur vents and Mt. Fuji behind</li>
+<li><strong>Optimal time:</strong> Early morning (before 10:00 AM) for clearest views. Fuji is often clouded by afternoon.</li>
+<li><strong>Best shot:</strong> Fuji from the ropeway gondola. Fuji framed by sulfur steam at Owakudani. Lake Ashi with Fuji.</li>
+<li><strong>Composition:</strong> Use the volcanic steam as foreground interest with Fuji behind. From Lake Ashi, use the red torii gate of Hakone Shrine as a frame.</li>
+<li><strong>Gear:</strong> 70-200mm to pull Fuji close; 24-70mm for environmental shots.</li>
+<li><strong>Pro tip:</strong> October is one of the best months for Fuji visibility. If it's clear at your hotel in the morning, go immediately — don't wait.</li>
+</ul>
+<h3>Lake Ashi (芦ノ湖)</h3>
+<ul>
+<li><strong>What:</strong> Caldera lake with Fuji reflections on still mornings</li>
+<li><strong>Optimal time:</strong> 6:00-8:00 AM for mirror-still water and Fuji reflections.</li>
+<li><strong>Best shot:</strong> Fuji reflected in the lake, Hakone Shrine torii in foreground.</li>
+<li><strong>Composition:</strong> South shore looking north. Use the pirate ship or shrine torii as foreground elements.</li>
+</ul>
+<hr>
+<h2>October Foliage Spots</h2>
+<p>Peak foliage in 2026 is estimated:</p>
+<ul>
+<li><strong>Tokyo:</strong> Late November (early color in late October in parks)</li>
+<li><strong>Kyoto:</strong> Mid-to-late November (but Tofuku-ji and high-altitude temples start in late October)</li>
+<li><strong>Hakone:</strong> Late October to mid-November (best timing for this trip!)</li>
+</ul>
+<h3>Best Early-Foliage Spots for Late October</h3>
+<div class="table-wrapper"><table>
+<thead><tr>
+<th>Spot</th><th>City</th><th>Peak Timing</th><th>Notes</th></tr></thead><tbody>
+<tr>
+<td>Tofuku-ji Temple</td><td>Kyoto</td><td>Late Oct - early Nov</td><td>Maple valley from Tsutenkyo Bridge</td></tr>
+<tr>
+<td>Koto-in (Daitoku-ji)</td><td>Kyoto</td><td>Late Oct - early Nov</td><td>Maple-lined approach path</td></tr>
+<tr>
+<td>Hakone Open Air Museum</td><td>Hakone</td><td>Late Oct</td><td>Sculptures + autumn mountain backdrop</td></tr>
+<tr>
+<td>Rikugien Garden</td><td>Tokyo</td><td>Early Nov</td><td>But ginkgo starts late Oct</td></tr>
+<tr>
+<td>Inokashira Park</td><td>Tokyo</td><td>Late Oct</td><td>Best combined with Kichijoji exploration</td></tr>
+<tr>
+<td>Shinjuku Gyoen</td><td>Tokyo</td><td>Late Oct start</td><td>Mix of maple, ginkgo, and cherry fall color</td></tr>
+<tr>
+<td>Eikan-do</td><td>Kyoto</td><td>Early-mid Nov</td><td>Check for early-turn trees at the pond</td></tr>
+</tbody></table></div>
+<hr>
+<h2>General Photo Tips for Japan</h2>
+<ol>
+<li><strong>Respect temple rules</strong> — Many interiors prohibit photography. Look for the camera-with-X signs.</li>
+<li><strong>No tripods</strong> in most temples and observation decks. A small gorillapod or beanbag works as an alternative.</li>
+<li><strong>People photography</strong> — Japan has strict privacy norms. Don't photograph people's faces close-up without permission. Street scenes from a distance are fine.</li>
+<li><strong>Vending machine glow</strong> — Use the omnipresent vending machines as a light source for moody night portraits on quiet streets.</li>
+<li><strong>Rainy day = best day</strong> — Wet streets reflect neon. Umbrellas add color to compositions. Temples in rain are atmospheric and less crowded.</li>
+<li><strong>Convenience store portraits</strong> — The warm light of a konbini (7-Eleven, Lawson) at night makes for iconic Japan street photos.</li>
+<li><strong>Manhole covers</strong> — Japan has beautifully designed manhole covers unique to each city. Shoot them when wet for best contrast.</li>
+</ol>
+<hr>
+<h2>Phone Photography Settings</h2>
+<p>If shooting on iPhone/Pixel:</p>
+<ul>
+<li>Shoot in 48MP (iPhone) or full resolution mode</li>
+<li>Use 0.5x ultra-wide for temples and narrow alleys</li>
+<li>Use 2x or 3x for food photos (natural compression, less distortion)</li>
+<li>Turn on grid lines for level compositions</li>
+<li>Night mode auto-activates — let it work, brace against a wall for 3-second exposures</li>
+<li>Shoot RAW (ProRAW on iPhone) for maximum editing flexibility of neon/sunset scenes</li>
+</ul>
+  </main>
+  <footer class="site-footer">
+    Generated by /travel-agent &middot; Offline-ready &middot; No external resources
+  </footer>
+</body>
+</html>
